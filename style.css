@@ -1,29 +1,30 @@
-body {
-  background-color: #1a1a2e;
-  color: #eaeaea;
-  font-family: 'Georgia', serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #16213e;
-  padding: 30px;
-  border-bottom: 2px solid #0f3460;
-}
-
-nav a {
-  color: #e94560;
-  text-decoration: none;
+button {
+  background-color: #e94560;
+  color: white;
+  border: none;
+  padding: 15px 30px;
   font-size: 18px;
-  margin: 0 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+button:hover {
+  background-color: #d1304b;
 }
 
-main {
-  padding: 40px 20px;
+#cardDisplay {
+  margin-top: 30px;
+  background-color: #16213e;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e94560;
+  display: inline-block;
+  max-width: 400px;
+}
+
+#cardName {
+  color: #e94560;
+  margin-top: 0;
+  font-size: 24px;
 }
