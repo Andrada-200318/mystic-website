@@ -1,0 +1,29 @@
+body {
+  background-color: #1a1a2e;
+  color: #eaeaea;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #16213e;
+  padding: 30px;
+  border-bottom: 2px solid #0f3460;
+}
+
+nav a {
+  color: #e94560;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 40px 20px;
+}
