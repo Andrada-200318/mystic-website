@@ -88,17 +88,224 @@ const cards = [
   { name: "King of Pentacles", meaning: "Material success and business leadership. You have the discipline to manifest a secure empire." }
 ];
 
-const button = document.getElementById("drawButton");
-const display = document.getElementById("cardDisplay");
-const nameElement = document.getElementById("cardName");
-const meaningElement = document.getElementById("cardMeaning");
+const positions = ["Past", "Present", "Future"];
 
-button.addEventListener("click", function() {
-  const randomIndex = Math.floor(Math.random() * cards.length);
-  const selectedCard = cards[randomIndex];
-  
-  nameElement.textContent = selectedCard.name;
-  meaningElement.textContent = selectedCard.meaning;
-  
-  display.style.display = "inline-block";
+const romanNumerals = [
+  "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
+  "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI"
+];
+
+const suits = {
+  major: {
+    symbol: "☽",
+    message: "the Major Arcana, so fate itself is speaking. These are soul-level lessons, larger than the day-to-day. Pay close attention to what is unfolding."
+  },
+  Wands: {
+    symbol: "♣",
+    message: "Wands, so fire runs through your reading. Passion, creativity and bold action are the energies to work with now."
+  },
+  Cups: {
+    symbol: "♥",
+    message: "Cups, so water flows through your reading. Your feelings, relationships and intuition hold the answers you seek."
+  },
+  Swords: {
+    symbol: "♠",
+    message: "Swords, so air sharpens your reading. Your thoughts, words and decisions are at the heart of the matter. Seek clarity and speak your truth."
+  },
+  Pentacles: {
+    symbol: "♦",
+    message: "Pentacles, so earth grounds your reading. Work, money, the body and the home are where your energy wants to go."
+  }
+};
+
+const deckButton = document.getElementById("deck");
+const deckTop = document.getElementById("deckTop");
+const deckHint = document.getElementById("deckHint");
+const slots = document.querySelectorAll(".slot");
+const reading = document.getElementById("reading");
+const readingCards = document.getElementById("readingCards");
+const readingSummary = document.getElementById("readingSummary");
+const redrawButton = document.getElementById("redrawButton");
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const flyTime = reduceMotion ? 0 : 750;
+const flipTime = reduceMotion ? 0 : 900;
+
+let shuffledDeck = [];
+let drawnCards = [];
+let isDrawing = false;
+
+function getSuit(card) {
+  const match = card.name.match(/of (Wands|Cups|Swords|Pentacles)$/);
+  return match ? match[1] : "major";
+}
+
+// Card images live in "Deck of cards", named like "Eight_of_Swords_(Rider-Waite_Smith_tarot_deck).png"
+function getImagePath(card) {
+  return encodeURI("Deck of cards/" + card.name.replace(/ /g, "_") + "_(Rider-Waite_Smith_tarot_deck).png");
+}
+
+function cardBackHTML() {
+  return `
+    <svg viewBox="0 0 70 120" aria-hidden="true">
+      <circle cx="35" cy="60" r="22" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.7"/>
+      <circle cx="35" cy="60" r="25" fill="none" stroke="currentColor" stroke-width="0.4" stroke-dasharray="1 2" opacity="0.7"/>
+      <path d="M42 47.9 A14 14 0 1 0 42 72.1 A13 13 0 0 1 42 47.9 Z" fill="currentColor"/>
+      <path d="M44 55 Q44 58 47 58 Q44 58 44 61 Q44 58 41 58 Q44 58 44 55 Z" fill="currentColor"/>
+      <path d="M35 14 Q35 20 41 20 Q35 20 35 26 Q35 20 29 20 Q35 20 35 14 Z" fill="currentColor"/>
+      <path d="M35 94 Q35 100 41 100 Q35 100 35 106 Q35 100 29 100 Q35 100 35 94 Z" fill="currentColor"/>
+      <line x1="35" y1="29" x2="35" y2="34" stroke="currentColor" stroke-width="0.6"/>
+      <line x1="35" y1="86" x2="35" y2="91" stroke="currentColor" stroke-width="0.6"/>
+    </svg>`;
+}
+
+function shuffle(list) {
+  const copy = list.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function createCardElement(card) {
+  const suit = getSuit(card);
+  const numeral = suit === "major" ? romanNumerals[cards.indexOf(card)] : "";
+
+  const element = document.createElement("div");
+  element.className = "card";
+  element.innerHTML = `
+    <div class="card-inner">
+      <div class="card-face card-back">${cardBackHTML()}</div>
+      <div class="card-face card-front">
+        <img alt="${card.name}">
+        <div class="card-fallback">
+          <span class="card-fallback-numeral">${numeral}</span>
+          <span class="card-fallback-symbol">${suits[suit].symbol}</span>
+          <span class="card-fallback-name">${card.name}</span>
+        </div>
+      </div>
+    </div>`;
+
+  const image = element.querySelector("img");
+  image.addEventListener("error", function() {
+    image.parentElement.classList.add("no-image");
+  });
+  image.src = getImagePath(card);
+
+  return element;
+}
+
+function drawCard() {
+  if (isDrawing || drawnCards.length >= positions.length) return;
+  isDrawing = true;
+
+  const card = shuffledDeck.pop();
+  drawnCards.push(card);
+
+  const slot = slots[drawnCards.length - 1];
+  const cardElement = createCardElement(card);
+  slot.querySelector(".slot-frame").appendChild(cardElement);
+
+  // Start the card on top of the deck, then let it glide into its slot
+  const from = deckTop.getBoundingClientRect();
+  const to = cardElement.getBoundingClientRect();
+  cardElement.style.transition = "none";
+  cardElement.style.transform =
+    `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width})`;
+  cardElement.offsetWidth; // force the starting position to render before animating
+  cardElement.style.transition = "";
+  cardElement.style.transform = "";
+
+  setTimeout(function() {
+    cardElement.classList.add("is-flipped");
+
+    setTimeout(function() {
+      const nameElement = slot.querySelector(".slot-name");
+      nameElement.textContent = card.name;
+      nameElement.classList.add("is-visible");
+      isDrawing = false;
+
+      if (drawnCards.length === positions.length) {
+        finishReading();
+      } else {
+        deckHint.textContent = `Draw your ${positions[drawnCards.length].toLowerCase()} card`;
+      }
+    }, flipTime);
+  }, flyTime);
+}
+
+function buildSummary() {
+  const counts = {};
+  drawnCards.forEach(function(card) {
+    const suit = getSuit(card);
+    counts[suit] = (counts[suit] || 0) + 1;
+  });
+
+  const [topSuit, topCount] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  let summary;
+
+  if (topCount === 3) {
+    summary = "All three cards belong to " + suits[topSuit].message;
+  } else if (topCount === 2) {
+    summary = "Two of your three cards belong to " + suits[topSuit].message;
+  } else {
+    summary = "Each card comes from a different realm, so your path asks for balance between heart, mind, body and spirit. No single force rules this moment; you hold the reins.";
+  }
+
+  const [past, present, future] = drawnCards;
+  return `${summary} From ${past.name}, through ${present.name}, toward ${future.name}, your story is moving forward. Trust where it is leading you.`;
+}
+
+function finishReading() {
+  deckButton.disabled = true;
+  deckHint.textContent = "The cards have spoken";
+
+  readingCards.innerHTML = drawnCards.map(function(card, index) {
+    return `
+      <div class="reading-entry">
+        <p class="reading-entry-position">${positions[index]}</p>
+        <p class="reading-entry-name">${card.name}</p>
+        <p class="reading-entry-meaning">${card.meaning}</p>
+      </div>`;
+  }).join("");
+  readingSummary.textContent = buildSummary();
+
+  reading.hidden = false;
+  requestAnimationFrame(function() {
+    reading.classList.add("is-visible");
+    reading.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+  });
+}
+
+function resetReading() {
+  shuffledDeck = shuffle(cards);
+  drawnCards = [];
+  isDrawing = false;
+
+  slots.forEach(function(slot) {
+    const card = slot.querySelector(".card");
+    if (card) card.remove();
+    const nameElement = slot.querySelector(".slot-name");
+    nameElement.textContent = "";
+    nameElement.classList.remove("is-visible");
+  });
+
+  reading.classList.remove("is-visible");
+  reading.hidden = true;
+  deckButton.disabled = false;
+  deckHint.textContent = "Tap the deck to draw your first card";
+}
+
+document.querySelectorAll(".deck-layer").forEach(function(layer) {
+  layer.innerHTML = cardBackHTML();
 });
+
+deckButton.addEventListener("click", drawCard);
+
+redrawButton.addEventListener("click", function() {
+  resetReading();
+  deckButton.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+});
+
+resetReading();
