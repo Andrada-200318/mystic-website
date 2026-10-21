@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tea Leaves · Modern Spirituality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tea.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>My Mystic Space</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="index.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html" class="active">Tea Leaves</a>
+        <a href="#">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>Tea Leaf Reading</h2>
+        <p>The old art of tasseography reads the shapes that loose leaves leave behind. Hold a question in your mind as you drink, swirl what is left three times, and turn the cup over onto its saucer. Then see what the leaves have to say.</p>
+      </section>
+
+      <section class="tea-table">
+        <ol class="tea-steps" id="teaSteps">
+          <li data-step="sip">Sip</li>
+          <li data-step="swirl">Swirl</li>
+          <li data-step="turn">Turn</li>
+          <li data-step="read">Read</li>
+        </ol>
+
+        <div class="saucer" id="saucer">
+          <div class="cup" id="cup" tabindex="0" role="button">
+            <div class="cup-inner" id="cupInner">
+              <span class="cup-handle"></span>
+
+              <div class="cup-face cup-top">
+                <svg viewBox="0 0 300 300" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="china" cx="40%" cy="35%" r="75%">
+                      <stop offset="0" stop-color="#fffdf8"/>
+                      <stop offset="1" stop-color="#e3d5bf"/>
+                    </radialGradient>
+                    <radialGradient id="bowl" cx="50%" cy="50%" r="50%">
+                      <stop offset="0" stop-color="#fffaf0"/>
+                      <stop offset="0.75" stop-color="#f1e6d3"/>
+                      <stop offset="1" stop-color="#c9b89c"/>
+                    </radialGradient>
+                    <radialGradient id="teaFill" cx="45%" cy="40%" r="60%">
+                      <stop offset="0" stop-color="#c9842f"/>
+                      <stop offset="0.7" stop-color="#8a4a17"/>
+                      <stop offset="1" stop-color="#5a2e0e"/>
+                    </radialGradient>
+                    <clipPath id="bowlClip"><circle cx="150" cy="150" r="118"/></clipPath>
+                  </defs>
+                  <circle cx="150" cy="150" r="146" fill="url(#china)"/>
+                  <circle cx="150" cy="150" r="145" fill="none" stroke="#d6b36a" stroke-width="3"/>
+                  <circle cx="150" cy="150" r="134" fill="none" stroke="#9b6fd0" stroke-width="4" stroke-dasharray="1 9" stroke-linecap="round"/>
+                  <circle cx="150" cy="150" r="124" fill="none" stroke="#d6b36a" stroke-width="1.5"/>
+                  <circle cx="150" cy="150" r="118" fill="url(#bowl)"/>
+                  <g clip-path="url(#bowlClip)">
+                    <g id="leaves"></g>
+                    <g id="shapes"></g>
+                    <circle class="tea" id="tea" cx="150" cy="150" r="118" fill="url(#teaFill)"/>
+                    <ellipse class="tea-shine" id="teaShine" cx="118" cy="104" rx="46" ry="16" transform="rotate(-28 118 104)"/>
+                  </g>
+                </svg>
+                <div class="steam" id="steam"><span></span><span></span><span></span></div>
+              </div>
+
+              <div class="cup-face cup-bottom">
+                <svg viewBox="0 0 300 300" aria-hidden="true">
+                  <circle cx="150" cy="150" r="146" fill="url(#china)"/>
+                  <circle cx="150" cy="150" r="145" fill="none" stroke="#d6b36a" stroke-width="3"/>
+                  <circle cx="150" cy="150" r="70" fill="none" stroke="#c9b89c" stroke-width="10"/>
+                  <circle cx="150" cy="150" r="64" fill="none" stroke="#d6b36a" stroke-width="1.5"/>
+                  <text x="150" y="146" text-anchor="middle" class="cup-mark">☾</text>
+                  <text x="150" y="172" text-anchor="middle" class="cup-mark-small">Fine Bone China</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="tea-hint" id="teaHint" aria-live="polite"></p>
+        <div class="tea-progress" id="teaProgress"><span id="teaProgressBar"></span></div>
+        <button class="redraw" id="turnButton" type="button" hidden>Turn the Cup Over</button>
+      </section>
+
+      <section class="reading" id="reading" hidden>
+        <h2>Your Reading</h2>
+        <div class="reading-cards" id="readingCards"></div>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>What the Cup Says</h3>
+        <p class="reading-summary" id="readingSummary"></p>
+        <button class="redraw" id="brewButton" type="button">Brew Another Cup</button>
+      </section>
+    </main>
+
+    <script src="tea.js"></script>
+  </body>
+</html>

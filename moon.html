@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moon Altar · Modern Spirituality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="moon.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>My Mystic Space</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="index.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html" class="active">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="#">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>The Moon Altar</h2>
+        <p>Every night the moon shows a different face, and each one asks for a different kind of magic. See where she is in her cycle tonight, then dress your altar with a candle, a crystal and a herb. Light the candle when you are ready.</p>
+      </section>
+
+      <section class="moon-sky" aria-labelledby="phaseName">
+        <svg class="moon" id="moon" viewBox="0 0 200 200" role="img">
+          <defs>
+            <radialGradient id="moonLight" cx="40%" cy="38%" r="70%">
+              <stop offset="0" stop-color="#fffdf2"/>
+              <stop offset="0.6" stop-color="#f1e6c6"/>
+              <stop offset="1" stop-color="#cbb98f"/>
+            </radialGradient>
+            <clipPath id="litClip"><path id="litClipPath"/></clipPath>
+          </defs>
+          <circle class="moon-dark" cx="100" cy="100" r="80"/>
+          <path class="moon-lit" id="moonLit"/>
+          <g class="moon-craters" clip-path="url(#litClip)">
+            <circle cx="72" cy="70" r="14"/>
+            <circle cx="122" cy="58" r="8"/>
+            <circle cx="135" cy="112" r="17"/>
+            <circle cx="90" cy="128" r="10"/>
+            <circle cx="62" cy="112" r="6"/>
+            <circle cx="108" cy="92" r="5"/>
+            <circle cx="114" cy="152" r="7"/>
+          </g>
+        </svg>
+
+        <div class="moon-info">
+          <p class="moon-date" id="moonDate"></p>
+          <h2 class="moon-phase" id="phaseName"></h2>
+          <p class="moon-theme" id="phaseTheme"></p>
+          <p class="moon-text" id="phaseText"></p>
+          <ul class="moon-facts">
+            <li><span>Illuminated</span><strong id="moonIllumination"></strong></li>
+            <li><span>Moon age</span><strong id="moonAge"></strong></li>
+            <li><span>Next full moon</span><strong id="nextFull"></strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="altar-scene" aria-label="Your altar">
+        <div class="altar" id="altar">
+          <div class="altar-glow"></div>
+          <div class="altar-items">
+            <div class="altar-spot" id="crystalSpot"></div>
+            <button class="altar-spot altar-candle" id="candleSpot" type="button" disabled></button>
+            <div class="altar-spot" id="herbSpot"></div>
+          </div>
+          <div class="altar-top"></div>
+          <div class="altar-cloth"><span>☾ ✦ ☽</span></div>
+        </div>
+        <p class="altar-hint" id="altarHint" aria-live="polite"></p>
+      </section>
+
+      <section class="offerings" aria-label="Offerings">
+        <div class="offering-group">
+          <h3>Candles</h3>
+          <div class="offering-row" id="candleRow"></div>
+        </div>
+        <div class="offering-group">
+          <h3>Crystals</h3>
+          <div class="offering-row" id="crystalRow"></div>
+        </div>
+        <div class="offering-group">
+          <h3>Herbs</h3>
+          <div class="offering-row" id="herbRow"></div>
+        </div>
+        <p class="offering-key"><span>✦</span> marks what the moon favours tonight</p>
+      </section>
+
+      <p class="ritual-log" id="ritualLog"></p>
+
+      <section class="reading" id="reading" hidden>
+        <h2>Your Moon Ritual</h2>
+        <div class="reading-cards" id="readingCards"></div>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>The Moon's Message</h3>
+        <p class="reading-summary" id="readingSummary"></p>
+        <button class="redraw" id="clearButton">Clear the Altar</button>
+      </section>
+    </main>
+
+    <!-- Shading shared by the candles drawn on the altar and in the offerings -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="waxShade" x1="0" x2="1">
+          <stop offset="0" stop-color="#000" stop-opacity="0.35"/>
+          <stop offset="0.35" stop-color="#fff" stop-opacity="0.25"/>
+          <stop offset="0.6" stop-color="#fff" stop-opacity="0"/>
+          <stop offset="1" stop-color="#000" stop-opacity="0.4"/>
+        </linearGradient>
+        <linearGradient id="brass" x1="0" x2="1">
+          <stop offset="0" stop-color="#4a3010"/>
+          <stop offset="0.35" stop-color="#d6b36a"/>
+          <stop offset="0.5" stop-color="#f3dfa6"/>
+          <stop offset="0.75" stop-color="#b88a3e"/>
+          <stop offset="1" stop-color="#4a3010"/>
+        </linearGradient>
+        <radialGradient id="flameFill" cx="50%" cy="75%" r="70%">
+          <stop offset="0" stop-color="#fff8d8"/>
+          <stop offset="0.45" stop-color="#ffc35a"/>
+          <stop offset="1" stop-color="#e2611c"/>
+        </radialGradient>
+      </defs>
+    </svg>
+
+    <script src="moon.js"></script>
+  </body>
+</html>

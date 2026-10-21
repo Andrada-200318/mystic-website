@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Weaver · Modern Spirituality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stars.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>My Mystic Space</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="index.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html" class="active">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="#">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>The Star Weaver</h2>
+        <p>Tonight's sky is waiting for a new story. Tap a star, then tap another to draw a thread of light between them. Keep weaving until a shape appears, then ask the sky for its name and its myth.</p>
+      </section>
+
+      <section class="sky-wrap">
+        <svg class="sky" id="sky" viewBox="0 0 1000 620" aria-label="Tonight's sky. Use Tab to move between stars and Enter to join them.">
+          <defs>
+            <radialGradient id="starGlow">
+              <stop offset="0" stop-color="#fffbe9" stop-opacity="0.9"/>
+              <stop offset="0.3" stop-color="#e8d8ff" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#cdb2ec" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="milkyWayGlow">
+              <stop offset="0" stop-color="#cdb2ec" stop-opacity="0.35"/>
+              <stop offset="0.6" stop-color="#8a5cc4" stop-opacity="0.12"/>
+              <stop offset="1" stop-color="#8a5cc4" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="threadGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <ellipse id="milkyWay" cx="0" cy="0" rx="620" ry="120" fill="url(#milkyWayGlow)"/>
+          <g id="skyDust"></g>
+          <g id="skyThreads" filter="url(#threadGlow)"></g>
+          <line class="guide-thread" id="guideThread" x1="0" y1="0" x2="0" y2="0"/>
+          <g id="skyStars"></g>
+        </svg>
+
+        <div class="sky-controls">
+          <p class="sky-hint" id="skyHint" aria-live="polite"></p>
+          <div class="sky-buttons">
+            <button class="ghost-button" id="undoButton" type="button">Undo</button>
+            <button class="ghost-button" id="clearButton" type="button">Clear</button>
+            <button class="redraw" id="nameButton" type="button">Name My Constellation</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="reading" id="reading" hidden>
+        <p class="reading-entry-position">A new constellation</p>
+        <h2 id="constellationName"></h2>
+        <svg class="myth-figure" id="mythFigure" viewBox="0 0 200 140" aria-hidden="true"></svg>
+        <p class="reading-summary" id="mythText"></p>
+        <div class="reading-buttons">
+          <button class="redraw" id="saveButton" type="button">Add to My Sky</button>
+          <button class="ghost-button" id="againButton" type="button">Weave Another</button>
+        </div>
+      </section>
+
+      <section class="my-sky" aria-labelledby="mySkyTitle">
+        <p class="ornament">✦ ☾ ✦</p>
+        <h2 id="mySkyTitle">My Sky</h2>
+        <p class="my-sky-note" id="mySkyNote"></p>
+        <ul class="my-sky-list" id="mySkyList"></ul>
+      </section>
+    </main>
+
+    <script src="stars.js"></script>
+  </body>
+</html>

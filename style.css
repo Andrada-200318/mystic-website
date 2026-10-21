@@ -462,6 +462,46 @@ h3 {
   box-shadow: 0 10px 28px rgba(214, 179, 106, 0.5);
 }
 
+.redraw:disabled {
+  cursor: default;
+  opacity: 0.45;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Outlined companion to the gold button */
+.ghost-button {
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  padding: 13px 26px;
+  color: var(--gold-light);
+  background: rgba(10, 3, 16, 0.4);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.ghost-button:hover {
+  background: rgba(107, 47, 160, 0.45);
+}
+
+.ghost-button:disabled {
+  cursor: default;
+  opacity: 0.4;
+  background: rgba(10, 3, 16, 0.4);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card-inner,
