@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tide Pool: A Seashell &amp; Sea Glass Reading | Mystic Space</title>
+    <meta name="description" content="Call the tide under tonight's real moon, sweep the wet sand for sea glass and seashells, and let three treasures from the shore give you a reading. Watch for the mermaid's tears at full moon.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tide.css">
+
+    <script src="consent.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tarot.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="tide.html" class="active">Tide Pool</a>
+        <a href="articles.html">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>The Tide Pool</h2>
+        <p>The moon pulls the sea, and the sea gives back what it has gathered. Hold a question in your mind and call the tide. When the water pulls away, sweep the wet sand and choose three treasures from the shore. Out on her rock, the mermaid is watching.</p>
+      </section>
+
+      <section class="tide-shore">
+        <ol class="tide-steps" id="tideSteps">
+          <li data-step="call">Call</li>
+          <li data-step="sweep">Sweep</li>
+          <li data-step="gather">Gather</li>
+          <li data-step="read">Read</li>
+        </ol>
+
+        <p class="tide-tonight" id="tideTonight"></p>
+
+        <div class="tide-scene" id="tideScene">
+          <svg class="scene-art" id="sceneArt" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+          <div class="shore" id="shore" aria-label="The shore"></div>
+        </div>
+
+        <p class="tide-mermaid" id="tideMermaid"></p>
+        <p class="tide-hint" id="tideHint" aria-live="polite"></p>
+        <button class="redraw" id="callButton" type="button">Call the Tide</button>
+
+        <div class="tide-tray" id="tideTray">
+          <div class="tray-slot">
+            <div class="tray-frame"><span class="tray-numeral">I</span></div>
+            <p class="tray-label">What the sea brings</p>
+            <p class="tray-name"></p>
+          </div>
+          <div class="tray-slot">
+            <div class="tray-frame"><span class="tray-numeral">II</span></div>
+            <p class="tray-label">What it asks of you</p>
+            <p class="tray-name"></p>
+          </div>
+          <div class="tray-slot">
+            <div class="tray-frame"><span class="tray-numeral">III</span></div>
+            <p class="tray-label">What it carries away</p>
+            <p class="tray-name"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reading" id="reading" hidden>
+        <h2>Your Reading</h2>
+        <div class="reading-cards" id="readingCards"></div>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>What the Sea Says</h3>
+        <p class="reading-summary" id="readingSummary"></p>
+        <button class="redraw" id="againButton" type="button">Call Another Tide</button>
+      </section>
+    </main>
+
+    <script src="tide.js"></script>
+  </body>
+</html>

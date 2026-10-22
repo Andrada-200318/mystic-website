@@ -109,6 +109,8 @@ const jars = [
   {
     name: "Mermaid Tears",
     loot: "tears",
+    href: "tide.html",
+    game: "the Tide Pool",
     extra: true,
     svg: `<defs>
         <clipPath id="jarTear"><path d="M35 30H45V48C52 60 64 78 64 94A24 24 0 0 1 16 94C16 78 28 60 35 48Z"/></clipPath>

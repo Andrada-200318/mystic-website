@@ -129,10 +129,11 @@
   list-style: none;
 }
 
+/* Three to a row on wide screens, two on tablets */
 .ritual-list li {
   display: flex;
-  flex: 1 1 170px;
-  max-width: 210px;
+  flex: 1 1 260px;
+  max-width: 300px;
 }
 
 .ritual {
