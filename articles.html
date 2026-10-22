@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Articles on Tarot, Moon Magic, Crystals &amp; Herbs | Mystic Space</title>
+    <meta name="description" content="Read articles on tarot, moon magic, crystals, herbs and tea leaf reading, gathered into collections that bloom along our hanging garden vine.">
+    <!-- The collections below are samples. Remove this line once they are replaced with real articles, so Google can index the page. -->
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="articles.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRCX10CTS6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FRCX10CTS6');
+    </script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="index.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="articles.html" class="active">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>The Hanging Garden</h2>
+        <p>Our stories hang here like bundles of herbs left to dry by a moonlit window. Touch a bundle and its articles will bloom along the vine.</p>
+      </section>
+
+      <section class="garden" id="garden" aria-label="Article collections">
+        <p class="garden-hint" id="gardenHint" hidden>Touch a bundle to see what has bloomed inside.</p>
+        <!--
+          Each collection is one <li class="collection">.
+          data-herb picks the bundle: lavender, sage, rosemary, eucalyptus, chamomile, rose, mugwort or calendula.
+          To add an article, add an <li><a href="...">Title</a></li> to the collection's list.
+        -->
+        <ul class="collections" id="collections">
+          <li class="collection" data-herb="lavender">
+            <h3 class="collection-name">Moon Magic</h3>
+            <ul class="collection-articles">
+              <li><a href="#">How to Make Moon Water</a></li>
+              <li><a href="#">A Beginner's Guide to the Moon Phases</a></li>
+              <li><a href="#">Full Moon Rituals for Letting Go</a></li>
+              <li><a href="#">New Moon Intentions That Actually Stick</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="sage">
+            <h3 class="collection-name">Tarot Basics</h3>
+            <ul class="collection-articles">
+              <li><a href="#">Choosing Your First Tarot Deck</a></li>
+              <li><a href="#">How to Read Reversed Cards</a></li>
+              <li><a href="#">Three Card Spreads for Every Question</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="eucalyptus">
+            <h3 class="collection-name">Crystals</h3>
+            <ul class="collection-articles">
+              <li><a href="#">How to Cleanse and Charge Your Crystals</a></li>
+              <li><a href="#">Amethyst, Rose Quartz and Clear Quartz</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="rosemary">
+            <h3 class="collection-name">Herbal Magic</h3>
+            <ul class="collection-articles">
+              <li><a href="#">Seven Herbs for Protection</a></li>
+              <li><a href="#">Making a Simple Herbal Sachet</a></li>
+              <li><a href="#">Kitchen Witchcraft for Busy Days</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="chamomile">
+            <h3 class="collection-name">Tea Leaf Reading</h3>
+            <ul class="collection-articles">
+              <li><a href="#">The Most Common Tea Leaf Symbols</a></li>
+              <li><a href="#">Which Tea Is Best for a Reading?</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="rose">
+            <h3 class="collection-name">Astrology</h3>
+            <ul class="collection-articles">
+              <li><a href="#">Your Sun, Moon and Rising Signs</a></li>
+              <li><a href="#">What Mercury Retrograde Really Means</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="calendula">
+            <h3 class="collection-name">Manifestation</h3>
+            <ul class="collection-articles">
+              <li><a href="#">Writing Wishes That Work</a></li>
+            </ul>
+          </li>
+          <li class="collection" data-herb="mugwort">
+            <h3 class="collection-name">Dream Work</h3>
+            <ul class="collection-articles"></ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="articles.js"></script>
+  </body>
+</html>
