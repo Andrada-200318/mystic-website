@@ -164,7 +164,8 @@ const cells = [...list.children].map((cell, index) => {
 
 const vines = document.createElement("div");
 vines.className = "vines";
-list.replaceWith(vines);
+const greenhouse = buildGreenhouse(vines);
+list.replaceWith(greenhouse);
 garden.classList.add("is-grown");
 document.getElementById("gardenHint").hidden = false;
 
@@ -196,31 +197,55 @@ function arrange() {
     }
     vines.replaceChildren(...branches);
   }
+  drawGreenhouse(greenhouse);
   vines.querySelectorAll(".branch").forEach(drawVine);
   if (openCell) fitTendril(openCell);
 }
 
+// Each row hangs from an iron crossbar of the greenhouse, with the vine twisting around it
 function drawVine(branch, rowIndex) {
   const svg = branch.querySelector(".vine");
   const width = branch.clientWidth;
   const rand = seeded(rowIndex + 40);
   const phase = rowIndex * 2.1;
-  const vineY = (x) => 30 + 8 * Math.sin((x / width) * Math.PI * 2.2 + phase) + 3 * Math.sin(x / 41 + phase);
+  const bar = 30;
+  const turn = (x) => x / 23 + phase;
+  const vineY = (x) => bar + 7 * Math.sin(turn(x));
+  const twistY = (x) => bar + 6 * Math.sin(turn(x) + Math.PI);
 
-  let stem = "";
-  let twist = "";
-  for (let x = -10; x <= width + 10; x += 6) {
-    const cmd = x === -10 ? "M" : "L";
-    stem += `${cmd}${x} ${fixed(vineY(x))}`;
-    twist += `${cmd}${x} ${fixed(vineY(x) + 3 * Math.sin(x / 18 + phase))}`;
+  // The full strands are drawn behind the bar, then the parts that wind over the front on top of it
+  let back = "";
+  let front = "";
+  for (let x = -10, wasFront = false; x <= width + 10; x += 4) {
+    const point = `${x} ${fixed(vineY(x))}`;
+    back += `${x === -10 ? "M" : "L"}${point}`;
+    const isFront = Math.cos(turn(x)) > 0;
+    if (isFront) front += `${wasFront ? "L" : "M"}${point}`;
+    wasFront = isFront;
   }
+  let twistBack = "";
+  let twistFront = "";
+  for (let x = -10, wasFront = false; x <= width + 10; x += 4) {
+    const point = `${x} ${fixed(twistY(x))}`;
+    twistBack += `${x === -10 ? "M" : "L"}${point}`;
+    const isFront = Math.cos(turn(x) + Math.PI) > 0;
+    if (isFront) twistFront += `${wasFront ? "L" : "M"}${point}`;
+    wasFront = isFront;
+  }
+
+  let rivets = "";
+  for (let x = 24; x < width; x += 48) rivets += `<circle class="bar-rivet" cx="${x}" cy="${bar}" r="1.6"/>`;
+  const ironBar = `<rect class="bar" x="0" y="${bar - 5}" width="${width}" height="10"/>
+    <rect class="bar-shine" x="0" y="${bar - 4}" width="${width}" height="1.5"/>${rivets}
+    <path class="bar-bracket" d="M0 ${bar + 5}q18 0 22 14q2 10 -8 10q-8 -1 -5 -8"/>
+    <path class="bar-bracket" d="M${width} ${bar + 5}q-18 0 -22 14q-2 10 8 10q8 -1 5 -8"/>`;
 
   let leaves = "";
   for (let x = 14, side = 1; x < width - 6; x += 30 + rand() * 26, side = -side) {
     const y = vineY(x);
     const slope = (Math.atan2(vineY(x + 1) - vineY(x - 1), 2) * 180) / Math.PI;
-    const turn = side * (35 + rand() * 25) + (rand() < 0.3 ? 180 : 0);
-    leaves += `<path class="vine-leaf" d="M0 0Q8 -6 17 0Q8 6 0 0Z" transform="translate(${fixed(x)} ${fixed(y)}) rotate(${fixed(slope + turn)}) scale(${(0.7 + rand() * 0.6).toFixed(2)})"/>`;
+    const lean = side * (35 + rand() * 25) + (rand() < 0.3 ? 180 : 0);
+    leaves += `<path class="vine-leaf" d="M0 0Q8 -6 17 0Q8 6 0 0Z" transform="translate(${fixed(x)} ${fixed(y)}) rotate(${fixed(slope + lean)}) scale(${(0.7 + rand() * 0.6).toFixed(2)})"/>`;
     if (rand() < 0.2) {
       leaves += `<circle class="vine-berry" cx="${fixed(x + 6)}" cy="${fixed(y - side * 7)}" r="2.2"/>`;
     }
@@ -229,12 +254,13 @@ function drawVine(branch, rowIndex) {
   let cords = "";
   branch.querySelectorAll(".collection").forEach((cell) => {
     const x = cell.offsetLeft + cell.offsetWidth / 2;
-    const y = fixed(vineY(x));
-    cords += `<line class="vine-cord" x1="${x}" y1="${y}" x2="${x}" y2="${VINE_HEIGHT + 2}"/><circle class="vine-knot" cx="${x}" cy="${y}" r="2.6"/>`;
+    cords += `<line class="vine-cord" x1="${x}" y1="${bar - 6}" x2="${x}" y2="${VINE_HEIGHT + 2}"/><circle class="vine-knot" cx="${x}" cy="${bar + 6}" r="2.6"/>`;
   });
 
   svg.setAttribute("viewBox", `0 0 ${width} ${VINE_HEIGHT}`);
-  svg.innerHTML = `<path class="vine-stem" d="${stem}"/><path class="vine-twist" d="${twist}"/>${leaves}${cords}`;
+  svg.innerHTML = `<path class="vine-back" d="${back}"/><path class="vine-back" d="${twistBack}"/>
+    ${ironBar}
+    <path class="vine-stem" d="${front}"/><path class="vine-twist" d="${twistFront}"/>${leaves}${cords}`;
 }
 
 // ---------- Opening and closing a bundle ----------
@@ -304,9 +330,11 @@ document.addEventListener("keydown", (event) => {
   button.focus();
 });
 
-// ---------- Fireflies drifting around the garden ----------
+// ---------- Fireflies and fairies in the greenhouse ----------
 
 if (!reduceMotion) {
+  releaseFairies(greenhouse);
+
   for (let i = 0; i < 12; i++) {
     const fly = document.createElement("span");
     fly.className = "firefly";
@@ -316,7 +344,7 @@ if (!reduceMotion) {
     fly.style.setProperty("--dy", `${fixed((Math.random() - 0.5) * 80)}px`);
     fly.style.setProperty("--duration", `${fixed(7 + Math.random() * 8)}s`);
     fly.style.setProperty("--delay", `${fixed(-Math.random() * 12)}s`);
-    garden.append(fly);
+    greenhouse.append(fly);
   }
 }
 
