@@ -437,6 +437,13 @@
   fill: #f3ecd6;
 }
 
+/* The shadowed part of the moon, faintly visible against the sky */
+.roof-moon-dark {
+  fill: #2a2140;
+  stroke: rgba(243, 236, 214, 0.18);
+  stroke-width: 1;
+}
+
 .roof-crater {
   fill: #cbbf9d;
   opacity: 0.35;
@@ -540,7 +547,7 @@
 }
 
 .pot {
-  width: 76px;
+  width: 90px;
   height: auto;
 }
 
@@ -552,7 +559,7 @@
 
 .jar-glass {
   display: block;
-  width: 86px;
+  width: 104px;
   height: auto;
   overflow: visible;
   transform-origin: 50% 100%;
@@ -651,10 +658,10 @@
   position: absolute;
   bottom: 16px;
   left: 50%;
-  max-width: 84px;
+  max-width: 96px;
   padding: 1px 5px 2px;
   font-family: "Caveat", cursive;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 0.95;
   text-align: center;
   color: #3a2233;
@@ -915,7 +922,7 @@ a.jar:focus-visible .jar-whisper {
   }
 
   .jar-glass {
-    width: 66px;
+    width: 78px;
   }
 }
 

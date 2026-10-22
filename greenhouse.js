@@ -189,6 +189,32 @@ function buildGreenhouse(vines) {
   return greenhouse;
 }
 
+// ---------- Tonight's moon, using the same reckoning as the Moon Altar ----------
+
+const synodicMonth = 29.530588853;
+const knownNewMoon = Date.UTC(2000, 0, 6, 18, 14);
+const phaseNames = ["New Moon", "Waxing Crescent", "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", "Waning Crescent"];
+
+// How far through its cycle the moon is tonight: 0 is new, 0.5 is full
+function moonFraction(date) {
+  const days = (date.getTime() - knownNewMoon) / 86400000;
+  return (((days % synodicMonth) + synodicMonth) % synodicMonth) / synodicMonth;
+}
+
+// The lit part is a half circle plus the curved shadow line (an ellipse that narrows toward the quarters)
+function moonLitPath(cx, cy, r, fraction) {
+  const rx = fixed(Math.abs(Math.cos(fraction * 2 * Math.PI)) * r);
+  const top = `${fixed(cx)} ${fixed(cy - r)}`;
+  const bottom = `${fixed(cx)} ${fixed(cy + r)}`;
+  const radius = fixed(r);
+  if (fraction < 0.5) {
+    const sweep = fraction < 0.25 ? 0 : 1;
+    return `M${top}A${radius} ${radius} 0 0 1 ${bottom}A${rx} ${radius} 0 0 ${sweep} ${top}Z`;
+  }
+  const sweep = fraction < 0.75 ? 0 : 1;
+  return `M${top}A${radius} ${radius} 0 0 0 ${bottom}A${rx} ${radius} 0 0 ${sweep} ${top}Z`;
+}
+
 // ---------- Glass roof, redrawn to fit the width ----------
 
 function drawGreenhouse(greenhouse) {
@@ -217,7 +243,10 @@ function drawGreenhouse(greenhouse) {
     if (room > 8) stars += `<circle cx="${fixed(x)}" cy="${fixed(y)}" r="${fixed(r)}" style="--d: ${fixed(rand() * 4)}s"/>`;
   }
 
-  const moon = { x: width * 0.72, y: height - ry * 0.5, r: Math.min(height * 0.16, 30) };
+  const moon = { x: width * 0.72, y: height - ry * 0.5, r: Math.min(height * 0.22, 42) };
+  const fraction = moonFraction(new Date());
+  const illumination = (1 - Math.cos(fraction * 2 * Math.PI)) / 2;
+  const lit = moonLitPath(moon.x, moon.y, moon.r, fraction);
   const glare = [0.16, 0.5].map((at) => `M${fixed(width * at)} ${height}l${fixed(height * 0.9)} ${-height}`).join("");
   const top = height - ry;
 
@@ -226,15 +255,22 @@ function drawGreenhouse(greenhouse) {
     <defs>
       <clipPath id="roofGlass"><path d="${arch}"/></clipPath>
       <linearGradient id="roofSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0520"/><stop offset="1" stop-color="#2a1150"/></linearGradient>
+      <clipPath id="roofMoonLit"><path d="${lit}"/></clipPath>
       <radialGradient id="roofMoonGlow"><stop offset="0.3" stop-color="#f3ecd6" stop-opacity="0.35"/><stop offset="1" stop-color="#f3ecd6" stop-opacity="0"/></radialGradient>
     </defs>
     <g clip-path="url(#roofGlass)">
       <rect width="${width}" height="${height}" fill="url(#roofSky)"/>
       <g class="roof-stars">${stars}</g>
-      <circle cx="${fixed(moon.x)}" cy="${fixed(moon.y)}" r="${fixed(moon.r * 3)}" fill="url(#roofMoonGlow)"/>
-      <circle class="roof-moon" cx="${fixed(moon.x)}" cy="${fixed(moon.y)}" r="${fixed(moon.r)}"/>
-      <circle class="roof-crater" cx="${fixed(moon.x - moon.r * 0.3)}" cy="${fixed(moon.y - moon.r * 0.2)}" r="${fixed(moon.r * 0.22)}"/>
-      <circle class="roof-crater" cx="${fixed(moon.x + moon.r * 0.35)}" cy="${fixed(moon.y + moon.r * 0.3)}" r="${fixed(moon.r * 0.15)}"/>
+      <g class="roof-moon-phase">
+        <title>Tonight's moon: ${phaseNames[Math.floor(fraction * 8 + 0.5) % 8]}</title>
+        <circle cx="${fixed(moon.x)}" cy="${fixed(moon.y)}" r="${fixed(moon.r * 3)}" fill="url(#roofMoonGlow)" opacity="${fixed(0.2 + illumination * 0.8)}"/>
+        <circle class="roof-moon-dark" cx="${fixed(moon.x)}" cy="${fixed(moon.y)}" r="${fixed(moon.r)}"/>
+        <path class="roof-moon" d="${lit}"/>
+        <g clip-path="url(#roofMoonLit)">
+          <circle class="roof-crater" cx="${fixed(moon.x - moon.r * 0.3)}" cy="${fixed(moon.y - moon.r * 0.2)}" r="${fixed(moon.r * 0.22)}"/>
+          <circle class="roof-crater" cx="${fixed(moon.x + moon.r * 0.35)}" cy="${fixed(moon.y + moon.r * 0.3)}" r="${fixed(moon.r * 0.15)}"/>
+        </g>
+      </g>
       <rect width="${width}" height="${height}" fill="rgba(150, 180, 240, 0.06)"/>
       <path class="roof-glare" d="${glare}"/>
       <path class="roof-iron" d="M0 ${height}A${fixed(rx)} ${fixed(ry * 0.5)} 0 0 1 ${width} ${height}"/>
