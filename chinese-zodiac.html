@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chinese Zodiac Calculator: Find Your Animal &amp; Element | Mystic Space</title>
+    <meta name="description" content="Enter your birthday to find your Chinese zodiac animal and element, using the real date of Chinese New Year. See your inner animal, best matches and the sign that clashes with yours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Only the twelve animal characters, so the font file stays tiny -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600&text=%E9%BC%A0%E7%89%9B%E8%99%8E%E5%85%94%E9%BE%8D%E8%9B%87%E9%A6%AC%E7%BE%8A%E7%8C%B4%E9%9B%9E%E7%8B%97%E8%B1%AC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="zodiac.css">
+
+    <script src="consent.js" defer></script>
+    <script src="menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tarot.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="tide.html">Tide Pool</a>
+        <details class="nav-menu is-active">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="zodiac.html">Sun, Moon &amp; Rising</a>
+            <a href="zodiac.html#compatibility">Love Compatibility</a>
+            <a href="chinese-zodiac.html" class="active">Chinese Zodiac</a>
+          </div>
+        </details>
+        <a href="articles.html">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>The Chinese Zodiac</h2>
+        <p>Twelve animals once raced across a river to reach the Jade Emperor, and each now rules a year in turn. Your animal is set by the Chinese New Year, which follows the moon and falls on a different day each year. Enter your birthday to meet yours.</p>
+      </section>
+
+      <form class="zodiac-form" id="chineseForm" novalidate>
+        <h3>When were you born?</h3>
+        <div class="field-row">
+          <label class="field">
+            <span class="field-label">Date of birth</span>
+            <input type="date" id="cnDate" min="1900-01-01" max="2100-12-31" required>
+          </label>
+          <label class="field">
+            <span class="field-label">Time of birth <em>(optional)</em></span>
+            <input type="time" id="cnTime">
+          </label>
+        </div>
+        <p class="form-error" id="cnError" role="alert"></p>
+        <button class="redraw" type="submit">Find My Animal</button>
+        <p class="form-note">Everything is calculated in your browser. Nothing you enter is sent anywhere.</p>
+      </form>
+
+      <section class="cn-result" id="cnResult" hidden>
+        <div class="cn-medallion"><span class="cn-char" id="cnChar"></span></div>
+        <p class="placement-kind">Your Chinese zodiac sign</p>
+        <h2 id="cnTitle"></h2>
+        <p class="cn-meta" id="cnMeta"></p>
+        <p class="cn-year" id="cnYear"></p>
+        <p class="placement-note cn-cusp" id="cnCusp" hidden></p>
+        <p id="cnAnimalText"></p>
+        <p id="cnElementText"></p>
+        <p class="cn-inner" id="cnInner" hidden></p>
+
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>Friends and Rivals</h3>
+        <svg class="cn-wheel" id="cnWheel" viewBox="0 0 400 400" role="img"></svg>
+        <div class="cn-matches" id="cnMatches"></div>
+        <p class="cn-other-years" id="cnOtherYears"></p>
+      </section>
+    </main>
+
+    <script src="chinese-zodiac.js"></script>
+  </body>
+</html>

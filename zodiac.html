@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Birth Chart: Sun, Moon &amp; Rising Sign Calculator | Mystic Space</title>
+    <meta name="description" content="Find your Sun, Moon and Rising signs from your birth date, time and place, then check your love compatibility with any zodiac sign. Free and calculated in your browser.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="zodiac.css">
+
+    <script src="consent.js" defer></script>
+    <script src="menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tarot.html">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="tide.html">Tide Pool</a>
+        <details class="nav-menu is-active">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="zodiac.html" class="active">Sun, Moon &amp; Rising</a>
+            <a href="zodiac.html#compatibility">Love Compatibility</a>
+            <a href="chinese-zodiac.html">Chinese Zodiac</a>
+          </div>
+        </details>
+        <a href="articles.html">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>Your Birth Chart</h2>
+        <p>At the moment you were born, the sky held a pattern that was yours alone. Tell us when and where you arrived, and we will find your Sun, Moon and Rising signs: your heart, your inner tides and the face you show the world.</p>
+      </section>
+
+      <form class="zodiac-form" id="chartForm" novalidate>
+        <h3>When and where were you born?</h3>
+        <div class="field-row">
+          <label class="field">
+            <span class="field-label">Date of birth</span>
+            <input type="date" id="birthDate" min="1900-01-01" max="2100-12-31" required>
+          </label>
+          <label class="field">
+            <span class="field-label">Time of birth</span>
+            <input type="time" id="birthTime">
+          </label>
+        </div>
+        <label class="check"><input type="checkbox" id="unknownTime"> I don't know my birth time</label>
+
+        <div class="field place-field">
+          <label class="field-label" for="birthPlace">Place of birth</label>
+          <input type="text" id="birthPlace" placeholder="Start typing a town or city" autocomplete="off" spellcheck="false"
+                 role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="placeList">
+          <ul class="place-list" id="placeList" role="listbox" aria-label="Matching places" hidden></ul>
+          <p class="place-chosen" id="placeChosen"></p>
+        </div>
+
+        <p class="form-error" id="chartError" role="alert"></p>
+        <button class="redraw" type="submit">Read the Stars</button>
+        <p class="form-note">Your chart is calculated in your browser, and your birth date and time are never sent anywhere. Only the place you type is sent to <a href="https://open-meteo.com/">Open-Meteo</a> to find it on the map.</p>
+      </form>
+
+      <section class="chart" id="chart" hidden>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h2>Your Big Three</h2>
+        <p class="chart-summary" id="chartSummary"></p>
+        <svg class="chart-wheel" id="chartWheel" viewBox="0 0 400 400" role="img"></svg>
+        <div class="placements" id="placements"></div>
+      </section>
+
+      <section class="compat" id="compatibility" aria-labelledby="compatHeading">
+        <p class="ornament">✦ ♡ ✦</p>
+        <h2 id="compatHeading">Love Compatibility</h2>
+        <p class="compat-intro">Compare two Sun signs to see how your elements meet. Choose a sign, or enter a birthday and we will find it for you.</p>
+        <div class="compat-pair">
+          <div class="compat-person">
+            <h3>You</h3>
+            <label class="field">
+              <span class="field-label">Sun sign</span>
+              <select id="signA"></select>
+            </label>
+            <label class="field">
+              <span class="field-label">or your birthday</span>
+              <input type="date" id="dateA" min="1900-01-01" max="2100-12-31">
+            </label>
+          </div>
+          <span class="compat-heart" aria-hidden="true">♡</span>
+          <div class="compat-person">
+            <h3>Them</h3>
+            <label class="field">
+              <span class="field-label">Sun sign</span>
+              <select id="signB"></select>
+            </label>
+            <label class="field">
+              <span class="field-label">or their birthday</span>
+              <input type="date" id="dateB" min="1900-01-01" max="2100-12-31">
+            </label>
+          </div>
+        </div>
+        <div class="compat-result" id="compatResult" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <script src="zodiac.js"></script>
+  </body>
+</html>
