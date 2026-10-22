@@ -25,6 +25,8 @@ const jars = [
   {
     name: "Moonwort",
     loot: "herbs",
+    href: "moon.html",
+    game: "the Moon Altar",
     extra: true,
     svg: `<g fill="none" stroke="#7f9a6c" stroke-width="1.4" stroke-linecap="round">
         <path d="M28 114Q26 88 22 66"/><path d="M40 114Q40 86 42 62"/><path d="M52 114Q54 90 60 68"/>
@@ -47,6 +49,8 @@ const jars = [
   {
     name: "Bottled Stars",
     loot: "stars",
+    href: "stars.html",
+    game: "the Star Weaver",
     svg: `<defs><radialGradient id="jarStarGlow">
         <stop offset="0" stop-color="#ffe9a8" stop-opacity="0.5"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
       </radialGradient></defs>
@@ -63,6 +67,8 @@ const jars = [
   {
     name: "Questionable Liquid",
     loot: "liquid",
+    href: "tea.html",
+    game: "a tea leaf reading",
     svg: `<defs><clipPath id="jarFlask"><path d="M33 30V58L13 108Q10 117 19 117H61Q70 117 67 108L47 58V30Z"/></clipPath></defs>
       <g clip-path="url(#jarFlask)">
         <rect x="0" y="80" width="80" height="40" fill="#6fcf62" opacity="0.7"/>
@@ -80,6 +86,8 @@ const jars = [
   {
     name: "Pixie Dust",
     loot: "dust",
+    href: "wish.html",
+    game: "the Wish Globe",
     svg: `<defs>
         <clipPath id="jarPixie"><path d="M33 50V62H31Q22 62 22 71V107Q22 116 31 116H49Q58 116 58 107V71Q58 62 49 62H47V50Z"/></clipPath>
         <linearGradient id="jarPixieDust" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a8d8"/><stop offset="1" stop-color="#9b6fe0"/></linearGradient>
@@ -121,6 +129,8 @@ const jars = [
   {
     name: "Eye of Newt",
     loot: "eyes",
+    href: "index.html",
+    game: "a tarot reading",
     extra: true,
     svg: `<rect x="12" y="56" width="56" height="60" rx="14" fill="#b8c46a" opacity="0.4"/>
       ${[[30, 92, 0], [49, 76, 1.4], [46, 103, 2.6]]
@@ -149,20 +159,28 @@ function potSvg() {
   </svg>`;
 }
 
+// Jars with an href are secret doorways to the games; the rest are just for looking at
+function jarHtml(jar) {
+  const classes = `jar${jar.extra ? " jar-extra" : ""}`;
+  const inside = `<svg class="jar-glass" viewBox="0 0 80 120" aria-hidden="true" focusable="false">${jar.svg}</svg>
+    <span class="jar-label">${jar.name}</span>`;
+  if (!jar.href) {
+    return `<div class="${classes}" data-loot="${jar.loot}" aria-hidden="true">${inside}</div>`;
+  }
+  return `<a class="${classes}" data-loot="${jar.loot}" href="${jar.href}" aria-label="${jar.name}: play ${jar.game}">
+    ${inside}<span class="jar-whisper" aria-hidden="true">${jar.game}</span>
+  </a>`;
+}
+
 function buildGreenhouse(vines) {
   const greenhouse = document.createElement("div");
   greenhouse.className = "greenhouse";
   greenhouse.innerHTML = `
     <svg class="greenhouse-roof" aria-hidden="true" focusable="false"></svg>
     <div class="greenhouse-body">
-      <div class="bench" aria-hidden="true">
+      <div class="bench">
         ${potSvg()}
-        ${jars
-          .map((jar) => `<div class="jar${jar.extra ? " jar-extra" : ""}" data-loot="${jar.loot}">
-            <svg class="jar-glass" viewBox="0 0 80 120" focusable="false">${jar.svg}</svg>
-            <span class="jar-label">${jar.name}</span>
-          </div>`)
-          .join("")}
+        ${jars.map(jarHtml).join("")}
         ${potSvg()}
       </div>
     </div>
@@ -240,6 +258,7 @@ function releaseFairies(greenhouse) {
     fairy.className = "fairy";
     fairy.setAttribute("aria-hidden", "true");
     fairy.innerHTML = `<div class="fairy-face"><div class="fairy-bob">
+      <span class="fairy-catch"></span>
       <span class="fairy-wing fairy-wing-back"></span><span class="fairy-wing"></span>
       <span class="fairy-head"></span><span class="fairy-body"></span><span class="fairy-loot"></span>
     </div></div>`;
@@ -260,7 +279,7 @@ function releaseFairies(greenhouse) {
   }
 
   // A curved, eased flight path sampled into keyframes
-  async function fly(fairy, from, to) {
+  async function fly(fairy, from, to, duration) {
     const control = { x: (from.x + to.x) / 2, y: Math.min(from.y, to.y) - 40 - Math.random() * 80 };
     const frames = [];
     for (let k = 0; k <= 20; k++) {
@@ -269,14 +288,25 @@ function releaseFairies(greenhouse) {
       const p = curvePoint(from, control, to, t);
       frames.push({ transform: `translate(${fixed(p.x)}px, ${fixed(p.y)}px)` });
     }
-    const duration = Math.min(4200, Math.max(1800, Math.hypot(to.x - from.x, to.y - from.y) * 4.5));
+    duration = duration || Math.min(4200, Math.max(1800, Math.hypot(to.x - from.x, to.y - from.y) * 4.5));
     fairy.querySelector(".fairy-face").classList.toggle("faces-left", to.x < from.x);
+    fairy.flight = fairy.animate(frames, { duration, fill: "forwards" });
     const trail = setInterval(() => sparkle(fairy), 80);
-    await fairy.animate(frames, { duration, fill: "forwards" }).finished;
-    clearInterval(trail);
+    try {
+      await fairy.flight.finished;
+    } finally {
+      clearInterval(trail);
+    }
   }
 
-  function steal(jar, fairy) {
+  function positionOf(element) {
+    const home = greenhouse.getBoundingClientRect();
+    const at = element.getBoundingClientRect();
+    return { x: at.left - home.left, y: at.top - home.top };
+  }
+
+  function steal(heist) {
+    const { jar, fairy } = heist;
     const loot = fairy.querySelector(".fairy-loot");
     loot.dataset.loot = jar.dataset.loot;
     loot.textContent = lootGlyphs[jar.dataset.loot] || "";
@@ -287,8 +317,64 @@ function releaseFairies(greenhouse) {
     if (pieces.length > 1) {
       const piece = pieces[Math.floor(Math.random() * pieces.length)];
       piece.classList.add("is-stolen");
-      setTimeout(() => piece.classList.remove("is-stolen"), 20000);
+      heist.piece = piece;
+      heist.refill = setTimeout(() => piece.classList.remove("is-stolen"), 20000);
     }
+  }
+
+  function say(text, at) {
+    const note = document.createElement("span");
+    note.className = "fairy-note";
+    note.textContent = text;
+    note.style.left = `${fixed(at.x)}px`;
+    note.style.top = `${fixed(at.y - 30)}px`;
+    note.addEventListener("animationend", () => note.remove());
+    greenhouse.append(note);
+  }
+
+  // The stolen bit tumbles down onto the bench and fades
+  function dropLoot(loot, from) {
+    const bench = greenhouse.querySelector(".bench");
+    const floor = positionOf(bench).y + bench.offsetHeight - 22;
+    const fallen = loot.cloneNode(true);
+    fallen.className = "fairy-loot fallen-loot";
+    greenhouse.append(fallen);
+    const x = from.x;
+    const drop = Math.max(0, floor - from.y);
+    fallen.animate([
+      { transform: `translate(${fixed(x)}px, ${fixed(from.y)}px) rotate(0deg)`, opacity: 1, easing: "ease-in" },
+      { transform: `translate(${fixed(x + 10)}px, ${fixed(floor)}px) rotate(200deg)`, opacity: 1, offset: 0.7, easing: "ease-out" },
+      { transform: `translate(${fixed(x + 14)}px, ${fixed(floor - 10)}px) rotate(250deg)`, opacity: 1, offset: 0.82, easing: "ease-in" },
+      { transform: `translate(${fixed(x + 17)}px, ${fixed(floor)}px) rotate(290deg)`, opacity: 0 },
+    ], { duration: 600 + Math.sqrt(drop) * 40 }).finished.then(() => fallen.remove());
+  }
+
+  // Tapping a fairy makes it drop whatever it stole and dart away
+  function catchFairy(heist) {
+    const { fairy, jar } = heist;
+    if (heist.caught) return;
+    heist.caught = true;
+    const here = positionOf(fairy);
+    fairy.flight?.cancel();
+    jar.classList.remove("is-raided");
+    fairy.classList.remove("is-dipping");
+    fairy.classList.add("is-startled");
+
+    if (fairy.classList.contains("has-loot")) {
+      fairy.classList.remove("has-loot");
+      dropLoot(fairy.querySelector(".fairy-loot"), here);
+      if (heist.piece) {
+        clearTimeout(heist.refill);
+        heist.piece.classList.remove("is-stolen");
+      }
+      say(["Caught one!", "Put that back!", "Got you!"][Math.floor(Math.random() * 3)], here);
+    } else {
+      say("Shoo!", here);
+    }
+
+    const width = greenhouse.clientWidth;
+    const away = { x: here.x < width / 2 ? -60 : width + 60, y: Math.max(20, here.y - 160) };
+    fly(fairy, here, away, 700).catch(() => {}).then(() => fairy.remove());
   }
 
   async function raid() {
@@ -302,16 +388,25 @@ function releaseFairies(greenhouse) {
     const height = () => 40 + Math.random() * Math.max(0, mouth.y - 160);
 
     const fairy = makeFairy();
-    await fly(fairy, { x: edge(), y: height() }, mouth);
-    jar.classList.add("is-raided");
-    fairy.classList.add("is-dipping");
-    await later(700);
-    steal(jar, fairy);
-    await later(600);
-    jar.classList.remove("is-raided");
-    fairy.classList.remove("is-dipping");
-    await fly(fairy, mouth, { x: edge(), y: height() });
-    fairy.remove();
+    const heist = { fairy, jar, caught: false };
+    fairy.addEventListener("pointerdown", () => catchFairy(heist));
+
+    try {
+      await fly(fairy, { x: edge(), y: height() }, mouth);
+      jar.classList.add("is-raided");
+      fairy.classList.add("is-dipping");
+      await later(700);
+      if (heist.caught) return;
+      steal(heist);
+      await later(600);
+      if (heist.caught) return;
+      jar.classList.remove("is-raided");
+      fairy.classList.remove("is-dipping");
+      await fly(fairy, mouth, { x: edge(), y: height() });
+      fairy.remove();
+    } catch {
+      // The flight was cut short because a visitor caught the fairy; catchFairy() sends it off
+    }
   }
 
   async function haunt() {
