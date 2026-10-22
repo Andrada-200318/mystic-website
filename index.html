@@ -3,31 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Free Tarot Reading: Past, Present &amp; Future | Mystic Space</title>
-    <meta name="description" content="Get a free three card tarot reading online. Draw from the full 78-card Rider-Waite deck and discover what the cards reveal about your past, present and future.">
+    <title>Mystic Space: Free Tarot, Moon Rituals &amp; Small Magic</title>
+    <meta name="description" content="A quiet corner for tarot, moonlight and small magic. Draw a free tarot reading, see tonight's moon phase, make a wish, weave a constellation or read your tea leaves.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  </head>
-    
+    <link rel="stylesheet" href="home.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRCX10CTS6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+
       gtag('config', 'G-FRCX10CTS6');
     </script>
-  
+
     <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
            async src="//gc.zgo.at/count.js"></script>
+  </head>
   <body>
     <header class="site-header">
       <h1>Mystic Space</h1>
       <nav>
-        <a href="#">Home</a>
-        <a href="index.html" class="active">Daily Tarot</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="tarot.html">Daily Tarot</a>
         <a href="wish.html">Wish Globe</a>
         <a href="moon.html">Moon Altar</a>
         <a href="stars.html">Star Weaver</a>
@@ -36,53 +37,183 @@
       </nav>
     </header>
 
-    <main>
-      <section class="intro">
+    <main class="home">
+      <!-- 1. Welcome -->
+      <section class="hero">
         <p class="ornament">☾ ✦ ☽</p>
-        <h2>Three Card Spread</h2>
-        <p>Quiet your mind and hold a question in your heart. When you are ready, draw three cards from the deck: one for your past, one for your present, and one for your future.</p>
+        <h2>A quiet corner for tarot, moonlight and small magic</h2>
+        <p>Light a candle, take a breath and stay a while. Here you can draw your cards, follow the moon, make a wish or read the leaves at the bottom of your cup.</p>
+        <a class="redraw hero-button" href="tarot.html">Draw today's card ✦</a>
       </section>
 
-      <section class="table">
-        <div class="deck-area">
-          <button class="deck" id="deck" aria-label="Draw a card from the deck">
-            <span class="card-back deck-layer"></span>
-            <span class="card-back deck-layer"></span>
-            <span class="card-back deck-layer"></span>
-            <span class="card-back deck-layer deck-top" id="deckTop"></span>
-          </button>
-          <p class="deck-hint" id="deckHint">Tap the deck to draw your first card</p>
-        </div>
-
-        <div class="spread">
-          <div class="slot">
-            <div class="slot-frame"><span class="slot-label">I</span></div>
-            <p class="slot-position">Past</p>
-            <p class="slot-name"></p>
-          </div>
-          <div class="slot">
-            <div class="slot-frame"><span class="slot-label">II</span></div>
-            <p class="slot-position">Present</p>
-            <p class="slot-name"></p>
-          </div>
-          <div class="slot">
-            <div class="slot-frame"><span class="slot-label">III</span></div>
-            <p class="slot-position">Future</p>
-            <p class="slot-name"></p>
-          </div>
+      <!-- 2. Tonight's sky: home.js draws the moon and fills in the phase -->
+      <section class="sky" aria-labelledby="skyHeading">
+        <svg class="sky-moon" id="skyMoon" viewBox="0 0 120 120" role="img" aria-label="Tonight's moon"></svg>
+        <div class="sky-text">
+          <p class="section-label">Tonight's sky</p>
+          <h2 id="skyHeading">The Moon Tonight</h2>
+          <p class="sky-meta" id="skyMeta"></p>
+          <p class="sky-message" id="skyMessage">Every night the moon shows a different face, and each one asks for a different kind of magic.</p>
+          <a class="text-link" href="moon.html">Visit the Moon Altar →</a>
         </div>
       </section>
 
-      <section class="reading" id="reading" hidden>
-        <h2>Your Reading</h2>
-        <div class="reading-cards" id="readingCards"></div>
+      <!-- 3. Choose your ritual -->
+      <section class="rituals" aria-labelledby="ritualsHeading">
         <p class="ornament">✦ ☾ ✦</p>
-        <h3>The Message of the Spread</h3>
-        <p class="reading-summary" id="readingSummary"></p>
-        <button class="redraw" id="redrawButton">Shuffle &amp; Draw Again</button>
+        <h2 id="ritualsHeading">Choose Your Ritual</h2>
+        <ul class="ritual-list">
+          <li>
+            <a class="ritual" href="tarot.html">
+              <svg class="ritual-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="8" y="9" width="19" height="30" rx="3" transform="rotate(-12 17 24)"/>
+                <rect class="solid" x="19" y="9" width="19" height="30" rx="3" transform="rotate(8 28 24)"/>
+                <path d="M28.5 18l1.6 3.6 3.9.4-2.9 2.6.8 3.8-3.4-2-3.4 2 .8-3.8-2.9-2.6 3.9-.4z"/>
+              </svg>
+              <span class="ritual-name">Daily Tarot</span>
+              <span class="ritual-text">Draw three cards for your past, present and future.</span>
+            </a>
+          </li>
+          <li>
+            <a class="ritual" href="wish.html">
+              <svg class="ritual-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="20" r="14"/>
+                <path d="M13 41h22l-3.5-7.5h-15z"/>
+                <path d="M19 15l1 2.5 2.5 1-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1zM29 22l.7 1.6 1.6.7-1.6.7-.7 1.6-.7-1.6-1.6-.7 1.6-.7z"/>
+              </svg>
+              <span class="ritual-name">Wish Globe</span>
+              <span class="ritual-text">Write a wish and watch it drift into the crystal globe.</span>
+            </a>
+          </li>
+          <li>
+            <a class="ritual" href="moon.html">
+              <svg class="ritual-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M29 8A16 16 0 1 0 29 40A18 18 0 0 1 29 8z"/>
+                <path d="M36 12l.8 1.8 1.8.8-1.8.8-.8 1.8-.8-1.8-1.8-.8 1.8-.8z"/>
+              </svg>
+              <span class="ritual-name">Moon Altar</span>
+              <span class="ritual-text">Dress your altar for tonight's phase and light the candle.</span>
+            </a>
+          </li>
+          <li>
+            <a class="ritual" href="stars.html">
+              <svg class="ritual-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M9 35L17 17L29 23L39 10M29 23L36 37"/>
+                <g class="solid-gold">
+                  <circle cx="9" cy="35" r="2.2"/>
+                  <circle cx="17" cy="17" r="2.6"/>
+                  <circle cx="29" cy="23" r="2.2"/>
+                  <circle cx="39" cy="10" r="2.8"/>
+                  <circle cx="36" cy="37" r="2"/>
+                </g>
+              </svg>
+              <span class="ritual-name">Star Weaver</span>
+              <span class="ritual-text">Connect the stars and learn your constellation's myth.</span>
+            </a>
+          </li>
+          <li>
+            <a class="ritual" href="tea.html">
+              <svg class="ritual-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M9 21h24v4a12 12 0 0 1-24 0z"/>
+                <path d="M33 23a5 5 0 0 1 0 10h-2"/>
+                <path d="M5 41h32"/>
+                <path d="M17 16c-2-3 2-4 0-8M25 16c-2-3 2-4 0-8"/>
+              </svg>
+              <span class="ritual-name">Tea Leaves</span>
+              <span class="ritual-text">Swirl your cup and read the shapes the leaves leave behind.</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4. From the garden.
+           Hidden until the first articles are published: remove the word "hidden" from the
+           <section> line below, then copy one <li> per article (newest first, three is plenty). -->
+      <section class="latest" aria-labelledby="latestHeading" hidden>
+        <p class="ornament">❦</p>
+        <h2 id="latestHeading">From the Garden</h2>
+        <ul class="latest-list">
+          <li>
+            <a class="latest-card" href="articles/article-name.html">
+              <span class="latest-collection">Moon Magic</span>
+              <span class="latest-title">Article title</span>
+              <span class="latest-teaser">One or two sentences that make people want to read on.</span>
+            </a>
+          </li>
+        </ul>
+        <a class="text-link" href="articles.html">Wander the hanging garden →</a>
+      </section>
+
+      <!-- 5. Meet the team.
+           Each person is one <li class="member">. Copy a whole <li> to add someone.
+           data-sigil picks the symbol on their card: moon, herb, star, crystal, sun, eye or cup.
+           To use a photo instead, put it inside the portrait: <div class="member-portrait"><img src="team/name.jpg" alt=""></div> -->
+      <section class="team" aria-labelledby="teamHeading">
+        <p class="ornament">✦ ☾ ✦</p>
+        <h2 id="teamHeading">Who Tends This Space</h2>
+        <p class="team-intro">Every candle here was lit by someone. Turn a card to meet them.</p>
+        <ul class="team-list">
+          <li class="member">
+            <div class="member-card">
+              <div class="member-face member-front">
+                <span class="member-numeral">I</span>
+                <div class="member-portrait" data-sigil="moon"></div>
+                <h3 class="member-name">Name</h3>
+              </div>
+              <div class="member-face member-back">
+                <p class="member-role">Founder &amp; Tarot Reader</p>
+                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
+                <p class="member-detail"><span>Favourite crystal</span>Amethyst</p>
+              </div>
+            </div>
+            <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
+          </li>
+          <li class="member">
+            <div class="member-card">
+              <div class="member-face member-front">
+                <span class="member-numeral">II</span>
+                <div class="member-portrait" data-sigil="herb"></div>
+                <h3 class="member-name">Name</h3>
+              </div>
+              <div class="member-face member-back">
+                <p class="member-role">Writer &amp; Herbalist</p>
+                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
+                <p class="member-detail"><span>Herb of choice</span>Lavender</p>
+              </div>
+            </div>
+            <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
+          </li>
+          <li class="member">
+            <div class="member-card">
+              <div class="member-face member-front">
+                <span class="member-numeral">III</span>
+                <div class="member-portrait" data-sigil="star"></div>
+                <h3 class="member-name">Name</h3>
+              </div>
+              <div class="member-face member-back">
+                <p class="member-role">Stargazer</p>
+                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
+                <p class="member-detail"><span>Star sign</span>Pisces</p>
+              </div>
+            </div>
+            <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
+          </li>
+        </ul>
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <!-- 6. Footer -->
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="articles.html">Articles</a>
+        <a href="privacy.html">Privacy</a>
+        <!-- Add your contact address here, for example: <a href="mailto:hello@yourdomain.com">Contact</a> -->
+      </nav>
+      <p class="footer-note">Our readings are for reflection and entertainment. They are not a substitute for medical, legal or financial advice.</p>
+      <p class="footer-copy">© <span id="year">2026</span> Mystic Space</p>
+    </footer>
+
+    <script src="home.js"></script>
   </body>
 </html>

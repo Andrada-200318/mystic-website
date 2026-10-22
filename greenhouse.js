@@ -129,7 +129,7 @@ const jars = [
   {
     name: "Eye of Newt",
     loot: "eyes",
-    href: "index.html",
+    href: "tarot.html",
     game: "a tarot reading",
     extra: true,
     svg: `<rect x="12" y="56" width="56" height="60" rx="14" fill="#b8c46a" opacity="0.4"/>

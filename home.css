@@ -1,0 +1,493 @@
+/* ---------- Home page sections ---------- */
+
+.home > section + section {
+  margin-top: 72px;
+}
+
+.home h2 {
+  margin: 6px 0 24px;
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+.section-label {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lilac);
+}
+
+.text-link {
+  display: inline-block;
+  font-family: "Cinzel", serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  color: var(--gold-light);
+}
+
+/* ---------- 1. Welcome ---------- */
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px clamp(18px, 5vw, 56px) 44px;
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid rgba(214, 179, 106, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 0 60px rgba(107, 47, 160, 0.35), 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.home .hero h2 {
+  margin: 10px 0 14px;
+  font-size: clamp(1.5rem, 4.6vw, 2.3rem);
+  line-height: 1.3;
+}
+
+.hero p:not(.ornament) {
+  margin: 0 0 28px;
+}
+
+.hero-button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* ---------- 2. Tonight's sky ---------- */
+
+.sky {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 5vw, 48px);
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 28px clamp(18px, 4vw, 40px);
+  background: var(--panel);
+  border: 1px solid rgba(214, 179, 106, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.sky-moon {
+  flex: 0 0 auto;
+  width: clamp(120px, 22vw, 170px);
+  height: auto;
+}
+
+.sky-moon-glow {
+  opacity: var(--glow, 0.6);
+}
+
+.sky-moon-dark {
+  fill: #2a2140;
+  stroke: rgba(243, 236, 214, 0.18);
+}
+
+.sky-moon-lit {
+  fill: #f3ecd6;
+}
+
+.sky-moon-crater {
+  fill: #cbbf9d;
+  opacity: 0.35;
+}
+
+.home .sky h2 {
+  margin: 2px 0 4px;
+  text-align: left;
+}
+
+.sky-meta {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--lilac);
+}
+
+.sky-message {
+  margin: 0 0 14px;
+}
+
+/* ---------- 3. Choose your ritual ---------- */
+
+.ritual-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ritual-list li {
+  display: flex;
+  flex: 1 1 170px;
+  max-width: 210px;
+}
+
+.ritual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 24px 16px 22px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--mist);
+  background: var(--panel);
+  border: 1px solid rgba(214, 179, 106, 0.35);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, border-color 0.25s, box-shadow 0.25s;
+}
+
+.ritual:hover,
+.ritual:focus-visible {
+  outline: none;
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 0 28px rgba(214, 179, 106, 0.3), 0 18px 38px rgba(0, 0, 0, 0.5);
+}
+
+.ritual-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ritual-icon .solid {
+  fill: var(--plum-deep);
+}
+
+.ritual-icon .solid-gold {
+  fill: var(--gold-light);
+  stroke: none;
+}
+
+.ritual-name {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+}
+
+.ritual-text {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--lilac);
+}
+
+/* ---------- 4. From the garden ---------- */
+
+.latest {
+  text-align: center;
+}
+
+.latest-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.latest-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: var(--mist);
+  background: var(--panel);
+  border: 1px solid rgba(214, 179, 106, 0.35);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  transition: transform 0.25s ease, border-color 0.25s;
+}
+
+.latest-card:hover,
+.latest-card:focus-visible {
+  outline: none;
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.latest-collection {
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lilac);
+}
+
+.latest-title {
+  margin: 4px 0 6px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--gold-light);
+}
+
+.latest-teaser {
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+/* ---------- 5. Team: tarot cards that turn over ---------- */
+
+.team-intro {
+  margin: -12px 0 28px;
+  text-align: center;
+  font-style: italic;
+  color: var(--lilac);
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 36px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member {
+  position: relative;
+  width: 210px;
+  perspective: 1200px;
+}
+
+/* Both faces share one grid cell, so the card grows to fit the longer one */
+.member-card {
+  display: grid;
+  aspect-ratio: 7 / 12;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.member.is-turned .member-card {
+  transform: rotateY(180deg);
+}
+
+.member:not(.is-turned):hover .member-card {
+  transform: translateY(-6px) rotate(-1deg);
+}
+
+.member-face {
+  position: relative;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 16px;
+  text-align: center;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 0 24px rgba(214, 179, 106, 0.2), 0 16px 34px rgba(0, 0, 0, 0.55);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.member-face::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(164, 126, 54, 0.6);
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.member-front {
+  justify-content: space-between;
+  color: #3d1260;
+  background: radial-gradient(circle at 50% 40%, #fbf4e6, #ecdcbf);
+}
+
+.member-numeral {
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: #7a5a24;
+}
+
+.member-portrait {
+  display: grid;
+  place-items: center;
+  width: 78%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid #a47e36;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107, 47, 160, 0.12), transparent 70%);
+}
+
+.member-portrait svg {
+  width: 72%;
+  height: 72%;
+  fill: none;
+  stroke: #4a1a73;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.member-portrait svg .filled {
+  fill: #4a1a73;
+}
+
+.member-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .member-name {
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: #3d1260;
+  border-top: 1px solid #a47e36;
+  border-bottom: 1px solid #a47e36;
+}
+
+.member-back {
+  justify-content: center;
+  gap: 12px;
+  transform: rotateY(180deg);
+  color: var(--mist);
+  background:
+    radial-gradient(rgba(214, 179, 106, 0.14) 1px, transparent 1.6px) 0 0 / 9px 9px,
+    radial-gradient(circle at 50% 50%, #4f1c78, #1c0730 75%);
+}
+
+.member-back::before {
+  border-color: rgba(214, 179, 106, 0.55);
+}
+
+.member-back p {
+  margin: 0;
+}
+
+.member-role {
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.member-bio {
+  font-size: 1.02rem;
+  line-height: 1.4;
+}
+
+.member-detail {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.member-detail span {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 0.7rem;
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lilac);
+}
+
+/* An invisible button over the whole card, so a tap anywhere turns it */
+.member-turn {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+}
+
+.member-turn:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 4px;
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 600px) {
+  .home > section + section {
+    margin-top: 56px;
+  }
+
+  .sky {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .sky h2 {
+    text-align: center;
+  }
+
+  /* The rituals become a row you swipe sideways */
+  .ritual-list {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-inline: -16px;
+    padding: 8px 16px 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    scrollbar-width: none;
+  }
+
+  .ritual-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ritual-list li {
+    flex: 0 0 62%;
+    scroll-snap-align: start;
+  }
+
+  .member {
+    width: calc(50% - 8px);
+    max-width: 210px;
+  }
+
+  .member-face {
+    padding: 18px 10px;
+  }
+
+  .member-bio {
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ritual,
+  .latest-card,
+  .member-card {
+    transition: none;
+  }
+}

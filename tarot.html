@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Tarot Reading: Past, Present &amp; Future | Mystic Space</title>
+    <meta name="description" content="Get a free three card tarot reading online. Draw from the full 78-card Rider-Waite deck and discover what the cards reveal about your past, present and future.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRCX10CTS6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-FRCX10CTS6');
+    </script>
+  
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="tarot.html" class="active">Daily Tarot</a>
+        <a href="wish.html">Wish Globe</a>
+        <a href="moon.html">Moon Altar</a>
+        <a href="stars.html">Star Weaver</a>
+        <a href="tea.html">Tea Leaves</a>
+        <a href="articles.html">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>Three Card Spread</h2>
+        <p>Quiet your mind and hold a question in your heart. When you are ready, draw three cards from the deck: one for your past, one for your present, and one for your future.</p>
+      </section>
+
+      <section class="table">
+        <div class="deck-area">
+          <button class="deck" id="deck" aria-label="Draw a card from the deck">
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer deck-top" id="deckTop"></span>
+          </button>
+          <p class="deck-hint" id="deckHint">Tap the deck to draw your first card</p>
+        </div>
+
+        <div class="spread">
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">I</span></div>
+            <p class="slot-position">Past</p>
+            <p class="slot-name"></p>
+          </div>
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">II</span></div>
+            <p class="slot-position">Present</p>
+            <p class="slot-name"></p>
+          </div>
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">III</span></div>
+            <p class="slot-position">Future</p>
+            <p class="slot-name"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reading" id="reading" hidden>
+        <h2>Your Reading</h2>
+        <div class="reading-cards" id="readingCards"></div>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>The Message of the Spread</h3>
+        <p class="reading-summary" id="readingSummary"></p>
+        <button class="redraw" id="redrawButton">Shuffle &amp; Draw Again</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
