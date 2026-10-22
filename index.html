@@ -11,14 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home.css">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FRCX10CTS6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-FRCX10CTS6');
-    </script>
+    <script src="consent.js" defer></script>
 
     <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
            async src="//gc.zgo.at/count.js"></script>
@@ -146,7 +139,7 @@
 
       <!-- 5. Meet the team.
            Each person is one <li class="member">. Copy a whole <li> to add someone.
-           data-sigil picks the symbol on their card: moon, herb, star, crystal, sun, eye or cup.
+           data-sigil picks the symbol on their card: rune, quill, moon, herb, star, crystal, sun, eye or cup.
            To use a photo instead, put it inside the portrait: <div class="member-portrait"><img src="team/name.jpg" alt=""></div> -->
       <section class="team" aria-labelledby="teamHeading">
         <p class="ornament">✦ ☾ ✦</p>
@@ -157,13 +150,13 @@
             <div class="member-card">
               <div class="member-face member-front">
                 <span class="member-numeral">I</span>
-                <div class="member-portrait" data-sigil="moon"></div>
-                <h3 class="member-name">Name</h3>
+                <div class="member-portrait" data-sigil="rune"></div>
+                <h3 class="member-name">Andrada</h3>
               </div>
               <div class="member-face member-back">
-                <p class="member-role">Founder &amp; Tarot Reader</p>
-                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
-                <p class="member-detail"><span>Favourite crystal</span>Amethyst</p>
+                <p class="member-role">Witch of Coding</p>
+                <p class="member-bio">Keeper of the runes of code. Andrada shuffles the tarot deck, steers the moon through its phases and keeps the fairies out of the jars (mostly).</p>
+                <p class="member-detail"><span>Favourite spell</span>Ctrl + Z</p>
               </div>
             </div>
             <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
@@ -172,13 +165,13 @@
             <div class="member-card">
               <div class="member-face member-front">
                 <span class="member-numeral">II</span>
-                <div class="member-portrait" data-sigil="herb"></div>
-                <h3 class="member-name">Name</h3>
+                <div class="member-portrait" data-sigil="quill"></div>
+                <h3 class="member-name">Ștef</h3>
               </div>
               <div class="member-face member-back">
-                <p class="member-role">Writer &amp; Herbalist</p>
-                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
-                <p class="member-detail"><span>Herb of choice</span>Lavender</p>
+                <p class="member-role">Keeper of the Scrolls</p>
+                <p class="member-bio">Gathers old lore and new wonders and writes them down before they drift away. Every bundle in the garden passes through Ștef's quill first.</p>
+                <p class="member-detail"><span>Sworn enemy</span>The blank page</p>
               </div>
             </div>
             <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
@@ -187,13 +180,13 @@
             <div class="member-card">
               <div class="member-face member-front">
                 <span class="member-numeral">III</span>
-                <div class="member-portrait" data-sigil="star"></div>
-                <h3 class="member-name">Name</h3>
+                <div class="member-portrait" data-sigil="moon"></div>
+                <h3 class="member-name">Ramona</h3>
               </div>
               <div class="member-face member-back">
-                <p class="member-role">Stargazer</p>
-                <p class="member-bio">A sentence or two about who you are and what you bring to Mystic Space.</p>
-                <p class="member-detail"><span>Star sign</span>Pisces</p>
+                <p class="member-role">Weaver of Words</p>
+                <p class="member-bio">Spins moonlight, herbs and old stories into articles. If a bundle in the garden has burst into bloom, Ramona probably watered it.</p>
+                <p class="member-detail"><span>Secret ingredient</span>A pinch of stardust</p>
               </div>
             </div>
             <button class="member-turn" type="button" aria-pressed="false"><span class="visually-hidden">Turn the card over</span></button>
@@ -208,6 +201,7 @@
       <nav class="footer-links">
         <a href="articles.html">Articles</a>
         <a href="privacy.html">Privacy</a>
+        <button class="footer-button" type="button" data-cookie-settings>Cookie settings</button>
         <!-- Add your contact address here, for example: <a href="mailto:hello@yourdomain.com">Contact</a> -->
       </nav>
       <p class="footer-note">Our readings are for reflection and entertainment. They are not a substitute for medical, legal or financial advice.</p>

@@ -532,7 +532,12 @@ h3 {
   margin: 12px 0 14px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   font-family: "Cinzel", serif;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
@@ -542,7 +547,8 @@ h3 {
   transition: color 0.2s;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-button:hover {
   color: var(--gold-light);
 }
 
@@ -598,12 +604,88 @@ h3 {
   margin-top: 8px;
 }
 
+/* A button that reads like a link inside a sentence */
+.inline-button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--gold-light);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---------- Cookie banner (consent.js) ---------- */
+
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 1000;
+  width: min(640px, calc(100% - 32px));
+  padding: 18px clamp(16px, 4vw, 28px) 20px;
+  text-align: center;
+  background: rgba(18, 5, 28, 0.96);
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(107, 47, 160, 0.5), 0 16px 40px rgba(0, 0, 0, 0.6);
+  transform: translateX(-50%);
+  animation: cookie-rise 0.5s ease both;
+}
+
+.cookie-banner.is-leaving {
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@keyframes cookie-rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 24px);
+  }
+}
+
+.cookie-title {
+  margin: 0 0 6px;
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+}
+
+.cookie-text {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.cookie-text a {
+  color: var(--gold-light);
+}
+
+.cookie-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cookie-buttons .ghost-button {
+  min-width: 130px;
+  padding: 10px 22px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card-inner,
   .deck-layer,
   .reading,
-  .slot-name {
+  .slot-name,
+  .cookie-banner.is-leaving {
     transition: none;
+  }
+
+  .cookie-banner {
+    animation: none;
   }
 }
