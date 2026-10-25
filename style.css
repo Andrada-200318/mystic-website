@@ -743,7 +743,7 @@ h3 {
 }
 
 /* A gold drop cap on the opening paragraph */
-.article-body > p:first-child::first-letter {
+.article-body > p:first-of-type::first-letter {
   float: left;
   margin: 6px 8px 0 0;
   font-family: "Cinzel Decorative", serif;
@@ -781,6 +781,42 @@ h3 {
 
 .article-end {
   margin: 30px 0 0;
+}
+
+/* A picture in a double gold frame, like the tarot card backs */
+.article-figure {
+  position: relative;
+  margin: 30px 0;
+  padding: 12px;
+  background: rgba(10, 3, 16, 0.55);
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  box-shadow: 0 0 26px rgba(107, 47, 160, 0.45), 0 14px 30px rgba(0, 0, 0, 0.5);
+}
+
+.article-figure::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(214, 179, 106, 0.45);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.article-figure figcaption {
+  margin: 10px 6px 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--lilac);
 }
 
 /* A button that reads like a link inside a sentence */
