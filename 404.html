@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found | Mystic Space</title>
+    <meta name="robots" content="noindex">
+
+    <script>
+      // The pages used to live at addresses like tea.html and now live in folders like tea/.
+      // Anyone arriving at an old address (a bookmark, an old Google result) is sent to the new one.
+      const moved = {
+        "tarot": "tarot/",
+        "moon": "moon/",
+        "stars": "stars/",
+        "tea": "tea/",
+        "tide": "tide/",
+        "wish": "wish/",
+        "zodiac": "zodiac/",
+        "chinese-zodiac": "chinese-zodiac/",
+        "privacy": "privacy/",
+        "articles": "articles/",
+        "hunters-moon-taurus-2026": "articles/hunters-moon-taurus-2026/",
+      };
+      const old = location.pathname.match(/^(.*\/)([a-z0-9-]+)\.html$/);
+      if (old && moved[old[2]]) location.replace(old[1] + moved[old[2]] + location.search + location.hash);
+    </script>
+
+    <!-- This page is shown at whatever address was missing, so every link below starts from the site's root.
+         If the site moves to its own domain, change this to <base href="/"> -->
+    <base href="/mystic-website/">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared/style.css">
+
+    <script src="shared/consent.js" defer></script>
+    <script src="shared/menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="./">Home</a>
+        <a href="tarot/">Daily Tarot</a>
+        <a href="wish/">Wish Globe</a>
+        <a href="moon/">Moon Altar</a>
+        <a href="stars/">Star Weaver</a>
+        <a href="tea/">Tea Leaves</a>
+        <a href="tide/">Tide Pool</a>
+        <details class="nav-menu">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="zodiac/">Sun, Moon &amp; Rising</a>
+            <a href="zodiac/#compatibility">Love Compatibility</a>
+            <a href="chinese-zodiac/">Chinese Zodiac</a>
+          </div>
+        </details>
+        <a href="articles/">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>Lost in the Mist</h2>
+        <p>The path you followed has faded away, or perhaps it was never there at all. Choose a ritual above, or <a href="./">return home</a>.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="articles/">Articles</a>
+        <a href="privacy/">Privacy</a>
+        <button class="footer-button" type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+      <p class="footer-copy">© 2026 Mystic Space</p>
+    </footer>
+  </body>
+</html>

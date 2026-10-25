@@ -4,6 +4,9 @@
 const analyticsId = "G-FRCX10CTS6";
 const consentKey = "cookieConsent";
 
+// Pages sit at different folder depths, so find the privacy page from this script's own address
+const privacyUrl = new URL("../privacy/", document.currentScript.src).href;
+
 function savedConsent() {
   try {
     return localStorage.getItem(consentKey);
@@ -57,7 +60,7 @@ function showCookieBanner() {
   banner.setAttribute("aria-label", "Cookie choice");
   banner.innerHTML = `
     <p class="cookie-title">✦ A small question before you wander on ✦</p>
-    <p class="cookie-text">May we use Google Analytics cookies to see which rituals visitors enjoy? They are never used for ads. You can change your mind at any time. <a href="privacy.html">Read our privacy policy</a></p>
+    <p class="cookie-text">May we use Google Analytics cookies to see which rituals visitors enjoy? They are never used for ads. You can change your mind at any time. <a href="${privacyUrl}">Read our privacy policy</a></p>
     <div class="cookie-buttons">
       <button class="ghost-button" type="button" data-choice="granted">Accept</button>
       <button class="ghost-button" type="button" data-choice="denied">Decline</button>

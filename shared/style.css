@@ -231,6 +231,10 @@ h3 {
   margin: 0;
 }
 
+.intro a {
+  color: var(--gold-light);
+}
+
 /* ---------- Deck ---------- */
 
 .deck-area {

@@ -25,7 +25,7 @@ const jars = [
   {
     name: "Moonwort",
     loot: "herbs",
-    href: "moon.html",
+    href: "../moon/",
     game: "the Moon Altar",
     extra: true,
     svg: `<g fill="none" stroke="#7f9a6c" stroke-width="1.4" stroke-linecap="round">
@@ -49,7 +49,7 @@ const jars = [
   {
     name: "Bottled Stars",
     loot: "stars",
-    href: "stars.html",
+    href: "../stars/",
     game: "the Star Weaver",
     svg: `<defs><radialGradient id="jarStarGlow">
         <stop offset="0" stop-color="#ffe9a8" stop-opacity="0.5"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
@@ -67,7 +67,7 @@ const jars = [
   {
     name: "Questionable Liquid",
     loot: "liquid",
-    href: "tea.html",
+    href: "../tea/",
     game: "a tea leaf reading",
     svg: `<defs><clipPath id="jarFlask"><path d="M33 30V58L13 108Q10 117 19 117H61Q70 117 67 108L47 58V30Z"/></clipPath></defs>
       <g clip-path="url(#jarFlask)">
@@ -86,7 +86,7 @@ const jars = [
   {
     name: "Pixie Dust",
     loot: "dust",
-    href: "wish.html",
+    href: "../wish/",
     game: "the Wish Globe",
     svg: `<defs>
         <clipPath id="jarPixie"><path d="M33 50V62H31Q22 62 22 71V107Q22 116 31 116H49Q58 116 58 107V71Q58 62 49 62H47V50Z"/></clipPath>
@@ -109,7 +109,7 @@ const jars = [
   {
     name: "Mermaid Tears",
     loot: "tears",
-    href: "tide.html",
+    href: "../tide/",
     game: "the Tide Pool",
     extra: true,
     svg: `<defs>
@@ -131,7 +131,7 @@ const jars = [
   {
     name: "Eye of Newt",
     loot: "eyes",
-    href: "tarot.html",
+    href: "../tarot/",
     game: "a tarot reading",
     extra: true,
     svg: `<rect x="12" y="56" width="56" height="60" rx="14" fill="#b8c46a" opacity="0.4"/>
