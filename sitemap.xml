@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every public page of the site, for Google. When you publish a new article, add a <url> block for it
+     with its address and the date. Google re-reads this file by itself, so you only submit it once. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/tarot/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/wish/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/moon/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/stars/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/tea/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/tide/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/zodiac/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/chinese-zodiac/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/articles/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/articles/hunters-moon-taurus-2026/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/articles/zodiac-signs/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+  <url>
+    <loc>https://andrada-200318.github.io/mystic-website/privacy/</loc>
+    <lastmod>2026-10-27</lastmod>
+  </url>
+</urlset>
