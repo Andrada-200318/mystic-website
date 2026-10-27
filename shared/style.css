@@ -823,6 +823,49 @@ h3 {
   color: var(--lilac);
 }
 
+/* A zodiac sign written over its large gold glyph */
+.sign-entry {
+  position: relative;
+  isolation: isolate;
+  margin: 18px 0;
+  padding: 18px 22px;
+  border: 1px solid rgba(214, 179, 106, 0.28);
+  border-radius: 14px;
+  background: radial-gradient(ellipse at 80% 50%, rgba(214, 179, 106, 0.1), rgba(10, 3, 16, 0.35) 70%);
+  overflow: hidden;
+}
+
+.sign-glyph {
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  z-index: -1;
+  font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", serif;
+  font-size: clamp(7rem, 22vw, 9.5rem);
+  line-height: 1;
+  color: var(--gold);
+  background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, #a47e36);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+  transform: translateY(-50%);
+  pointer-events: none;
+  user-select: none;
+}
+
+.sign-entry h4 {
+  margin: 0 0 6px;
+  font-family: "Cinzel", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+}
+
+.sign-entry p {
+  margin: 0;
+}
+
 /* A button that reads like a link inside a sentence */
 .inline-button {
   padding: 0;
