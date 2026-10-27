@@ -23,12 +23,17 @@
       <h1>Mystic Space</h1>
       <nav>
         <a href="../">Home</a>
-        <a href="../tarot/">Daily Tarot</a>
-        <a href="../wish/" class="active">Wish Globe</a>
-        <a href="../moon/">Moon Altar</a>
-        <a href="../stars/">Star Weaver</a>
-        <a href="../tea/">Tea Leaves</a>
-        <a href="../tide/">Tide Pool</a>
+        <details class="nav-menu is-active">
+          <summary>Mystic Games</summary>
+          <div class="nav-menu-list">
+            <a href="../tarot/">Daily Tarot</a>
+            <a href="../wish/" class="active">Wish Globe</a>
+            <a href="../moon/">Moon Altar</a>
+            <a href="../stars/">Star Weaver</a>
+            <a href="../tea/">Tea Leaves</a>
+            <a href="../tide/">Tide Pool</a>
+          </div>
+        </details>
         <details class="nav-menu">
           <summary>Zodiac</summary>
           <div class="nav-menu-list">
@@ -116,6 +121,17 @@
       <p class="wish-status" id="wishStatus" aria-live="polite"></p>
       <p class="wish-count" id="wishCount"></p>
     </main>
+
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="../articles/">Articles</a>
+        <a href="../privacy/">Privacy</a>
+        <button class="footer-button" type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+      <p class="footer-note">Our readings are for reflection and entertainment. They are not a substitute for medical, legal or financial advice.</p>
+      <p class="footer-copy">© 2026 Mystic Space</p>
+    </footer>
 
     <!-- Turns the soft blobs inside the globe into wispy smoke -->
     <svg width="0" height="0" style="position: absolute" aria-hidden="true">

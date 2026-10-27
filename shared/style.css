@@ -587,7 +587,7 @@ h3 {
   white-space: nowrap;
 }
 
-/* ---------- Footer (home and privacy pages) ---------- */
+/* ---------- Footer (every page) ---------- */
 
 .site-footer {
   position: relative;
@@ -827,6 +827,7 @@ h3 {
 .sign-entry {
   position: relative;
   isolation: isolate;
+  min-height: 10.5rem;
   margin: 18px 0;
   padding: 18px 22px;
   border: 1px solid rgba(214, 179, 106, 0.28);
@@ -841,7 +842,8 @@ h3 {
   top: 50%;
   z-index: -1;
   font-family: "Segoe UI Symbol", "Apple Symbols", "Noto Sans Symbols 2", serif;
-  font-size: clamp(7rem, 22vw, 9.5rem);
+  /* Small enough that the tallest glyphs fit inside the panel without being cut off */
+  font-size: 7rem;
   line-height: 1;
   color: var(--gold);
   background: linear-gradient(180deg, var(--gold-light), var(--gold) 55%, #a47e36);

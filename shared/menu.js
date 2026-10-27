@@ -1,4 +1,4 @@
-// The Zodiac menu in the header: it opens on a tap or click, and closes when you
+// The drop-down menus in the header (Mystic Games, Zodiac): each opens on a tap or click, and closes when you
 // choose a link, click anywhere else or press Escape.
 
 const menus = document.querySelectorAll(".nav-menu");
