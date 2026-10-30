@@ -19,6 +19,7 @@ const herbs = {
   chamomile:  { kind: "flowers", stem: "#7b9566", leaf: "#93ad7d", leafW: 1.6, leafL: 5,   petal: "#f5f0e1", heart: "#e9c25a" },
   rose:       { kind: "flowers", stem: "#6b8559", leaf: "#7f9a6c", leafW: 3,   leafL: 5,   petal: "#e597ad", heart: "#a8455f" },
   calendula:  { kind: "flowers", stem: "#728d5e", leaf: "#8fa877", leafW: 2.6, leafL: 6,   petal: "#f0a64a", heart: "#b9581c" },
+  basil:      { kind: "leaves",  stem: "#6a8a52", leaf: "#86b46a", leafW: 4,   leafL: 6.5, petal: "#ece2f2", heart: "#a982c4", step: 0.2 },
 };
 const herbNames = Object.keys(herbs);
 
