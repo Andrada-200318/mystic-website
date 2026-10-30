@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>From Saturn to the Moon: The Planetary Rulers of the Zodiac | Mystic Space</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Every zodiac sign has a ruling planet. Learn the traditional and modern rulers of the twelve signs, the ancient Chaldean order, and how each planet shapes its sign.">
+    <meta name="author" content="Andrada Alexiuc">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/style.css">
+
+    <script src="../../shared/consent.js" defer></script>
+    <script src="../../shared/menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <!-- The gold colour, the little sparkle, the engraved planets and the two arcs the planet names are written along -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gold-sheen" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="120">
+          <stop offset="0" stop-color="#f3dfa6"/>
+          <stop offset="0.55" stop-color="#d6b36a"/>
+          <stop offset="1" stop-color="#a47e36"/>
+        </linearGradient>
+        <symbol id="sparkle" viewBox="-10 -10 20 20">
+          <path d="M0 -10Q0 0 10 0Q0 0 0 10Q0 0 -10 0Q0 0 0 -10Z"/>
+        </symbol>
+
+        <!-- Each planet is drawn around 0 0, sized roughly as they compare in the sky -->
+        <symbol id="planet-sun" viewBox="-32 -32 64 64">
+          <circle r="13"/>
+          <circle r="8.5" stroke-dasharray="1 2.5"/>
+          <circle r="2"/>
+          <path d="M0 -17V-29"/><path d="M0 -17V-29" transform="rotate(30)"/><path d="M0 -17V-29" transform="rotate(60)"/>
+          <path d="M0 -17V-29" transform="rotate(90)"/><path d="M0 -17V-29" transform="rotate(120)"/><path d="M0 -17V-29" transform="rotate(150)"/>
+          <path d="M0 -17V-29" transform="rotate(180)"/><path d="M0 -17V-29" transform="rotate(210)"/><path d="M0 -17V-29" transform="rotate(240)"/>
+          <path d="M0 -17V-29" transform="rotate(270)"/><path d="M0 -17V-29" transform="rotate(300)"/><path d="M0 -17V-29" transform="rotate(330)"/>
+          <path d="M0 -17V-22" transform="rotate(15)"/><path d="M0 -17V-22" transform="rotate(45)"/><path d="M0 -17V-22" transform="rotate(75)"/>
+          <path d="M0 -17V-22" transform="rotate(105)"/><path d="M0 -17V-22" transform="rotate(135)"/><path d="M0 -17V-22" transform="rotate(165)"/>
+          <path d="M0 -17V-22" transform="rotate(195)"/><path d="M0 -17V-22" transform="rotate(225)"/><path d="M0 -17V-22" transform="rotate(255)"/>
+          <path d="M0 -17V-22" transform="rotate(285)"/><path d="M0 -17V-22" transform="rotate(315)"/><path d="M0 -17V-22" transform="rotate(345)"/>
+        </symbol>
+        <symbol id="planet-moon" viewBox="-32 -32 64 64">
+          <circle r="22"/>
+          <path d="M0 -22A9 22 0 0 1 0 22"/>
+          <path d="M0 -22A3 22 0 0 0 0 22M0 -22A12 22 0 0 0 0 22" stroke-dasharray="0.8 2.6"/>
+          <circle cx="15" cy="-7" r="2.2"/><circle cx="17" cy="5" r="1.4"/><circle cx="13" cy="12" r="1"/>
+        </symbol>
+        <symbol id="planet-mercury" viewBox="-32 -32 64 64">
+          <circle r="15"/>
+          <path d="M0 -15A7 15 0 0 0 0 15" stroke-dasharray="0.8 2.4"/>
+          <circle cx="5" cy="-6" r="2.6"/><circle cx="8" cy="5" r="1.6"/><circle cx="-1" cy="7" r="1.2"/><circle cx="2" cy="-1" r="0.8"/>
+        </symbol>
+        <symbol id="planet-venus" viewBox="-32 -32 64 64">
+          <circle r="20"/>
+          <path d="M-8 -17Q2 -19 9 -17.5M-17 -10Q-4 -15 10 -12Q15 -11 17 -9M-19.5 -3Q-6 -7 6 -3Q13 -1 19.6 -4M-19 5Q-8 1 4 5Q12 8 19 4M-15 13Q-4 9 8 13"/>
+        </symbol>
+        <symbol id="planet-mars" viewBox="-32 -32 64 64">
+          <circle r="18"/>
+          <path d="M-7 -16.6Q0 -12.5 7 -16.6"/>
+          <path d="M-12 1Q-4 -2 4 2Q9 4 13 1"/>
+          <path d="M-9 8q3 -2 6 0" stroke-dasharray="0.8 2"/>
+          <circle cx="7" cy="-6" r="2"/><circle cx="-8" cy="-6" r="1.2"/><circle cx="4" cy="10" r="1.4"/>
+        </symbol>
+        <symbol id="planet-jupiter" viewBox="-32 -32 64 64">
+          <circle r="26"/>
+          <path d="M-20.5 -16Q0 -14 20.5 -16M-24.4 -9Q0 -7 24.4 -9M-25.8 -3Q0 -5 25.8 -3M-25.7 4Q0 6 25.7 4M-23.6 11Q0 9 23.6 11M-18.8 18Q0 20 18.8 18"/>
+          <ellipse cx="9" cy="8" rx="5" ry="2"/>
+        </symbol>
+        <!-- The rings pass behind the planet at the top and in front of it at the bottom -->
+        <symbol id="planet-saturn" viewBox="-32 -32 64 64">
+          <g transform="rotate(-16)">
+            <circle r="16"/>
+            <path d="M-30 0A30 7 0 0 1 -14.8 -6.1M14.8 -6.1A30 7 0 0 1 30 0M-30 0A30 7 0 0 0 30 0"/>
+            <path d="M-24 0A24 5.6 0 0 1 -15.4 -4.3M15.4 -4.3A24 5.6 0 0 1 24 0M-24 0A24 5.6 0 0 0 24 0"/>
+            <path d="M-12.5 10Q0 12 12.5 10M-9.3 13Q0 14.5 9.3 13"/>
+          </g>
+        </symbol>
+        <!-- Uranus spins on its side, so its rings stand almost upright -->
+        <symbol id="planet-uranus" viewBox="-32 -32 64 64">
+          <g transform="rotate(14)">
+            <circle r="20"/>
+            <circle r="9" stroke-dasharray="0.8 2.2"/><circle r="14.5" stroke-dasharray="0.8 2.6"/>
+            <path d="M0 -30A7 30 0 0 1 0 30M0 -30A7 30 0 0 0 -5.36 -19.3M-5.36 19.3A7 30 0 0 0 0 30"/>
+          </g>
+        </symbol>
+        <symbol id="planet-neptune" viewBox="-32 -32 64 64">
+          <circle r="22"/>
+          <path d="M-19 -11Q0 -13 19 -11M-21.6 -4Q0 -6 21.6 -4" stroke-dasharray="1 2.5"/>
+          <path d="M-20.3 8.5Q0 10.5 20.3 8.5M-15 16Q0 18.5 15 16"/>
+          <ellipse cx="-6" cy="2.5" rx="5" ry="2.8"/>
+          <path d="M1 -0.5q4 -1.5 8 0M-4 13q4 -1.2 8 0"/>
+        </symbol>
+        <!-- Pluto with the great heart-shaped plain on its face -->
+        <symbol id="planet-pluto" viewBox="-32 -32 64 64">
+          <circle r="13"/>
+          <path d="M3 9C-3 5 -4 0 -1 -1C1 -2 2.5 0 3 1.5C3.5 0 5 -2 7 -1C10 0 9 5 3 9Z"/>
+          <circle cx="-6" cy="-5" r="1.4"/><circle cx="-2" cy="-8" r="0.9"/>
+        </symbol>
+
+        <path id="name-arc" d="M14 60A46 46 0 0 1 106 60"/>
+        <path id="note-arc" d="M10 60A50 50 0 0 0 110 60"/>
+      </defs>
+    </svg>
+
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="../../">Home</a>
+        <details class="nav-menu">
+          <summary>Mystic Games</summary>
+          <div class="nav-menu-list">
+            <a href="../../tarot/">Daily Tarot</a>
+            <a href="../../wish/">Wish Globe</a>
+            <a href="../../moon/">Moon Altar</a>
+            <a href="../../stars/">Star Weaver</a>
+            <a href="../../tea/">Tea Leaves</a>
+            <a href="../../tide/">Tide Pool</a>
+          </div>
+        </details>
+        <details class="nav-menu">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="../../zodiac/">Sun, Moon &amp; Rising</a>
+            <a href="../../zodiac/#compatibility">Love Compatibility</a>
+            <a href="../../chinese-zodiac/">Chinese Zodiac</a>
+          </div>
+        </details>
+        <a href="../../articles/" class="active">Articles</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="article-back"><a href="../../articles/">← Back to the Hanging Garden</a></p>
+
+      <article class="prose article">
+        <p class="ornament">☾ ✦ ☽</p>
+        <p class="article-collection">Astrology</p>
+        <h2>From Saturn to the Moon: The Planetary Rulers of the Zodiac</h2>
+        <p class="article-subtitle">Every sign has a planet that rules it. Discover the traditional and modern rulers of the zodiac, and how each one shapes the sign it guides.</p>
+        <p class="article-byline">By Andrada Alexiuc · <time datetime="2026-10-30">30 October 2026</time></p>
+        <p class="ornament article-divider">✦</p>
+
+        <div class="article-body">
+          <p>Each zodiac sign is associated with a planet known as its ruler. In astrology, this planet is believed to have the strongest influence on the sign, shaping its personality, fortune, relationships and the energy that surrounds it. Traditional and modern rulerships are based on different logic: the traditional system relies on the planets’ order and distance from the Sun and Earth, and on the symbolism of light and warmth, while the modern system relies on psychological and thematic affinities.</p>
+
+          <h3>The Seven Classical Planets</h3>
+          <p>Traditional astrology worked with seven classical “planets”: the five planets visible to the naked eye (Mercury, Venus, Mars, Jupiter and Saturn) and the two luminaries, the Sun and the Moon. Their assignments are rooted in the ancient Chaldean order and in the layout of the zodiac wheel relative to the solstices. The Sun and the Moon rule Leo and Cancer, the signs of midsummer, when daylight is at its peak. The remaining planets then rule the signs in pairs, moving outward from the luminaries in order of their distance, up to Saturn, which rules Capricorn and Aquarius, the signs of midwinter.</p>
+          <p>The Chaldean order arranges the seven classical celestial bodies from the slowest to the fastest apparent motion: Saturn, Jupiter, Mars, the Sun, Venus, Mercury and the Moon. This order also inspired the belief that the soul descends from Saturn towards the Moon before birth, receiving a gift or quality from each celestial body along the way.</p>
+
+          <h3>The Modern Rulers</h3>
+          <p>Modern astrologers reassigned some rulerships based on thematic, psychological and elemental resonance. They also added three planets discovered after the invention of the telescope: Uranus (1781), Neptune (1846) and Pluto (1930), which now co-rule Aquarius, Pisces and Scorpio respectively.</p>
+
+          <h3>The Rulers of the Twelve Signs</h3>
+          <p>Below you can find each sign’s planetary ruler, together with its influence upon it.</p>
+
+          <!-- Each sign sits over its ruling planet engraved in gold, with the planet's name written along the circle.
+               A co-ruler orbits on the ring as a small planet. -->
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mars" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Mars</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Aries</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Aries</h4>
+            <p class="element-signs">Ruled by Mars</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of war, action, vitality, drive, and passion.</li>
+              <li><strong>The Influence:</strong> It gives Aries an innate competitive edge, immense courage, and a pioneer spirit. Aries individuals are driven by instinct, highly energetic, sometimes impatient, and possess a fierce determination to be first. They refuse to leave anything standing in their way of achieving their goals.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-venus" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Venus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Taurus</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Taurus</h4>
+            <p class="element-signs">Ruled by Venus</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of love, beauty, money, and harmony.</li>
+              <li><strong>The Influence:</strong> Focuses on the physical world. It manifests as a desire for material comfort, financial stability, sensory pleasures (fine dining, art, quality goods), and a loyal, grounded nature. They experience affection through all five senses and appreciate luxury. Taurus would usually like to have a slow and steady unfolding of a relationship, and do not enjoy being rushed.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mercury" x="2" y="2" width="116" height="116"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Mercury</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Gemini</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Gemini</h4>
+            <p class="element-signs">Ruled by Mercury</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of communication, intellect, logic, and short-distance travel.</li>
+              <li><strong>The Influence:</strong> Expresses itself outward. It brings an insatiable curiosity, high adaptability, quick wit, and a constant desire to exchange ideas and information with others. They are inclined towards communication, sharing information and gathering facts. They also like to connect with others and enrol themselves in different social networks.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-moon" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">The Moon</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Cancer</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Cancer</h4>
+            <p class="element-signs">Ruled by the Moon</p>
+            <ul>
+              <li><strong>The Energy:</strong> The celestial body of emotions, intuition, the subconscious, and maternal energy.</li>
+              <li><strong>The Influence:</strong> Cancers are highly empathetic, deeply sensitive, and fiercely protective of their home and family. The Moon dictates their shifting moods (mirroring the lunar cycles) and gives them a powerful need for emotional security. Moreover, the Moon gives them a long memory, which leads to prolonged stages of nostalgia, also enabling them to learn from their past.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-sun" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">The Sun</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Leo</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Leo</h4>
+            <p class="element-signs">Ruled by the Sun</p>
+            <ul>
+              <li><strong>The Energy:</strong> The center of our solar system, representing the ego, vital energy, identity, and creativity.</li>
+              <li><strong>The Influence:</strong> The Sun grants Leo a natural magnetism, generosity, pride, and an innate desire to shine and be recognized. Leos naturally seek leadership roles and love expressing themselves dramatically. As the Sun does not share its energy with other planets, it is natural that Leo can have an increased self-esteem, sometimes being self-centered and arrogant.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mercury" x="2" y="2" width="116" height="116"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Mercury</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Virgo</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Virgo</h4>
+            <p class="element-signs">Ruled by Mercury</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of communication, intellect, wit, and strategic reasoning.</li>
+              <li><strong>The Influence:</strong> Expresses itself inward. It manifests as analytical thinking, sharp attention to detail, organization, practicality, and a strong inner drive to be of service. Virgo takes their inclination towards perfectionism from Mercury, being meticulous and appreciating order.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-venus" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Venus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Libra</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Libra</h4>
+            <p class="element-signs">Ruled by Venus</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of love, beauty, connection, and harmony.</li>
+              <li><strong>The Influence:</strong> Focuses on the social world. It manifests as a drive for partnerships, diplomacy, aesthetics, justice, and a deep, constant need for balance and peace. It gives Libra a magnetic, almost alluring energy, making them extremely relationship-oriented.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-pluto" x="-6" y="-6" width="132" height="132"/>
+              <use href="#planet-mars" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Pluto</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">co-ruled by Mars</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Scorpio</h4>
+            <p class="element-signs">Ruled by Pluto &amp; Mars</p>
+            <ul>
+              <li><strong>The Energy:</strong> Pluto is the planet of transformation, rebirth, power dynamics, and the psychological underworld. Mars is known as the planet of war, action, and passion.</li>
+              <li><strong>The Influence:</strong> It gives Scorpio an intense, magnetic aura, detective-like intuition, and the ability to completely reinvent themselves after crises. Their traditional co-ruler, Mars, adds a strategic, hidden ambition to their quiet exterior. Mars also explains their unapologetic drive and their desire to achieve their desires.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-jupiter" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Jupiter</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Sagittarius</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Sagittarius</h4>
+            <p class="element-signs">Ruled by Jupiter</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of luck, expansion, philosophy, and higher learning.</li>
+              <li><strong>The Influence:</strong> It infuses Sagittarius with an incurable optimism, a deep love for personal freedom, adventure, and travel. They are lifelong seekers of truth who always prefer to look at the big picture. They are passionate and look for thrills and fun in the mundane activities of life, running from boredom.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-saturn" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Saturn</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">ruler of Capricorn</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Capricorn</h4>
+            <p class="element-signs">Ruled by Saturn</p>
+            <ul>
+              <li><strong>The Energy:</strong> The planet of discipline, time, structure, karma, and boundaries.</li>
+              <li><strong>The Influence:</strong> It makes Capricorns incredibly responsible, ambitious, realistic, and patient. They respect the value of hard work and are entirely willing to climb the mountain of success slowly, steadily, and systematically. They are usually perfectionists, always guided by a purpose and determined to accomplish their aim.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-uranus" x="14" y="14" width="92" height="92"/>
+              <use href="#planet-saturn" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Uranus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">co-ruled by Saturn</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Aquarius</h4>
+            <p class="element-signs">Ruled by Uranus &amp; Saturn</p>
+            <ul>
+              <li><strong>The Energy:</strong> Uranus is the planet of rebellion, innovation, sudden change, and technology. Saturn is known as representing karma, progress and maturity.</li>
+              <li><strong>The Influence:</strong> It gives Aquarius visionary thinking, strong originality, and a deeply humanitarian spirit. Their traditional co-ruler, Saturn, anchors them by providing the structural logic needed to turn their revolutionary ideas into reality. Aquarius has a strong desire to make an impact and not to fade into memory. They can also come up with shocking initiatives playing an important role in awakening the ones around them.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-neptune" x="14" y="14" width="92" height="92"/>
+              <use href="#planet-jupiter" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Neptune</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">co-ruled by Jupiter</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Pisces</h4>
+            <p class="element-signs">Ruled by Neptune &amp; Jupiter</p>
+            <ul>
+              <li><strong>The Energy:</strong> Neptune is the planet of dreams, illusions, spirituality, and artistic imagination. Jupiter is known as the planet of expansion, free-spirit and spiritual growth.</li>
+              <li><strong>The Influence:</strong> It makes Pisces highly dream-oriented, idealistic, artistic, and capable of universal compassion. They are healers, but creative, feeling a responsibility to give to the others. Their traditional co-ruler, Jupiter, amplifies their inner faith, intuition, and deep connection to the mystical side of life.</li>
+            </ul>
+          </section>
+
+          <h3>Sources</h3>
+          <ul>
+            <li>Astro: “The Rulers”</li>
+            <li>MyInfiniteThreads: “The Chaldean Order of Planets: A Cosmic Journey of Spiritual Evolution”</li>
+            <li>Parade: “The Ruling Planet for Each Zodiac Sign, According to Astrologers”</li>
+          </ul>
+        </div>
+
+        <p class="ornament article-end">☾ ✦ ☽</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="../../articles/">Articles</a>
+        <a href="../../privacy/">Privacy</a>
+        <button class="footer-button" type="button" data-cookie-settings>Cookie settings</button>
+      </nav>
+      <p class="footer-note">Our readings are for reflection and entertainment. They are not a substitute for medical, legal or financial advice.</p>
+      <p class="footer-copy">© 2026 Mystic Space</p>
+    </footer>
+  </body>
+</html>

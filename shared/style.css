@@ -960,10 +960,52 @@ h3 {
   filter: drop-shadow(0 0 8px rgba(214, 179, 106, 0.4));
 }
 
+/* A planet engraved in fine gold lines, with its name written along the circle (articles/planetary-rulers) */
+.planet-sigil {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  z-index: -1;
+  width: 12rem;
+  height: 12rem;
+  fill: none;
+  stroke: url(#gold-sheen);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 5px rgba(214, 179, 106, 0.4));
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.planet-sigil text {
+  font-family: "Cinzel", serif;
+  font-size: 6.5px;
+  letter-spacing: 0.4em;
+  fill: url(#gold-sheen);
+  stroke: none;
+}
+
+.planet-sigil .planet-note {
+  font-size: 4.6px;
+  letter-spacing: 0.3em;
+}
+
+.planet-sigil .sparkle {
+  fill: url(#gold-sheen);
+  stroke: none;
+}
+
 @media (max-width: 600px) {
   .element-sigil {
     width: 7.5rem;
     height: 7.5rem;
+  }
+
+  .planet-sigil {
+    width: 9rem;
+    height: 9rem;
   }
 }
 
