@@ -997,6 +997,24 @@ h3 {
   stroke: none;
 }
 
+/* Longer boxes with a heading and several paragraphs, over a larger drawing (articles/how-many-zodiacs) */
+.system-entry {
+  padding: 22px 24px;
+}
+
+.system-entry h3 {
+  margin-top: 0;
+}
+
+.system-entry p + p {
+  margin-top: 12px;
+}
+
+.system-sigil {
+  width: 16rem;
+  height: 16rem;
+}
+
 @media (max-width: 600px) {
   .element-sigil {
     width: 7.5rem;
@@ -1006,6 +1024,11 @@ h3 {
   .planet-sigil {
     width: 9rem;
     height: 9rem;
+  }
+
+  .system-sigil {
+    width: 11rem;
+    height: 11rem;
   }
 }
 
