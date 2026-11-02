@@ -1032,6 +1032,72 @@ h3 {
   }
 }
 
+/* The year in crystals: a dozen stones that each jump to their month (articles/birthstones) */
+.stone-calendar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 6px;
+  margin: 26px 0;
+}
+
+.stone-calendar a {
+  font-style: italic;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--lilac);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.stone-calendar a:hover,
+.stone-calendar a:focus-visible {
+  color: var(--gold-light);
+}
+
+.stone-calendar img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.stone-calendar a:hover img,
+.stone-calendar a:focus-visible img {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.stone-month {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+
+/* A month's box, with its crystal in full colour beside the words rather than behind them */
+.stone-entry {
+  scroll-margin-top: 16px;
+}
+
+.stone-picture {
+  float: right;
+  width: 11rem;
+  height: 11rem;
+  margin: -6px -8px 6px 14px;
+}
+
+@media (max-width: 600px) {
+  .stone-calendar {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stone-picture {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+
 /* A button that reads like a link inside a sentence */
 .inline-button {
   padding: 0;
@@ -1103,12 +1169,47 @@ h3 {
   padding: 10px 22px;
 }
 
+/* The cauldron's note (cauldron-note.js): the cookie banner's twin, with the gold cauldron at its side.
+   On very short screens it scrolls, so its button can always be reached. */
+.cauldron-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  text-align: left;
+}
+
+.cauldron-banner img {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  filter: drop-shadow(0 0 5px rgba(214, 179, 106, 0.4));
+}
+
+.cauldron-banner .cookie-buttons {
+  justify-content: flex-start;
+}
+
+@media (max-width: 600px) {
+  .cauldron-banner {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cauldron-banner img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card-inner,
   .deck-layer,
   .reading,
   .slot-name,
+  .stone-calendar img,
   .cookie-banner.is-leaving {
     transition: none;
   }
