@@ -1,6 +1,7 @@
 // ---------- Lore notes: gentle disclaimers that rise like the cookie banner ----------
 // Each note waits until the cookie banner has been answered, so the two never sit on top of each other.
-// Once a visitor has read a note, that note stays away on later visits.
+// Once a visitor has read a note, it stays away for that visit (refreshing won't bring it back),
+// then returns the next time they come back in a new tab or browser window.
 // To add one to a page, put this after the consent.js line, with the right number of ../ for the page,
 // and set data-note to one of the notes below:
 //   <script src="../../shared/lore-note.js" data-note="fairy" defer></script>
@@ -26,7 +27,7 @@ const loreBase = document.currentScript.src;
 
 function loreNoteRead() {
   try {
-    return localStorage.getItem(loreKey) === "read";
+    return sessionStorage.getItem(loreKey) === "read";
   } catch {
     return false;
   }
@@ -34,9 +35,9 @@ function loreNoteRead() {
 
 function rememberLoreNote() {
   try {
-    localStorage.setItem(loreKey, "read");
+    sessionStorage.setItem(loreKey, "read");
   } catch {
-    // Storage is blocked, so the note will simply appear again next visit
+    // Storage is blocked, so the note will simply appear again on the next page
   }
 }
 
