@@ -1169,9 +1169,9 @@ h3 {
   padding: 10px 22px;
 }
 
-/* The cauldron's note (cauldron-note.js): the cookie banner's twin, with the gold cauldron at its side.
+/* The notes from the cauldron and the fairies (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
    On very short screens it scrolls, so its button can always be reached. */
-.cauldron-banner {
+.lore-banner {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -1180,24 +1180,24 @@ h3 {
   text-align: left;
 }
 
-.cauldron-banner img {
+.lore-banner img {
   flex: none;
   width: 112px;
   height: 112px;
   filter: drop-shadow(0 0 5px rgba(214, 179, 106, 0.4));
 }
 
-.cauldron-banner .cookie-buttons {
+.lore-banner .cookie-buttons {
   justify-content: flex-start;
 }
 
 @media (max-width: 600px) {
-  .cauldron-banner {
+  .lore-banner {
     align-items: flex-start;
     gap: 10px;
   }
 
-  .cauldron-banner img {
+  .lore-banner img {
     width: 64px;
     height: 64px;
   }
