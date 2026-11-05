@@ -1098,6 +1098,182 @@ h3 {
   }
 }
 
+/* The Chinese zodiac wheel of years and the five elements (articles/chinese-zodiac) */
+.article-body [lang="zh"],
+.cz-char,
+.cz-heart,
+.cz-glyph,
+.fe-char,
+.fe-heart {
+  font-family: "Noto Serif TC", "PingFang TC", "Microsoft JhengHei", serif;
+  font-weight: 600;
+}
+
+.cz-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cz-wheel text,
+.fe-char,
+.fe-heart {
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.cz-line {
+  fill: none;
+  stroke: rgba(214, 179, 106, 0.35);
+}
+
+.cz-dots {
+  stroke: var(--gold);
+  stroke-width: 1.4;
+  stroke-dasharray: 1 5;
+  stroke-linecap: round;
+}
+
+.cz-wedge {
+  fill: transparent;
+  transition: fill 0.25s;
+}
+
+.cz-seg:hover .cz-wedge {
+  fill: rgba(214, 179, 106, 0.1);
+}
+
+.cz-name {
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: var(--gold-light);
+}
+
+.cz-seat {
+  fill: #1c0730;
+  stroke: rgba(214, 179, 106, 0.55);
+  stroke-width: 1.2;
+}
+
+.cz-char {
+  font-size: 19px;
+  fill: var(--gold-light);
+}
+
+.cz-year {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  fill: var(--lilac);
+  transition: fill 0.25s;
+}
+
+.cz-seg:hover .cz-year {
+  fill: var(--mist);
+}
+
+.cz-year.is-now,
+.cz-seg:hover .cz-year.is-now {
+  fill: var(--gold-light);
+  font-size: 14px;
+}
+
+.cz-heart {
+  font-size: 24px;
+  fill: var(--gold-light);
+}
+
+/* Each animal and element over its own character, in place of a zodiac glyph */
+.cz-glyph {
+  font-size: 6.5rem;
+}
+
+.sign-entry .cz-years {
+  margin: 0 0 8px;
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+.fe-entry {
+  border-color: color-mix(in srgb, var(--tone) 40%, transparent);
+}
+
+.fe-entry .cz-glyph {
+  background: linear-gradient(180deg, var(--mist), var(--tone) 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.fe-entry h4,
+.fe-entry strong {
+  color: var(--tone);
+}
+
+:is(.fe-entry, .fe-node).is-wood { --tone: #7fc77f; }
+:is(.fe-entry, .fe-node).is-fire { --tone: #ec7059; }
+:is(.fe-entry, .fe-node).is-earth { --tone: #d8aa5a; }
+:is(.fe-entry, .fe-node).is-metal { --tone: #dcdce8; }
+:is(.fe-entry, .fe-node).is-water { --tone: #6aa8ec; }
+
+.fe-cycle {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.6;
+}
+
+.fe-control {
+  fill: none;
+  stroke: var(--lilac);
+  stroke-opacity: 0.55;
+  stroke-width: 1.2;
+  stroke-dasharray: 3 5;
+}
+
+.fe-arrow {
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fe-node circle {
+  fill: #1c0730;
+  stroke: var(--tone);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tone) 55%, transparent));
+}
+
+.fe-char {
+  font-size: 36px;
+  fill: var(--tone);
+}
+
+.fe-name {
+  font-family: "Cinzel", serif;
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  fill: var(--tone);
+}
+
+.fe-pinyin {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-style: italic;
+  fill: var(--lilac);
+}
+
+.fe-heart {
+  font-size: 24px;
+  fill: var(--gold-light);
+}
+
 /* A button that reads like a link inside a sentence */
 .inline-button {
   padding: 0;
