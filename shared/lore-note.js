@@ -22,6 +22,11 @@ const loreNotes = {
     title: "A word from the banshees",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered information by wandering through folklore, moonlit wonder and enchanted forests. Keep the spells and potions for your own reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
   },
+  elf: {
+    picture: "elf.svg",
+    title: "A word from the elves of the woodland",
+    text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its crystal lore by wandering through starlit glades, ancient woodland halls and the old ways of the stone-keepers. No stone can take the place of a healer's care, so keep your crystals close for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+  },
 };
 
 const loreChoice = document.currentScript.dataset.note;

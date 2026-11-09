@@ -783,6 +783,25 @@ h3 {
   color: var(--gold-light);
 }
 
+/* Smaller headings inside a section, e.g. each stone in a list of crystals */
+.article-body h4 {
+  margin: 24px 0 4px;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+}
+
+/* A one-line summary under an entry, e.g. "The Vibe: ..." */
+.article-vibe {
+  font-style: italic;
+  color: var(--lilac);
+}
+
+.article-vibe strong {
+  font-style: normal;
+}
+
 .article-end {
   margin: 30px 0 0;
 }
@@ -1345,7 +1364,7 @@ h3 {
   padding: 10px 22px;
 }
 
-/* The notes from the cauldron, the fairies and the banshees (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
+/* The notes from the cauldron, the fairies, the banshees and the elves (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
    On very short screens it scrolls, so its button can always be reached. */
 .lore-banner {
   display: flex;
