@@ -20,6 +20,34 @@
            async src="//gc.zgo.at/count.js"></script>
   </head>
   <body>
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="cs-line" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="320" y2="0">
+          <stop offset="0" stop-color="#d6b36a" stop-opacity="0"/>
+          <stop offset="0.3" stop-color="#d6b36a"/>
+          <stop offset="0.5" stop-color="#f3dfa6"/>
+          <stop offset="0.7" stop-color="#d6b36a"/>
+          <stop offset="1" stop-color="#d6b36a" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="cs-sheen" gradientUnits="userSpaceOnUse" x1="0" y1="1" x2="0" y2="27">
+          <stop offset="0" stop-color="#f3dfa6"/>
+          <stop offset="0.55" stop-color="#d6b36a"/>
+          <stop offset="1" stop-color="#a47e36"/>
+        </linearGradient>
+        <!-- A gold crystal point between two fading lines, drawn above each section heading -->
+        <symbol id="cs-divider" viewBox="0 0 320 28">
+          <g stroke="url(#cs-line)" stroke-width="1" fill="none">
+            <path d="M8 14H128M192 14H312"/>
+            <path d="M40 10.5H128M192 17.5H280" stroke-opacity="0.45"/>
+          </g>
+          <g fill="url(#cs-sheen)">
+            <path d="M136 14l4-4 4 4-4 4z M176 14l4-4 4 4-4 4z"/>
+            <path d="M160 1l8 8v10l-8 8-8-8V9z"/>
+          </g>
+          <path d="M152 9l8 5 8-5M160 14v13" fill="none" stroke="#1a0729" stroke-opacity="0.5" stroke-width="0.8"/>
+        </symbol>
+      </defs>
+    </svg>
     <header class="site-header">
       <h1>Mystic Space</h1>
       <nav>
@@ -58,7 +86,7 @@
         <p class="article-byline">By Ramona Sîrbu · <time datetime="2026-11-09">9 November 2026</time></p>
         <p class="ornament article-divider">✦</p>
 
-        <div class="article-body">
+        <div class="article-body article-gilded">
           <figure class="article-figure">
             <img src="crystals-web.jpg" alt="Close-up of hands holding a clear quartz point and a piece of amethyst above a dark cloth laid with bowls of crystals, a beaded bracelet, rose quartz and a pair of brass bells" width="1600" height="1068">
             <figcaption>Photo by Arina Krasnikova</figcaption>
@@ -67,6 +95,7 @@
           <p>Three to four times a year, the astrological community collectively holds its breath. Mercury, the planet that governs communication, technology, travel, and logic, appears to spin backward in the sky. During Mercury Retrograde, the natural flow of information gets tangled. Emails bounce, flights are delayed, old exes suddenly text you, and simple conversations turn into massive misunderstandings.</p>
           <p>While you cannot stop the planets from moving, you can create an energetic buffer between your aura and the cosmic chaos. This is where crystal magic shines. By working with specific stones that target clarity, grounding, and communication, you can ride out the retrograde wave without losing your mind.</p>
 
+          <svg class="article-section-divider" aria-hidden="true" focusable="false"><use href="#cs-divider"/></svg>
           <h3>The Retrograde Survival Kit: 4 Essential Stones</h3>
           <p>Not just any crystal will do during this transit. You need stones that specifically counteract Mercury’s favorite disruptions: mental fog, emotional reactivity, and technological meltdowns.</p>
 
@@ -86,6 +115,7 @@
           <p>When plans change at the last minute or travel delays leave you stranded, it is easy to spiral into anxiety. Hematite is a heavy, metallic iron-oxide stone that immediately pulls your energy downward, out of your buzzing, stressed-out head and back into your physical body.</p>
           <p class="article-vibe"><strong>The Vibe:</strong> Ultimate grounding, stability, and resilience.</p>
 
+          <svg class="article-section-divider" aria-hidden="true" focusable="false"><use href="#cs-divider"/></svg>
           <h3>Practical Magic: How to Use Your Crystals</h3>
           <p>You don’t need a complex, two-hour ritual to make these stones work for you. During a retrograde, keep your magic simple and intentional.</p>
           <ul>
@@ -94,6 +124,7 @@
             <li><strong>The Retrograde Protection Grid:</strong> For the duration of the transit, set up a simple crystal grid in your bedroom. Place a Clear Quartz point in the center to amplify your intention, and surround it with Tourmaline, Fluorite, and Amazonite. State your intention out loud: “I am grounded, I communicate clearly, and my energy is protected from chaos.” Leave it up until the retrograde shadow period clears.</li>
           </ul>
 
+          <svg class="article-section-divider" aria-hidden="true" focusable="false"><use href="#cs-divider"/></svg>
           <h3>Sources &amp; Further Reading</h3>
           <ul>
             <li>Crystals Alchemy: <a href="https://crystalsalchemy.com/crystals-for-mercury-retrograde">“Best Crystals for Mercury Retrograde: Your Survival Guide”</a></li>
