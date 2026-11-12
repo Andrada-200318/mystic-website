@@ -1609,3 +1609,224 @@ h3 {
   clip-path: polygon(50% 0, 100% 30%, 100% 70%, 50% 100%, 0 70%, 0 30%);
   filter: drop-shadow(0 0 4px rgba(243, 223, 166, 0.6));
 }
+
+/* The Ophiuchus drawings: the Serpent Bearer on the Sun's path, the twelve-part wheel, the calendar and the Rod of Asclepius (articles/ophiuchus).
+   They also borrow the .nm-* sky, line, orbit and lettering styles of the New Moon drawings. */
+.oph-serpent {
+  fill: none;
+  stroke: rgba(214, 179, 106, 0.13);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.oph-bright {
+  stroke: rgba(243, 223, 166, 0.65);
+}
+
+.oph-stars circle {
+  fill: var(--gold-light);
+  filter: drop-shadow(0 0 4px rgba(243, 223, 166, 0.8));
+}
+
+.oph-stars .oph-antares {
+  fill: #f09a6c;
+  filter: drop-shadow(0 0 5px rgba(240, 154, 108, 0.85));
+}
+
+.oph-faint {
+  opacity: 0.6;
+}
+
+.oph-ecliptic {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.4;
+  stroke-dasharray: 2 7;
+  stroke-linecap: round;
+}
+
+.oph-chevron,
+.oph-rays {
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.oph-sun {
+  fill: var(--gold-light);
+  filter: drop-shadow(0 0 8px rgba(243, 223, 166, 0.9));
+}
+
+.oph-path-note {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-style: italic;
+  text-anchor: middle;
+  fill: var(--lilac);
+}
+
+.oph-label,
+.oph-name,
+.oph-row,
+.oph-bar-text,
+.oph-center,
+.oph-word {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  text-anchor: middle;
+}
+
+.oph-label {
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  fill: var(--gold);
+}
+
+.oph-ring {
+  fill: none;
+  stroke: rgba(214, 179, 106, 0.6);
+  stroke-width: 1.2;
+}
+
+.oph-spokes {
+  stroke: rgba(214, 179, 106, 0.45);
+  stroke-width: 1.1;
+}
+
+.oph-center {
+  font-size: 24px;
+  letter-spacing: 0.16em;
+  fill: var(--gold-light);
+}
+
+.oph-glyph {
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(243, 223, 166, 0.7));
+}
+
+.oph-name {
+  font-size: 19px;
+  letter-spacing: 0.16em;
+  fill: var(--gold-light);
+}
+
+.oph-figure .oph-start {
+  text-anchor: start;
+}
+
+.oph-figure .oph-end {
+  text-anchor: end;
+}
+
+.oph-row {
+  font-size: 15px;
+  letter-spacing: 0.16em;
+  text-anchor: start;
+  fill: var(--gold);
+}
+
+.oph-bar {
+  fill: rgba(28, 7, 48, 0.85);
+  stroke: rgba(214, 179, 106, 0.5);
+  stroke-width: 1.1;
+}
+
+.oph-bar.is-oph {
+  fill: rgba(214, 179, 106, 0.24);
+  stroke: var(--gold-light);
+  filter: drop-shadow(0 0 8px rgba(243, 223, 166, 0.45));
+}
+
+.oph-bar-text {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  dominant-baseline: central;
+  fill: var(--lilac);
+}
+
+.oph-bar-text.is-oph {
+  fill: var(--gold-light);
+}
+
+.oph-date-note {
+  fill: var(--gold-light);
+}
+
+.oph-tick {
+  stroke: rgba(214, 179, 106, 0.55);
+  stroke-width: 1.2;
+}
+
+.oph-tick-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  text-anchor: middle;
+  fill: var(--mist);
+}
+
+.oph-staff-out,
+.oph-staff-in,
+.oph-snake-out,
+.oph-snake-in {
+  fill: none;
+}
+
+.oph-staff-out {
+  stroke: var(--gold);
+  stroke-width: 10;
+}
+
+.oph-staff-in {
+  stroke: #1c0730;
+  stroke-width: 6.6;
+}
+
+.oph-knob {
+  fill: #1c0730;
+  stroke: var(--gold);
+  stroke-width: 1.8;
+}
+
+.oph-snake-out {
+  stroke: var(--gold-light);
+  stroke-width: 9;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(243, 223, 166, 0.5));
+}
+
+.oph-snake-in {
+  stroke: #2a0d44;
+  stroke-width: 5.4;
+  stroke-linecap: round;
+}
+
+.oph-head {
+  fill: #2a0d44;
+  stroke: var(--gold-light);
+  stroke-width: 1.8;
+}
+
+.oph-eye {
+  fill: var(--gold-light);
+}
+
+.oph-tongue {
+  fill: none;
+  stroke: #f09a6c;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.oph-word {
+  font-size: 22px;
+  letter-spacing: 0.14em;
+  fill: var(--gold-light);
+}
