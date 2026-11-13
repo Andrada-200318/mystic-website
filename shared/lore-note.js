@@ -27,6 +27,11 @@ const loreNotes = {
     title: "A word from the elves of the woodland",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its crystal lore by wandering through starlit glades, ancient woodland halls and the old ways of the stone-keepers. No stone can take the place of a healer's care, so keep your crystals close for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
   },
+  gnome: {
+    picture: "gnome.svg",
+    title: "A word from the garden gnomes",
+    text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its star lore beneath the toadstools, reading the planets by lantern light among the roots of the old garden. No planet can sign your contracts or mend your heart for you, so keep these forecasts for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+  },
 };
 
 const loreChoice = document.currentScript.dataset.note;

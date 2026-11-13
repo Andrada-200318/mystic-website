@@ -1364,7 +1364,7 @@ h3 {
   padding: 10px 22px;
 }
 
-/* The notes from the cauldron, the fairies, the banshees and the elves (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
+/* The notes from the cauldron, the fairies, the banshees, the elves and the gnomes (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
    On very short screens it scrolls, so its button can always be reached. */
 .lore-banner {
   display: flex;
