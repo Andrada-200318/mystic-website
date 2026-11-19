@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="200" height="200">
+  <title>A golden Sânziana with a crown of bedstraw flowers, dancing in a midsummer field</title>
+  <style>
+    .ring { transform-box: view-box; transform-origin: 60px 60px; animation: turn 90s linear infinite; }
+    .hover { animation: hover 4.2s ease-in-out infinite; }
+    .stalk { transform-box: view-box; animation: sway 3.8s ease-in-out infinite; }
+    .left { transform-origin: 28px 104px; }
+    .right { transform-origin: 92px 104px; animation-delay: -1.9s; }
+    .glow { animation: glow 3s ease-in-out infinite; }
+    .twinkle { animation: twinkle 3.6s ease-in-out infinite; }
+    @keyframes turn { to { transform: rotate(360deg); } }
+    @keyframes hover { 50% { transform: translateY(-1.4px); } }
+    @keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+    @keyframes glow { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+    @keyframes twinkle { 50% { opacity: 0.25; } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="120">
+      <stop offset="0" stop-color="#f3dfa6"/>
+      <stop offset="0.55" stop-color="#d6b36a"/>
+      <stop offset="1" stop-color="#a47e36"/>
+    </linearGradient>
+    <path id="spark" d="M0 -10Q0 0 10 0Q0 0 0 10Q0 0 -10 0Q0 0 0 -10Z"/>
+    <!-- A stalk of yellow bedstraw, the sânziene flower, its little blossoms clustered at the top -->
+    <g id="bedstraw">
+      <path d="M0 0Q-1 -20 1 -38M0 -20Q4 -24 6 -30M0 -28Q-4 -31 -6 -36"/>
+      <g fill="url(#gold)" stroke="none">
+        <circle cx="1" cy="-40" r="1.3"/><circle cx="-1.5" cy="-37" r="1.1"/><circle cx="3" cy="-36.5" r="1.1"/>
+        <circle cx="6.5" cy="-32" r="1.1"/><circle cx="4.5" cy="-29.5" r="0.9"/>
+        <circle cx="-6.5" cy="-38" r="1.1"/><circle cx="-4.5" cy="-35" r="0.9"/>
+      </g>
+    </g>
+  </defs>
+
+  <g fill="none" stroke="url(#gold)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <circle class="ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+
+    <!-- The midsummer sun, still glowing on the longest night -->
+    <circle cx="27" cy="34" r="5.5"/>
+    <path class="glow" d="M27 24.5V22M27 46V43.5M17.5 34H15M39 34H36.5M20.3 27.3L18.5 25.5M33.7 27.3L35.5 25.5M20.3 40.7L18.5 42.5M33.7 40.7L35.5 42.5"/>
+
+    <!-- The field of bedstraw she dances through -->
+    <g class="stalk left">
+      <use href="#bedstraw" transform="translate(26 104)"/>
+      <use href="#bedstraw" transform="translate(34 106) scale(0.75)"/>
+    </g>
+    <g class="stalk right">
+      <use href="#bedstraw" transform="translate(94 104) scale(-1 1)"/>
+      <use href="#bedstraw" transform="translate(86 106) scale(-0.75 0.75)"/>
+    </g>
+    <path d="M14 106Q60 101 106 106" stroke-dasharray="1 3"/>
+
+    <g class="hover">
+      <!-- Her long skirt and embroidered blouse, the ie, filled so the field passes behind her -->
+      <g fill="#12051c">
+        <path d="M53 60Q49 80 44 99H76Q71 80 67 60Z"/>
+        <path d="M54 43Q60 46 66 43L67 60H53Z"/>
+        <path d="M58 39.5H62V43.5H58Z"/>
+        <circle cx="60" cy="34" r="6"/>
+      </g>
+      <path d="M57.5 49l2.5-2.5 2.5 2.5-2.5 2.5z M57.5 55l2.5-2.5 2.5 2.5-2.5 2.5z"/>
+      <path d="M46 94H74" stroke-dasharray="1 2.4"/>
+      <path d="M48.5 89.5l2-2 2 2-2 2z M58 89.5l2-2 2 2-2 2z M67.5 89.5l2-2 2 2-2 2z"/>
+
+      <!-- Long loose hair falling past her shoulders -->
+      <path d="M54.2 32Q51 44 53 55"/>
+      <path d="M65.8 32Q69 44 67 55"/>
+
+      <!-- Her crown of bedstraw blossoms -->
+      <path d="M53 30Q60 25 67 30"/>
+      <g fill="url(#gold)" stroke="none">
+        <circle cx="53" cy="29.5" r="1.5"/><circle cx="56.5" cy="27.2" r="1.5"/><circle cx="60" cy="26.4" r="1.7"/>
+        <circle cx="63.5" cy="27.2" r="1.5"/><circle cx="67" cy="29.5" r="1.5"/>
+      </g>
+
+      <!-- Arms curving down to the wreath she holds for the midsummer night -->
+      <path d="M54.5 44Q47 54 53.5 61"/>
+      <path d="M65.5 44Q73 54 66.5 61"/>
+      <circle cx="60" cy="63.5" r="7"/>
+      <g fill="url(#gold)" stroke="none">
+        <circle cx="60" cy="56.5" r="1.2"/><circle cx="66" cy="60" r="1.2"/><circle cx="66" cy="67" r="1.2"/>
+        <circle cx="60" cy="70.5" r="1.2"/><circle cx="54" cy="67" r="1.2"/><circle cx="54" cy="60" r="1.2"/>
+      </g>
+    </g>
+  </g>
+
+  <g fill="url(#gold)">
+    <use class="twinkle" style="animation-delay:-0.8s" href="#spark" transform="translate(84 20) scale(0.45)"/>
+    <use class="twinkle" style="animation-delay:-1.6s" href="#spark" transform="translate(100 40) scale(0.26)"/>
+    <use class="twinkle" style="animation-delay:-2.6s" href="#spark" transform="translate(46 16) scale(0.24)"/>
+    <use class="twinkle" style="animation-delay:-1.2s" href="#spark" transform="translate(16 62) scale(0.3)"/>
+    <use class="twinkle" style="animation-delay:-2.4s" href="#spark" transform="translate(104 70) scale(0.3)"/>
+  </g>
+</svg>

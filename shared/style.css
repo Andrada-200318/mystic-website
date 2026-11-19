@@ -1364,7 +1364,7 @@ h3 {
   padding: 10px 22px;
 }
 
-/* The notes from the cauldron, the fairies, the banshees, the elves and the gnomes (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
+/* The notes from the cauldron, the fairies, the banshees, the elves, the gnomes, the Iele and the Sânziene (lore-note.js): the cookie banner's twin, with a gold drawing at its side.
    On very short screens it scrolls, so its button can always be reached. */
 .lore-banner {
   display: flex;
@@ -1831,7 +1831,8 @@ h3 {
   fill: var(--gold-light);
 }
 
-/* The household drawings: brooms, doors, spoons, bread, salt, bowls and fire (articles/romanian-household-superstitions).
+/* The Romanian folklore drawings: brooms, doors and bread (articles/romanian-household-superstitions),
+   basil, rings, tinsel and wedding bread (articles/romanian-love-superstitions).
    Each superstition borrows the .element-entry box of the zodiac elements, with its own object drawn behind the words. */
 .rf-article {
   position: relative;

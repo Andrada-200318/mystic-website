@@ -32,6 +32,16 @@ const loreNotes = {
     title: "A word from the garden gnomes",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its star lore beneath the toadstools, reading the planets by lantern light among the roots of the old garden. No planet can sign your contracts or mend your heart for you, so keep these forecasts for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
   },
+  iele: {
+    picture: "iele.svg",
+    title: "A word from the Iele",
+    text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its love lore while dancing the hora in moonlit clearings, where the grass never grows back, and by listening at the windows of old village weddings. No sprig of basil can choose your sweetheart for you, so keep these beliefs for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+  },
+  sanziene: {
+    picture: "sanziene.svg",
+    title: "A word from the Sânziene",
+    text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its household lore on Midsummer night, dancing through the fields in our crowns of yellow bedstraw and peeking through the windows of old village homes. No broom can sweep away true misfortune, so keep these beliefs for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+  },
 };
 
 const loreChoice = document.currentScript.dataset.note;
