@@ -36,13 +36,24 @@ const loreNotes = {
     picture: "iele.svg",
     title: "A word from the Iele",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its love lore while dancing the hora in moonlit clearings, where the grass never grows back, and by listening at the windows of old village weddings. No sprig of basil can choose your sweetheart for you, so keep these beliefs for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la Iele",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre dragoste dansând hora în poienile luminate de lună, unde iarba nu mai crește niciodată, și ascultând la ferestrele nunților de odinioară. Niciun fir de busuioc nu-ți poate alege ursitul în locul tău, așa că păstrează aceste credințe pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   sanziene: {
     picture: "sanziene.svg",
     title: "A word from the Sânziene",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its household lore on Midsummer night, dancing through the fields in our crowns of yellow bedstraw and peeking through the windows of old village homes. No broom can sweep away true misfortune, so keep these beliefs for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la Sânziene",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre casă în noaptea de Sânziene, dansând prin câmpuri cu cununi de flori galbene și privind pe furiș prin ferestrele caselor bătrânești de la sat. Nicio mătură nu poate mătura un necaz adevărat, așa că păstrează aceste credințe pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
 };
+
+// Pages under /ro/ have <html lang="ro">: their notes speak Romanian where a translation exists
+const loreInRomanian = document.documentElement.lang.startsWith("ro");
 
 const loreChoice = document.currentScript.dataset.note;
 const loreKey = `${loreChoice}Note`;
@@ -67,17 +78,20 @@ function rememberLoreNote() {
 }
 
 function showLoreNote() {
-  const { picture, title, text } = loreNotes[loreChoice];
+  const lore = loreNotes[loreChoice];
+  const romanian = loreInRomanian && lore.ro;
+  const { title, text } = romanian ? lore.ro : lore;
+  const { picture } = lore;
   const note = document.createElement("section");
   note.className = "cookie-banner lore-banner";
-  note.setAttribute("aria-label", "A note about the lore on this page");
+  note.setAttribute("aria-label", romanian ? "O notă despre credințele din această pagină" : "A note about the lore on this page");
   note.innerHTML = `
     <img src="${new URL(picture, loreBase).href}" alt="" width="200" height="200">
     <div>
       <p class="cookie-title">✦ ${title} ✦</p>
       <p class="cookie-text">${text}</p>
       <div class="cookie-buttons">
-        <button class="ghost-button" type="button">So mote it be</button>
+        <button class="ghost-button" type="button">${romanian ? "Așa să fie" : "So mote it be"}</button>
       </div>
     </div>`;
   note.querySelector("button").addEventListener("click", () => {

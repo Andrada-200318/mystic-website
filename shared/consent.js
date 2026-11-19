@@ -50,20 +50,41 @@ function stopAnalytics() {
   });
 }
 
+// The banner's words, in English and in Romanian (pages under /ro/ have <html lang="ro">)
+const cookieWords = {
+  en: {
+    label: "Cookie choice",
+    title: "A small question before you wander on",
+    text: "May we use Google Analytics cookies to see which rituals visitors enjoy? They are never used for ads. You can change your mind at any time.",
+    privacy: "Read our privacy policy",
+    accept: "Accept",
+    decline: "Decline",
+  },
+  ro: {
+    label: "Alegerea cookie-urilor",
+    title: "O mică întrebare înainte să-ți continui drumul",
+    text: "Putem folosi cookie-uri Google Analytics ca să vedem ce ritualuri le plac vizitatorilor? Nu le folosim niciodată pentru reclame. Te poți răzgândi oricând.",
+    privacy: "Citește politica noastră de confidențialitate (în engleză)",
+    accept: "Accept",
+    decline: "Refuz",
+  },
+};
+
 function showCookieBanner() {
   const open = document.getElementById("cookieBanner");
   if (open && !open.classList.contains("is-leaving")) return;
   if (open) open.remove();
+  const words = document.documentElement.lang.startsWith("ro") ? cookieWords.ro : cookieWords.en;
   const banner = document.createElement("section");
   banner.className = "cookie-banner";
   banner.id = "cookieBanner";
-  banner.setAttribute("aria-label", "Cookie choice");
+  banner.setAttribute("aria-label", words.label);
   banner.innerHTML = `
-    <p class="cookie-title">✦ A small question before you wander on ✦</p>
-    <p class="cookie-text">May we use Google Analytics cookies to see which rituals visitors enjoy? They are never used for ads. You can change your mind at any time. <a href="${privacyUrl}">Read our privacy policy</a></p>
+    <p class="cookie-title">✦ ${words.title} ✦</p>
+    <p class="cookie-text">${words.text} <a href="${privacyUrl}">${words.privacy}</a></p>
     <div class="cookie-buttons">
-      <button class="ghost-button" type="button" data-choice="granted">Accept</button>
-      <button class="ghost-button" type="button" data-choice="denied">Decline</button>
+      <button class="ghost-button" type="button" data-choice="granted">${words.accept}</button>
+      <button class="ghost-button" type="button" data-choice="denied">${words.decline}</button>
     </div>`;
   banner.addEventListener("click", (event) => {
     const choice = event.target.dataset.choice;

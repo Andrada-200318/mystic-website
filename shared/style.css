@@ -741,6 +741,42 @@ h3 {
   color: var(--gold);
 }
 
+/* The English / Română switch under the byline of articles that have a translation (ro/articles/...) */
+.lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0 0;
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lang-switch a,
+.lang-switch .lang-current {
+  padding: 5px 16px;
+  border: 1px solid rgba(214, 179, 106, 0.45);
+  border-radius: 999px;
+}
+
+.lang-switch .lang-current {
+  background: rgba(214, 179, 106, 0.16);
+  color: var(--gold-light);
+}
+
+.lang-switch a {
+  color: var(--lilac);
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus-visible {
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
 .article-divider {
   margin: 22px 0 26px;
   font-size: 0.9rem;
