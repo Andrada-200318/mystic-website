@@ -11,6 +11,10 @@ const loreNotes = {
     picture: "cauldron.svg",
     title: "A word from the cauldron",
     text: "The lore in these pages is gathered from folklore, tradition and moonlit wonder, not from the laboratory. It has not been evaluated by doctors or other professionals, and no crystal can take the place of their care. Keep your stones close for reflection and delight, and carry matters of body, mind, law and coin to a qualified professional.",
+    ro: {
+      title: "Un cuvânt din cazanul vrăjitoarei",
+      text: "Credințele din aceste pagini sunt culese din folclor, din tradiție și din minunile nopților cu lună, nu din laborator. Ele nu au fost evaluate de medici sau de alți specialiști, iar niciun cristal nu le poate lua locul. Păstrează-ți pietrele aproape pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   fairy: {
     picture: "fairy.svg",
@@ -26,6 +30,10 @@ const loreNotes = {
     picture: "elf.svg",
     title: "A word from the elves of the woodland",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its crystal lore by wandering through starlit glades, ancient woodland halls and the old ways of the stone-keepers. No stone can take the place of a healer's care, so keep your crystals close for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la elfii pădurii",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre cristale rătăcind prin poieni luminate de stele, prin vechile săli ale codrului și pe urmele străvechilor păzitori ai pietrelor. Nicio piatră nu poate lua locul grijii unui vindecător, așa că păstrează-ți cristalele aproape pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   gnome: {
     picture: "gnome.svg",
