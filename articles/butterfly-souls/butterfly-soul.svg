@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" height="320">
+<title>A crystal butterfly soul</title>
+<style>
+.ring{transform-box:view-box;transform-origin:300px 160px;animation:turn 120s linear infinite}
+.aura{animation:breathe 7s ease-in-out infinite}
+.hover{animation:hover 6s ease-in-out infinite}
+.wr{transform-box:fill-box;transform-origin:left center;animation:flap 4.8s ease-in-out infinite}
+.wl{transform-box:fill-box;transform-origin:right center;animation:flap 4.8s ease-in-out infinite}
+.rise{animation:rise 7s ease-in-out infinite}
+.tw{animation:tw 3.6s ease-in-out infinite}
+@keyframes turn{to{transform:rotate(360deg)}}
+@keyframes breathe{50%{opacity:.62}}
+@keyframes hover{50%{transform:translateY(-5px)}}
+@keyframes flap{50%{transform:scaleX(.82)}}
+@keyframes rise{50%{transform:translateY(-6px)}}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.15}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<radialGradient id="aura"><stop offset="0" stop-color="#9a7cf0" stop-opacity="0.6"/><stop offset="0.5" stop-color="#7f9ef0" stop-opacity="0.2"/><stop offset="1" stop-color="#7f9ef0" stop-opacity="0"/></radialGradient>
+<radialGradient id="glow" cx="0.3" cy="0.2" r="0.85"><stop offset="0" stop-color="#fff" stop-opacity="0.3"/><stop offset="0.6" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="320"><stop offset="0" stop-color="#f3dfa6"/><stop offset="0.55" stop-color="#d6b36a"/><stop offset="1" stop-color="#a47e36"/></linearGradient>
+<linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff4d2"/><stop offset="1" stop-color="#c99a45"/></linearGradient>
+<linearGradient id="s1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1166"/><stop offset="1" stop-color="#12062e"/></linearGradient>
+<linearGradient id="s2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d1c8a"/><stop offset="1" stop-color="#1b0a45"/></linearGradient>
+<linearGradient id="s3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5430b0"/><stop offset="1" stop-color="#28115f"/></linearGradient>
+<linearGradient id="s4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6a46c9"/><stop offset="1" stop-color="#36197a"/></linearGradient>
+<linearGradient id="s5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7f60d9"/><stop offset="1" stop-color="#472a92"/></linearGradient>
+<linearGradient id="s6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9479e4"/><stop offset="1" stop-color="#5b3eab"/></linearGradient>
+<linearGradient id="s7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a993ee"/><stop offset="1" stop-color="#7356c2"/></linearGradient>
+<linearGradient id="s8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfaef5"/><stop offset="1" stop-color="#8b72d6"/></linearGradient>
+<linearGradient id="s9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d6caf9"/><stop offset="1" stop-color="#a493e6"/></linearGradient>
+<linearGradient id="s10" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3eeff"/><stop offset="1" stop-color="#c2b6f2"/></linearGradient>
+<linearGradient id="a1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d4f1fb"/><stop offset="1" stop-color="#6fb0d8"/></linearGradient>
+<linearGradient id="a2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fd8f0"/><stop offset="1" stop-color="#3f6fb0"/></linearGradient>
+<path id="spark" d="M0 -10Q0 0 10 0Q0 0 0 10Q0 0 -10 0Q0 0 0 -10Z"/>
+
+<!-- The right-hand pair of wings, cut into facets like a gemstone, drawn out from the body at 0,0 -->
+<g id="wings">
+<g stroke="#f1e6ff" stroke-width="0.6" stroke-linejoin="round" stroke-opacity="0.42" fill-opacity="0.94">
+<path d="M4 -8L30 -70L60 -55Z" fill="url(#s9)"/>
+<path d="M30 -70L80 -102L60 -55Z" fill="url(#s10)"/>
+<path d="M80 -102L100 -60L60 -55Z" fill="url(#s7)"/>
+<path d="M80 -102L128 -96L100 -60Z" fill="url(#s8)"/>
+<path d="M128 -96L140 -62L100 -60Z" fill="url(#s5)"/>
+<path d="M140 -62L95 -28L100 -60Z" fill="url(#s4)"/>
+<path d="M140 -62L120 -22L95 -28Z" fill="url(#s2)"/>
+<path d="M120 -22L70 -4L95 -28Z" fill="url(#s3)"/>
+<path d="M70 -4L40 -22L95 -28Z" fill="url(#s5)"/>
+<path d="M70 -4L6 0L40 -22Z" fill="url(#s4)"/>
+<path d="M6 0L4 -8L40 -22Z" fill="url(#s6)"/>
+<path d="M4 -8L60 -55L40 -22Z" fill="url(#s8)"/>
+<path d="M60 -55L100 -60L95 -28Z" fill="url(#a1)"/>
+<path d="M60 -55L95 -28L40 -22Z" fill="url(#s6)"/>
+
+<path d="M6 4L60 6L50 40Z" fill="url(#s7)"/>
+<path d="M60 6L104 22L50 40Z" fill="url(#s6)"/>
+<path d="M104 22L112 58L80 52Z" fill="url(#s3)"/>
+<path d="M104 22L80 52L50 40Z" fill="url(#s5)"/>
+<path d="M112 58L88 96L80 52Z" fill="url(#s2)"/>
+<path d="M88 96L34 66L80 52Z" fill="url(#s3)"/>
+<path d="M88 96L52 104L34 66Z" fill="url(#s1)"/>
+<path d="M52 104L26 80L34 66Z" fill="url(#s2)"/>
+<path d="M26 80L6 28L34 66Z" fill="url(#s4)"/>
+<path d="M6 28L50 40L34 66Z" fill="url(#a2)"/>
+<path d="M6 28L6 4L50 40Z" fill="url(#s8)"/>
+<path d="M50 40L80 52L34 66Z" fill="url(#s4)"/>
+</g>
+<path d="M4 -8L30 -70L80 -102L128 -96L140 -62L120 -22L70 -4L6 0Z" fill="url(#glow)"/>
+<path d="M6 4L60 6L104 22L112 58L88 96L52 104L26 80L6 28Z" fill="url(#glow)"/>
+<!-- A thin gold rim, and two little gold gems set in the wings like the eye-spots of a butterfly -->
+<path d="M4 -8L30 -70L80 -102L128 -96L140 -62L120 -22L70 -4L6 0Z M6 4L60 6L104 22L112 58L88 96L52 104L26 80L6 28Z" fill="none" stroke="url(#gold)" stroke-width="1.1" stroke-linejoin="round" stroke-opacity="0.85"/>
+<path d="M112 -76L120 -68L112 -60L104 -68Z" fill="url(#gem)" stroke="#fff4d2" stroke-width="0.5"/>
+<path d="M112 -76L112 -60L104 -68Z" fill="#fff" fill-opacity="0.35"/>
+<path d="M84 72L90 78L84 84L78 78Z" fill="url(#gem)" stroke="#fff4d2" stroke-width="0.5"/>
+</g>
+
+<!-- The body: a slender faceted crystal with a round head and two gold antennae -->
+<g id="body">
+<path d="M-1.5 -50Q-14 -72 -26 -78M1.5 -50Q14 -72 26 -78" fill="none" stroke="url(#gold)" stroke-width="1.4" stroke-linecap="round"/>
+<circle cx="-26" cy="-78" r="2.4" fill="url(#gem)"/><circle cx="26" cy="-78" r="2.4" fill="url(#gem)"/>
+<g stroke="#f1e6ff" stroke-width="0.6" stroke-linejoin="round" stroke-opacity="0.5">
+<path d="M0 -38L-6 -28L-6 34L0 50Z" fill="url(#s9)"/>
+<path d="M0 -38L6 -28L6 34L0 50Z" fill="url(#s4)"/>
+<path d="M0 -54L-6 -50L-7 -43L0 -38Z" fill="url(#s10)"/>
+<path d="M0 -54L6 -50L7 -43L0 -38Z" fill="url(#s5)"/>
+</g>
+<path d="M-6 -12H6M-6 4H6M-6 20H6" stroke="url(#gold)" stroke-width="0.8" stroke-opacity="0.8"/>
+</g>
+
+<g id="bfly"><use href="#wings"/><use href="#wings" transform="scale(-1 1)"/><use href="#body"/></g>
+</defs>
+
+<circle class="aura" cx="300" cy="160" r="160" fill="url(#aura)"/>
+<circle class="ring" cx="300" cy="160" r="142" fill="none" stroke="url(#gold)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.1 7"/>
+
+<!-- The crescent moon the souls are flying towards -->
+<path d="M84 34A20 20 0 0 0 84 74A25 25 0 0 1 84 34Z" fill="url(#gold)"/>
+
+<!-- Two smaller souls rising on a faint trail of light -->
+<path d="M368 214Q460 200 470 140Q478 92 520 64" fill="none" stroke="url(#gold)" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="0.1 6"/>
+<g class="rise"><use href="#bfly" transform="translate(470 128) rotate(14) scale(0.24)"/></g>
+<g class="rise" style="animation-delay:-3s"><use href="#bfly" transform="translate(528 56) rotate(20) scale(0.16)"/></g>
+
+<!-- The great butterfly, its wings slowly opening and closing -->
+<g transform="translate(300 168)">
+<g class="hover">
+<g class="wr"><use href="#wings"/></g>
+<g class="wl"><use href="#wings" transform="scale(-1 1)"/></g>
+<use href="#body"/>
+</g>
+</g>
+
+<g fill="#fff">
+<use class="tw" href="#spark" transform="translate(356 96) scale(0.8)"/>
+<use class="tw" style="animation-delay:-1.3s" href="#spark" transform="translate(222 210) scale(0.55)"/>
+<use class="tw" style="animation-delay:-2.6s" href="#spark" transform="translate(402 238) scale(0.45)"/>
+</g>
+<g fill="url(#gold)">
+<use class="tw" style="animation-delay:-0.5s" href="#spark" transform="translate(560 140) scale(1)"/>
+<use class="tw" style="animation-delay:-2.3s" href="#spark" transform="translate(52 250) scale(0.7)"/>
+<use class="tw" style="animation-delay:-1.7s" href="#spark" transform="translate(150 120) scale(0.5)"/>
+<use class="tw" style="animation-delay:-3.1s" href="#spark" transform="translate(470 290) scale(0.55)"/>
+<use class="tw" style="animation-delay:-0.9s" href="#spark" transform="translate(140 34) scale(0.45)"/>
+</g>
+</svg>

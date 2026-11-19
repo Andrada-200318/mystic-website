@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>De la Saturn la Lună: planetele care guvernează zodiile | Mystic Space</title>
+    <link rel="icon" type="image/png" href="../../../favicon.png">
+    <meta name="description" content="Fiecare zodie are o planetă care o guvernează. Află care sunt planetele tradiționale și moderne ale celor douăsprezece zodii, ce este vechea ordine caldeeană și cum își modelează fiecare planetă zodia.">
+    <meta name="author" content="Andrada Alexiuc">
+    <link rel="alternate" hreflang="en" href="https://andrada-200318.github.io/mystic-website/articles/planetary-rulers/">
+    <link rel="alternate" hreflang="ro" href="https://andrada-200318.github.io/mystic-website/ro/articles/planetary-rulers/">
+    <link rel="alternate" hreflang="x-default" href="https://andrada-200318.github.io/mystic-website/articles/planetary-rulers/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../shared/style.css">
+
+    <script src="../../../shared/consent.js" defer></script>
+    <script src="../../../shared/menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <!-- The gold colour, the little sparkle, the engraved planets and the two arcs the planet names are written along -->
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="gold-sheen" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="120">
+          <stop offset="0" stop-color="#f3dfa6"/>
+          <stop offset="0.55" stop-color="#d6b36a"/>
+          <stop offset="1" stop-color="#a47e36"/>
+        </linearGradient>
+        <symbol id="sparkle" viewBox="-10 -10 20 20">
+          <path d="M0 -10Q0 0 10 0Q0 0 0 10Q0 0 -10 0Q0 0 0 -10Z"/>
+        </symbol>
+
+        <!-- Each planet is drawn around 0 0, sized roughly as they compare in the sky -->
+        <symbol id="planet-sun" viewBox="-32 -32 64 64">
+          <circle r="13"/>
+          <circle r="8.5" stroke-dasharray="1 2.5"/>
+          <circle r="2"/>
+          <path d="M0 -17V-29"/><path d="M0 -17V-29" transform="rotate(30)"/><path d="M0 -17V-29" transform="rotate(60)"/>
+          <path d="M0 -17V-29" transform="rotate(90)"/><path d="M0 -17V-29" transform="rotate(120)"/><path d="M0 -17V-29" transform="rotate(150)"/>
+          <path d="M0 -17V-29" transform="rotate(180)"/><path d="M0 -17V-29" transform="rotate(210)"/><path d="M0 -17V-29" transform="rotate(240)"/>
+          <path d="M0 -17V-29" transform="rotate(270)"/><path d="M0 -17V-29" transform="rotate(300)"/><path d="M0 -17V-29" transform="rotate(330)"/>
+          <path d="M0 -17V-22" transform="rotate(15)"/><path d="M0 -17V-22" transform="rotate(45)"/><path d="M0 -17V-22" transform="rotate(75)"/>
+          <path d="M0 -17V-22" transform="rotate(105)"/><path d="M0 -17V-22" transform="rotate(135)"/><path d="M0 -17V-22" transform="rotate(165)"/>
+          <path d="M0 -17V-22" transform="rotate(195)"/><path d="M0 -17V-22" transform="rotate(225)"/><path d="M0 -17V-22" transform="rotate(255)"/>
+          <path d="M0 -17V-22" transform="rotate(285)"/><path d="M0 -17V-22" transform="rotate(315)"/><path d="M0 -17V-22" transform="rotate(345)"/>
+        </symbol>
+        <symbol id="planet-moon" viewBox="-32 -32 64 64">
+          <circle r="22"/>
+          <path d="M0 -22A9 22 0 0 1 0 22"/>
+          <path d="M0 -22A3 22 0 0 0 0 22M0 -22A12 22 0 0 0 0 22" stroke-dasharray="0.8 2.6"/>
+          <circle cx="15" cy="-7" r="2.2"/><circle cx="17" cy="5" r="1.4"/><circle cx="13" cy="12" r="1"/>
+        </symbol>
+        <symbol id="planet-mercury" viewBox="-32 -32 64 64">
+          <circle r="15"/>
+          <path d="M0 -15A7 15 0 0 0 0 15" stroke-dasharray="0.8 2.4"/>
+          <circle cx="5" cy="-6" r="2.6"/><circle cx="8" cy="5" r="1.6"/><circle cx="-1" cy="7" r="1.2"/><circle cx="2" cy="-1" r="0.8"/>
+        </symbol>
+        <symbol id="planet-venus" viewBox="-32 -32 64 64">
+          <circle r="20"/>
+          <path d="M-8 -17Q2 -19 9 -17.5M-17 -10Q-4 -15 10 -12Q15 -11 17 -9M-19.5 -3Q-6 -7 6 -3Q13 -1 19.6 -4M-19 5Q-8 1 4 5Q12 8 19 4M-15 13Q-4 9 8 13"/>
+        </symbol>
+        <symbol id="planet-mars" viewBox="-32 -32 64 64">
+          <circle r="18"/>
+          <path d="M-7 -16.6Q0 -12.5 7 -16.6"/>
+          <path d="M-12 1Q-4 -2 4 2Q9 4 13 1"/>
+          <path d="M-9 8q3 -2 6 0" stroke-dasharray="0.8 2"/>
+          <circle cx="7" cy="-6" r="2"/><circle cx="-8" cy="-6" r="1.2"/><circle cx="4" cy="10" r="1.4"/>
+        </symbol>
+        <symbol id="planet-jupiter" viewBox="-32 -32 64 64">
+          <circle r="26"/>
+          <path d="M-20.5 -16Q0 -14 20.5 -16M-24.4 -9Q0 -7 24.4 -9M-25.8 -3Q0 -5 25.8 -3M-25.7 4Q0 6 25.7 4M-23.6 11Q0 9 23.6 11M-18.8 18Q0 20 18.8 18"/>
+          <ellipse cx="9" cy="8" rx="5" ry="2"/>
+        </symbol>
+        <!-- The rings pass behind the planet at the top and in front of it at the bottom -->
+        <symbol id="planet-saturn" viewBox="-32 -32 64 64">
+          <g transform="rotate(-16)">
+            <circle r="16"/>
+            <path d="M-30 0A30 7 0 0 1 -14.8 -6.1M14.8 -6.1A30 7 0 0 1 30 0M-30 0A30 7 0 0 0 30 0"/>
+            <path d="M-24 0A24 5.6 0 0 1 -15.4 -4.3M15.4 -4.3A24 5.6 0 0 1 24 0M-24 0A24 5.6 0 0 0 24 0"/>
+            <path d="M-12.5 10Q0 12 12.5 10M-9.3 13Q0 14.5 9.3 13"/>
+          </g>
+        </symbol>
+        <!-- Uranus spins on its side, so its rings stand almost upright -->
+        <symbol id="planet-uranus" viewBox="-32 -32 64 64">
+          <g transform="rotate(14)">
+            <circle r="20"/>
+            <circle r="9" stroke-dasharray="0.8 2.2"/><circle r="14.5" stroke-dasharray="0.8 2.6"/>
+            <path d="M0 -30A7 30 0 0 1 0 30M0 -30A7 30 0 0 0 -5.36 -19.3M-5.36 19.3A7 30 0 0 0 0 30"/>
+          </g>
+        </symbol>
+        <symbol id="planet-neptune" viewBox="-32 -32 64 64">
+          <circle r="22"/>
+          <path d="M-19 -11Q0 -13 19 -11M-21.6 -4Q0 -6 21.6 -4" stroke-dasharray="1 2.5"/>
+          <path d="M-20.3 8.5Q0 10.5 20.3 8.5M-15 16Q0 18.5 15 16"/>
+          <ellipse cx="-6" cy="2.5" rx="5" ry="2.8"/>
+          <path d="M1 -0.5q4 -1.5 8 0M-4 13q4 -1.2 8 0"/>
+        </symbol>
+        <!-- Pluto with the great heart-shaped plain on its face -->
+        <symbol id="planet-pluto" viewBox="-32 -32 64 64">
+          <circle r="13"/>
+          <path d="M3 9C-3 5 -4 0 -1 -1C1 -2 2.5 0 3 1.5C3.5 0 5 -2 7 -1C10 0 9 5 3 9Z"/>
+          <circle cx="-6" cy="-5" r="1.4"/><circle cx="-2" cy="-8" r="0.9"/>
+        </symbol>
+
+        <path id="name-arc" d="M14 60A46 46 0 0 1 106 60"/>
+        <path id="note-arc" d="M10 60A50 50 0 0 0 110 60"/>
+      </defs>
+    </svg>
+
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="../../../">Acasă</a>
+        <details class="nav-menu">
+          <summary>Jocuri mistice</summary>
+          <div class="nav-menu-list">
+            <a href="../../../tarot/">Tarotul zilei</a>
+            <a href="../../../wish/">Globul dorințelor</a>
+            <a href="../../../moon/">Altarul Lunii</a>
+            <a href="../../../stars/">Țesătorul de stele</a>
+            <a href="../../../tea/">Frunze de ceai</a>
+            <a href="../../../tide/">Bazinul mareei</a>
+          </div>
+        </details>
+        <details class="nav-menu">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="../../../zodiac/">Soare, Lună și Ascendent</a>
+            <a href="../../../zodiac/#compatibility">Compatibilitate în dragoste</a>
+            <a href="../../../chinese-zodiac/">Zodiacul chinezesc</a>
+          </div>
+        </details>
+        <a href="../../../articles/" class="active">Articole</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="article-back"><a href="../../../articles/">← Înapoi în Grădina Suspendată</a></p>
+
+      <article class="prose article">
+        <p class="ornament">☾ ✦ ☽</p>
+        <p class="article-collection">Astrologie</p>
+        <h2>De la Saturn la Lună: planetele care guvernează zodiile</h2>
+        <p class="article-subtitle">Fiecare zodie are o planetă care o guvernează. Descoperă planetele tradiționale și moderne ale zodiacului și felul în care fiecare modelează zodia pe care o călăuzește.</p>
+        <p class="article-byline">De Andrada Alexiuc · <time datetime="2026-10-30">30 octombrie 2026</time></p>
+        <nav class="lang-switch" aria-label="Limba articolului">
+          <a href="../../../articles/planetary-rulers/" hreflang="en" lang="en">English</a>
+          <span class="lang-current" aria-current="page">Română</span>
+        </nav>
+        <p class="ornament article-divider">✦</p>
+
+        <div class="article-body">
+          <p>Fiecare zodie este asociată cu o planetă numită planeta ei guvernatoare. În astrologie se crede că această planetă are cea mai puternică influență asupra zodiei, modelându-i personalitatea, norocul, relațiile și energia din jurul ei. Sistemele tradițional și modern pornesc de la logici diferite: cel tradițional se bazează pe ordinea planetelor și pe distanța lor față de Soare și Pământ, precum și pe simbolismul luminii și al căldurii, în timp ce sistemul modern se bazează pe afinități psihologice și tematice.</p>
+
+          <h3>Cele șapte planete clasice</h3>
+          <p>Astrologia tradițională lucra cu șapte „planete” clasice: cele cinci planete vizibile cu ochiul liber (Mercur, Venus, Marte, Jupiter și Saturn) și cei doi luminători, Soarele și Luna. Felul în care au fost împărțite pornește de la vechea ordine caldeeană și de la așezarea roții zodiacale față de solstiții. Soarele și Luna guvernează Leul și Racul, zodiile din mijlocul verii, când lumina zilei este la apogeu. Celelalte planete guvernează apoi zodiile în perechi, îndepărtându-se de luminători în ordinea distanței lor, până la Saturn, care guvernează Capricornul și Vărsătorul, zodiile din miezul iernii.</p>
+          <p>Ordinea caldeeană așază cele șapte corpuri cerești clasice de la cel mai lent la cel mai rapid în mișcarea lor aparentă: Saturn, Jupiter, Marte, Soarele, Venus, Mercur și Luna. Această ordine a inspirat și credința că, înainte de naștere, sufletul coboară de la Saturn spre Lună, primind pe drum câte un dar sau o calitate de la fiecare corp ceresc.</p>
+
+          <h3>Planetele guvernatoare moderne</h3>
+          <p>Astrologii moderni au redistribuit unele zodii pe baza afinităților tematice, psihologice și elementale. Ei au adăugat și trei planete descoperite după inventarea telescopului: Uranus (1781), Neptun (1846) și Pluton (1930), care astăzi guvernează, alături de vechile planete, Vărsătorul, Peștii și, respectiv, Scorpionul.</p>
+
+          <h3>Planetele celor douăsprezece zodii</h3>
+          <p>Mai jos găsești planeta guvernatoare a fiecărei zodii, împreună cu influența pe care o are asupra ei.</p>
+
+          <!-- Each sign sits over its ruling planet engraved in gold, with the planet's name written along the circle.
+               A co-ruler orbits on the ring as a small planet. -->
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mars" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Marte</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Berbecul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Berbec</h4>
+            <p class="element-signs">Planeta guvernatoare: Marte</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta războiului, a acțiunii, a vitalității, a ambiției și a pasiunii.</li>
+              <li><strong>Influența:</strong> Îi dă Berbecului un spirit competitiv înnăscut, un curaj imens și o fire de pionier. Berbecii sunt mânați de instinct, foarte energici, uneori nerăbdători și au o hotărâre aprigă de a fi primii. Nu lasă nimic să le stea în cale când își urmăresc țelurile.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-venus" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Venus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Taurul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Taur</h4>
+            <p class="element-signs">Planeta guvernatoare: Venus</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta iubirii, a frumuseții, a banilor și a armoniei.</li>
+              <li><strong>Influența:</strong> Se îndreaptă spre lumea materială. Se manifestă ca dorință de confort material, stabilitate financiară, plăceri ale simțurilor (mâncare aleasă, artă, lucruri de calitate) și ca o fire loială și cu picioarele pe pământ. Taurii trăiesc afecțiunea prin toate cele cinci simțuri și apreciază luxul. De obicei, le place ca o relație să se dezvolte încet și sigur și nu le place să fie grăbiți.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mercury" x="2" y="2" width="116" height="116"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Mercur</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Gemenii</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Gemeni</h4>
+            <p class="element-signs">Planeta guvernatoare: Mercur</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta comunicării, a intelectului, a logicii și a călătoriilor scurte.</li>
+              <li><strong>Influența:</strong> Se exprimă în afară. Aduce o curiozitate nesățioasă, o mare capacitate de adaptare, o minte ageră și dorința constantă de a schimba idei și informații cu ceilalți. Gemenii sunt înclinați spre comunicare, spre împărtășirea informațiilor și adunarea faptelor. Le place, de asemenea, să cunoască oameni și să facă parte din cercuri sociale diferite.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-moon" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Luna</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Racul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Rac</h4>
+            <p class="element-signs">Astrul guvernator: Luna</p>
+            <ul>
+              <li><strong>Energia:</strong> Corpul ceresc al emoțiilor, al intuiției, al subconștientului și al energiei materne.</li>
+              <li><strong>Influența:</strong> Racii sunt foarte empatici, profund sensibili și își apără cu înverșunare casa și familia. Luna le dictează schimbările de dispoziție (oglindind ciclurile lunare) și le dă o nevoie puternică de siguranță emoțională. Mai mult, Luna le dăruiește o memorie lungă, care duce la perioade prelungite de nostalgie, dar îi ajută și să învețe din trecut.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-sun" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Soarele</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Leul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Leu</h4>
+            <p class="element-signs">Astrul guvernator: Soarele</p>
+            <ul>
+              <li><strong>Energia:</strong> Centrul sistemului nostru solar, care reprezintă ego-ul, energia vitală, identitatea și creativitatea.</li>
+              <li><strong>Influența:</strong> Soarele îi dăruiește Leului un magnetism natural, generozitate, mândrie și dorința înnăscută de a străluci și de a fi recunoscut. Leii caută din fire rolurile de conducere și adoră să se exprime teatral. Cum Soarele nu-și împarte energia cu alte planete, e firesc ca Leul să aibă o stimă de sine ridicată, uneori fiind egocentric și arogant.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-mercury" x="2" y="2" width="116" height="116"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Mercur</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Fecioara</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Fecioară</h4>
+            <p class="element-signs">Planeta guvernatoare: Mercur</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta comunicării, a intelectului, a istețimii și a gândirii strategice.</li>
+              <li><strong>Influența:</strong> Se exprimă înăuntru. Se manifestă ca gândire analitică, atenție ascuțită la detalii, organizare, spirit practic și o puternică dorință lăuntrică de a fi de folos. Fecioara își ia de la Mercur înclinația spre perfecționism, fiind meticuloasă și iubitoare de ordine.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-venus" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Venus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Balanța</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Balanță</h4>
+            <p class="element-signs">Planeta guvernatoare: Venus</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta iubirii, a frumuseții, a legăturilor dintre oameni și a armoniei.</li>
+              <li><strong>Influența:</strong> Se îndreaptă spre lumea socială. Se manifestă ca dorință de parteneriat, diplomație, simț estetic, dreptate și o nevoie profundă și constantă de echilibru și pace. Îi dă Balanței o energie magnetică, aproape seducătoare, care o face extrem de orientată spre relații.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-pluto" x="-6" y="-6" width="132" height="132"/>
+              <use href="#planet-mars" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Pluton</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">alături de Marte</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Scorpion</h4>
+            <p class="element-signs">Planete guvernatoare: Pluton și Marte</p>
+            <ul>
+              <li><strong>Energia:</strong> Pluton este planeta transformării, a renașterii, a jocurilor de putere și a lumii subterane a psihicului. Marte este cunoscut drept planeta războiului, a acțiunii și a pasiunii.</li>
+              <li><strong>Influența:</strong> Îi dă Scorpionului o aură intensă și magnetică, o intuiție de detectiv și capacitatea de a se reinventa complet după crize. Planeta lui tradițională, Marte, adaugă o ambiție strategică și ascunsă sub înfățișarea lui liniștită. Tot Marte explică forța cu care merge înainte fără scuze și hotărârea de a-și împlini dorințele.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-jupiter" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Jupiter</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Săgetătorul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Săgetător</h4>
+            <p class="element-signs">Planeta guvernatoare: Jupiter</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta norocului, a expansiunii, a filozofiei și a studiilor înalte.</li>
+              <li><strong>Influența:</strong> Îl umple pe Săgetător de un optimism incurabil și de o iubire profundă pentru libertatea personală, aventură și călătorii. Săgetătorii caută adevărul toată viața și preferă mereu să privească imaginea de ansamblu. Sunt pasionali, caută emoții și distracție chiar și în activitățile banale de zi cu zi și fug de plictiseală.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-saturn" x="14" y="14" width="92" height="92"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Saturn</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">guvernează Capricornul</textPath></text>
+              <use class="sparkle" href="#sparkle" x="100" y="4" width="12" height="12"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Capricorn</h4>
+            <p class="element-signs">Planeta guvernatoare: Saturn</p>
+            <ul>
+              <li><strong>Energia:</strong> Planeta disciplinei, a timpului, a structurii, a karmei și a limitelor.</li>
+              <li><strong>Influența:</strong> Îi face pe Capricorni incredibil de responsabili, ambițioși, realiști și răbdători. Ei prețuiesc munca grea și sunt gata să urce muntele succesului încet, sigur și metodic. De obicei sunt perfecționiști, mereu călăuziți de un scop și hotărâți să și-l împlinească.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-uranus" x="14" y="14" width="92" height="92"/>
+              <use href="#planet-saturn" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Uranus</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">alături de Saturn</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Vărsător</h4>
+            <p class="element-signs">Planete guvernatoare: Uranus și Saturn</p>
+            <ul>
+              <li><strong>Energia:</strong> Uranus este planeta rebeliunii, a inovației, a schimbărilor bruște și a tehnologiei. Saturn este cunoscut ca simbol al karmei, al progresului și al maturității.</li>
+              <li><strong>Influența:</strong> Îi dă Vărsătorului o gândire vizionară, o originalitate puternică și un spirit profund umanitar. Planeta lui tradițională, Saturn, îl ancorează, oferindu-i logica și structura de care are nevoie ca să-și transforme ideile revoluționare în realitate. Vărsătorul își dorește din tot sufletul să lase o urmă și să nu se piardă în uitare. Poate veni și cu inițiative șocante, care au un rol important în trezirea celor din jur.</li>
+            </ul>
+          </section>
+
+          <section class="element-entry">
+            <svg class="planet-sigil" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+              <circle class="sigil-ring" cx="60" cy="60" r="55" stroke-dasharray="1 4"/>
+              <use href="#planet-neptune" x="14" y="14" width="92" height="92"/>
+              <use href="#planet-jupiter" x="84" y="6" width="30" height="30"/>
+              <text><textPath href="#name-arc" startOffset="50%" text-anchor="middle">Neptun</textPath></text>
+              <text class="planet-note"><textPath href="#note-arc" startOffset="50%" text-anchor="middle">alături de Jupiter</textPath></text>
+              <use class="sparkle" href="#sparkle" x="6" y="6" width="10" height="10"/>
+              <use class="sparkle" href="#sparkle" x="8" y="104" width="8" height="8"/>
+            </svg>
+            <h4>Pești</h4>
+            <p class="element-signs">Planete guvernatoare: Neptun și Jupiter</p>
+            <ul>
+              <li><strong>Energia:</strong> Neptun este planeta viselor, a iluziilor, a spiritualității și a imaginației artistice. Jupiter este cunoscut drept planeta expansiunii, a spiritului liber și a creșterii spirituale.</li>
+              <li><strong>Influența:</strong> Îi face pe Pești foarte visători, idealiști, artistici și capabili de o compasiune universală. Sunt vindecători, dar creativi, și simt că au datoria de a dărui celorlalți. Planeta lor tradițională, Jupiter, le amplifică credința lăuntrică, intuiția și legătura profundă cu latura mistică a vieții.</li>
+            </ul>
+          </section>
+
+          <h3>Surse</h3>
+          <ul lang="en">
+            <li>Astro: “The Rulers”</li>
+            <li>MyInfiniteThreads: “The Chaldean Order of Planets: A Cosmic Journey of Spiritual Evolution”</li>
+            <li>Parade: “The Ruling Planet for Each Zodiac Sign, According to Astrologers”</li>
+          </ul>
+        </div>
+
+        <p class="ornament article-end">☾ ✦ ☽</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="../../../articles/">Articole</a>
+        <a href="../../../privacy/">Confidențialitate</a>
+        <button class="footer-button" type="button" data-cookie-settings>Setări cookie-uri</button>
+      </nav>
+      <p class="footer-note">Citirile noastre sunt pentru reflecție și divertisment. Nu înlocuiesc sfaturile medicale, juridice sau financiare.</p>
+      <p class="footer-copy">© 2026 Mystic Space</p>
+    </footer>
+  </body>
+</html>

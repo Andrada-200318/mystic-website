@@ -20,11 +20,19 @@ const loreNotes = {
     picture: "fairy.svg",
     title: "A word from the fairies of the forest",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered information by wandering through folklore, moonlit wonder and enchanted forests. Keep the spells and potions for your own reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la zânele pădurii",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste informații rătăcind prin folclor, prin minunile nopților cu lună și prin păduri fermecate. Păstrează vrăjile și poțiunile pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   banshee: {
     picture: "banshee.svg",
     title: "A word from the banshees",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered information by wandering through folklore, moonlit wonder and enchanted forests. Keep the spells and potions for your own reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la banshee",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste informații rătăcind prin folclor, prin minunile nopților cu lună și prin păduri fermecate. Păstrează vrăjile și poțiunile pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   elf: {
     picture: "elf.svg",
@@ -39,6 +47,10 @@ const loreNotes = {
     picture: "gnome.svg",
     title: "A word from the garden gnomes",
     text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its star lore beneath the toadstools, reading the planets by lantern light among the roots of the old garden. No planet can sign your contracts or mend your heart for you, so keep these forecasts for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la piticii din grădină",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre stele sub pălăriile ciupercilor, citind planetele la lumina felinarului printre rădăcinile grădinii bătrâne. Nicio planetă nu-ți poate semna contractele sau vindeca inima în locul tău, așa că păstrează aceste previziuni pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
   },
   iele: {
     picture: "iele.svg",
@@ -56,6 +68,15 @@ const loreNotes = {
     ro: {
       title: "Un cuvânt de la Sânziene",
       text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre casă în noaptea de Sânziene, dansând prin câmpuri cu cununi de flori galbene și privind pe furiș prin ferestrele caselor bătrânești de la sat. Nicio mătură nu poate mătura un necaz adevărat, așa că păstrează aceste credințe pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
+  },
+  butterfly: {
+    picture: "butterfly.svg",
+    title: "A word from the butterflies",
+    text: "This guide is intended for cosmic inspiration and comfort, rather than a professional or scholarly review. We have gathered its lore fluttering past candlelit windows and village bell towers, listening to the stories grandmothers tell about the ones who have gone before us. No belief can take the place of real support in grief, so keep these stories for reflection and comfort, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la fluturi",
+      text: "Acest ghid este menit să inspire și să aline, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe zburând pe lângă ferestre luminate de lumânări și pe lângă clopotnițele satelor, ascultând poveștile pe care le spun bunicile despre cei care au plecat dintre noi. Nicio credință nu poate lua locul unui sprijin adevărat în vreme de doliu, așa că păstrează aceste povești pentru reflecție și alinare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
     },
   },
 };
