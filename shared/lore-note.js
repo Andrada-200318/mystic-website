@@ -79,6 +79,15 @@ const loreNotes = {
       text: "Acest ghid este menit să inspire și să aline, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe zburând pe lângă ferestre luminate de lumânări și pe lângă clopotnițele satelor, ascultând poveștile pe care le spun bunicile despre cei care au plecat dintre noi. Nicio credință nu poate lua locul unui sprijin adevărat în vreme de doliu, așa că păstrează aceste povești pentru reflecție și alinare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
     },
   },
+  mother: {
+    picture: "mother-nature.svg",
+    title: "A word from Mother Nature",
+    text: "This guide is intended for cosmic inspiration and entertainment, rather than a professional or scholarly review. We have gathered its herb lore wandering through gardens and meadows, grandmothers' kitchens and the steam of simmering pots. No sprig of rosemary can take the place of a doctor's care, and not every herb agrees with every body, medicine or pregnancy, so mind your flames, keep these spells for reflection and delight, and carry matters of body, mind, law and coins to a qualified professional.",
+    ro: {
+      title: "Un cuvânt de la Mama Natură",
+      text: "Acest ghid este menit să inspire și să încânte, nu să fie o lucrare profesională sau academică. Am adunat aceste credințe despre plante rătăcind prin grădini și pajiști, prin bucătăriile bunicilor și prin aburul oalelor care fierb încet pe foc. Niciun fir de rozmarin nu poate lua locul grijii unui medic, iar nu orice plantă se potrivește oricărui trup, oricărui tratament sau unei sarcini, așa că ai grijă la flacără, păstrează aceste vrăji pentru reflecție și încântare, iar grijile legate de sănătate, minte, lege și bani du-le la un specialist calificat.",
+    },
+  },
 };
 
 // Pages under /ro/ have <html lang="ro">: their notes speak Romanian where a translation exists
