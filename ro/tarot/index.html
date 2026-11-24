@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Citire gratuită în tarot: trecut, prezent și viitor | Mystic Space</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <meta name="description" content="Primește online o citire gratuită în tarot, cu trei cărți. Trage din pachetul complet Rider-Waite de 78 de cărți și descoperă ce îți dezvăluie despre trecut, prezent și viitor.">
+    <link rel="alternate" hreflang="en" href="https://andrada-200318.github.io/mystic-website/tarot/">
+    <link rel="alternate" hreflang="ro" href="https://andrada-200318.github.io/mystic-website/ro/tarot/">
+    <link rel="alternate" hreflang="x-default" href="https://andrada-200318.github.io/mystic-website/tarot/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/style.css">
+
+    <script src="../../shared/consent.js" defer></script>
+    <script src="../../shared/menu.js" defer></script>
+
+    <script data-goatcounter="https://mystic-space-website.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Mystic Space</h1>
+      <nav>
+        <a href="../../">Acasă</a>
+        <details class="nav-menu is-active">
+          <summary>Jocuri mistice</summary>
+          <div class="nav-menu-list">
+            <a href="../tarot/" class="active">Tarotul zilei</a>
+            <a href="../../wish/">Globul dorințelor</a>
+            <a href="../../moon/">Altarul Lunii</a>
+            <a href="../../stars/">Țesătorul de stele</a>
+            <a href="../../tea/">Frunze de ceai</a>
+            <a href="../../tide/">Bazinul mareei</a>
+          </div>
+        </details>
+        <details class="nav-menu">
+          <summary>Zodiac</summary>
+          <div class="nav-menu-list">
+            <a href="../../zodiac/">Soare, Lună și Ascendent</a>
+            <a href="../../zodiac/#compatibility">Compatibilitate în dragoste</a>
+            <a href="../../chinese-zodiac/">Zodiacul chinezesc</a>
+          </div>
+        </details>
+        <a href="../../articles/">Articole</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="ornament">☾ ✦ ☽</p>
+        <h2>Citirea în trei cărți</h2>
+        <nav class="lang-switch" aria-label="Limba jocului">
+          <a href="../../tarot/" hreflang="en" lang="en">English</a>
+          <span class="lang-current" aria-current="page">Română</span>
+        </nav>
+        <p>Liniștește-ți mintea și păstrează o întrebare în inimă. Când ești gata, trage trei cărți din pachet: una pentru trecut, una pentru prezent și una pentru viitor.</p>
+      </section>
+
+      <section class="table">
+        <div class="deck-area">
+          <button class="deck" id="deck" aria-label="Trage o carte din pachet">
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer"></span>
+            <span class="card-back deck-layer deck-top" id="deckTop"></span>
+          </button>
+          <p class="deck-hint" id="deckHint">Atinge pachetul ca să tragi prima carte</p>
+        </div>
+
+        <div class="spread">
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">I</span></div>
+            <p class="slot-position">Trecut</p>
+            <p class="slot-name"></p>
+          </div>
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">II</span></div>
+            <p class="slot-position">Prezent</p>
+            <p class="slot-name"></p>
+          </div>
+          <div class="slot">
+            <div class="slot-frame"><span class="slot-label">III</span></div>
+            <p class="slot-position">Viitor</p>
+            <p class="slot-name"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reading" id="reading" hidden>
+        <h2>Citirea ta</h2>
+        <div class="reading-cards" id="readingCards"></div>
+        <p class="ornament">✦ ☾ ✦</p>
+        <h3>Mesajul cărților</h3>
+        <p class="reading-summary" id="readingSummary"></p>
+        <button class="redraw" id="redrawButton">Amestecă și trage din nou</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="ornament">☾ ✦ ☽</p>
+      <nav class="footer-links">
+        <a href="../../articles/">Articole</a>
+        <a href="../../privacy/">Confidențialitate</a>
+        <button class="footer-button" type="button" data-cookie-settings>Setări cookie-uri</button>
+      </nav>
+      <p class="footer-note">Citirile noastre sunt pentru reflecție și divertisment. Nu înlocuiesc sfaturile medicale, juridice sau financiare.</p>
+      <p class="footer-copy">© 2026 Mystic Space</p>
+    </footer>
+
+    <script src="../../tarot/tarot.ro.js"></script>
+    <script src="../../tarot/tarot.js"></script>
+  </body>
+</html>

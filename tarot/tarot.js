@@ -88,7 +88,41 @@ const cards = [
   { name: "King of Pentacles", meaning: "Material success and business leadership. You have the discipline to manifest a secure empire." }
 ];
 
-const positions = ["Past", "Present", "Future"];
+// Every sentence the game writes by itself. The Romanian page (ro/tarot/) also loads tarot.ro.js,
+// which holds the same sentences in Romanian, plus the Romanian name and meaning of every card.
+const words = {
+  positions: ["Past", "Present", "Future"],
+  firstHint: "Tap the deck to draw your first card",
+  nextHint: (position) => `Draw your ${position.toLowerCase()} card`,
+  doneHint: "The cards have spoken",
+  allThree: "All three cards belong to ",
+  twoOfThree: "Two of your three cards belong to ",
+  mixed: "Each card comes from a different realm, so your path asks for balance between heart, mind, body and spirit. No single force rules this moment; you hold the reins.",
+  story: (past, present, future) => `From ${past}, through ${present}, toward ${future}, your story is moving forward. Trust where it is leading you.`,
+  suits: {
+    major: "the Major Arcana, so fate itself is speaking. These are soul-level lessons, larger than the day-to-day. Pay close attention to what is unfolding.",
+    Wands: "Wands, so fire runs through your reading. Passion, creativity and bold action are the energies to work with now.",
+    Cups: "Cups, so water flows through your reading. Your feelings, relationships and intuition hold the answers you seek.",
+    Swords: "Swords, so air sharpens your reading. Your thoughts, words and decisions are at the heart of the matter. Seek clarity and speak your truth.",
+    Pentacles: "Pentacles, so earth grounds your reading. Work, money, the body and the home are where your energy wants to go."
+  }
+};
+
+const romanian = document.documentElement.lang === "ro" && window.tarotRo;
+const text = romanian ? window.tarotRo : words;
+const positions = text.positions;
+
+// The English name stays the card's id (it picks the suit and the picture), so only what is shown is translated
+function cardName(card) {
+  return romanian ? text.cards[card.name][0] : card.name;
+}
+
+function cardMeaning(card) {
+  return romanian ? text.cards[card.name][1] : card.meaning;
+}
+
+// The card pictures sit next to this script, so the Romanian page finds them too
+const scriptUrl = document.currentScript.src;
 
 const romanNumerals = [
   "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
@@ -96,26 +130,11 @@ const romanNumerals = [
 ];
 
 const suits = {
-  major: {
-    symbol: "☽",
-    message: "the Major Arcana, so fate itself is speaking. These are soul-level lessons, larger than the day-to-day. Pay close attention to what is unfolding."
-  },
-  Wands: {
-    symbol: "♣",
-    message: "Wands, so fire runs through your reading. Passion, creativity and bold action are the energies to work with now."
-  },
-  Cups: {
-    symbol: "♥",
-    message: "Cups, so water flows through your reading. Your feelings, relationships and intuition hold the answers you seek."
-  },
-  Swords: {
-    symbol: "♠",
-    message: "Swords, so air sharpens your reading. Your thoughts, words and decisions are at the heart of the matter. Seek clarity and speak your truth."
-  },
-  Pentacles: {
-    symbol: "♦",
-    message: "Pentacles, so earth grounds your reading. Work, money, the body and the home are where your energy wants to go."
-  }
+  major: { symbol: "☽" },
+  Wands: { symbol: "♣" },
+  Cups: { symbol: "♥" },
+  Swords: { symbol: "♠" },
+  Pentacles: { symbol: "♦" }
 };
 
 const deckButton = document.getElementById("deck");
@@ -142,7 +161,8 @@ function getSuit(card) {
 
 // Card images live in "Deck of cards", named like "Eight_of_Swords_(Rider-Waite_Smith_tarot_deck).png"
 function getImagePath(card) {
-  return encodeURI("Deck of cards/" + card.name.replace(/ /g, "_") + "_(Rider-Waite_Smith_tarot_deck).png");
+  const file = "Deck of cards/" + card.name.replace(/ /g, "_") + "_(Rider-Waite_Smith_tarot_deck).png";
+  return new URL(encodeURI(file), scriptUrl).href;
 }
 
 function cardBackHTML() {
@@ -178,11 +198,11 @@ function createCardElement(card) {
     <div class="card-inner">
       <div class="card-face card-back">${cardBackHTML()}</div>
       <div class="card-face card-front">
-        <img alt="${card.name}">
+        <img alt="${cardName(card)}">
         <div class="card-fallback">
           <span class="card-fallback-numeral">${numeral}</span>
           <span class="card-fallback-symbol">${suits[suit].symbol}</span>
-          <span class="card-fallback-name">${card.name}</span>
+          <span class="card-fallback-name">${cardName(card)}</span>
         </div>
       </div>
     </div>`;
@@ -222,14 +242,14 @@ function drawCard() {
 
     setTimeout(function() {
       const nameElement = slot.querySelector(".slot-name");
-      nameElement.textContent = card.name;
+      nameElement.textContent = cardName(card);
       nameElement.classList.add("is-visible");
       isDrawing = false;
 
       if (drawnCards.length === positions.length) {
         finishReading();
       } else {
-        deckHint.textContent = `Draw your ${positions[drawnCards.length].toLowerCase()} card`;
+        deckHint.textContent = text.nextHint(positions[drawnCards.length]);
       }
     }, flipTime);
   }, flyTime);
@@ -246,27 +266,27 @@ function buildSummary() {
   let summary;
 
   if (topCount === 3) {
-    summary = "All three cards belong to " + suits[topSuit].message;
+    summary = text.allThree + text.suits[topSuit];
   } else if (topCount === 2) {
-    summary = "Two of your three cards belong to " + suits[topSuit].message;
+    summary = text.twoOfThree + text.suits[topSuit];
   } else {
-    summary = "Each card comes from a different realm, so your path asks for balance between heart, mind, body and spirit. No single force rules this moment; you hold the reins.";
+    summary = text.mixed;
   }
 
-  const [past, present, future] = drawnCards;
-  return `${summary} From ${past.name}, through ${present.name}, toward ${future.name}, your story is moving forward. Trust where it is leading you.`;
+  const [past, present, future] = drawnCards.map(cardName);
+  return `${summary} ${text.story(past, present, future)}`;
 }
 
 function finishReading() {
   deckButton.disabled = true;
-  deckHint.textContent = "The cards have spoken";
+  deckHint.textContent = text.doneHint;
 
   readingCards.innerHTML = drawnCards.map(function(card, index) {
     return `
       <div class="reading-entry">
         <p class="reading-entry-position">${positions[index]}</p>
-        <p class="reading-entry-name">${card.name}</p>
-        <p class="reading-entry-meaning">${card.meaning}</p>
+        <p class="reading-entry-name">${cardName(card)}</p>
+        <p class="reading-entry-meaning">${cardMeaning(card)}</p>
       </div>`;
   }).join("");
   readingSummary.textContent = buildSummary();
@@ -294,7 +314,7 @@ function resetReading() {
   reading.classList.remove("is-visible");
   reading.hidden = true;
   deckButton.disabled = false;
-  deckHint.textContent = "Tap the deck to draw your first card";
+  deckHint.textContent = text.firstHint;
 }
 
 document.querySelectorAll(".deck-layer").forEach(function(layer) {
