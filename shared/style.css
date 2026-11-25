@@ -407,16 +407,9 @@ h3 {
   box-shadow: 0 0 0 2px var(--gold), 0 0 28px rgba(214, 179, 106, 0.35), 0 16px 34px rgba(0, 0, 0, 0.6);
 }
 
-.card-front img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Shown when a card's image is not in the "Deck of cards" folder yet */
+/* Every card face is written, not pictured: its numeral, suit symbol and name */
 .card-fallback {
-  display: none;
+  display: flex;
   position: absolute;
   inset: 6px;
   flex-direction: column;
@@ -429,14 +422,6 @@ h3 {
   text-align: center;
   color: #3d1260;
   background: radial-gradient(circle, #fbf4e6, #ecdcbf);
-}
-
-.card-front.no-image img {
-  display: none;
-}
-
-.card-front.no-image .card-fallback {
-  display: flex;
 }
 
 .card-fallback-numeral {

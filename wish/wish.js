@@ -1,10 +1,21 @@
-const blessings = [
-  "The globe has heard you. Let your wish swirl in the mist.",
-  "Your wish is woven into the smoke. Now let it go and trust.",
-  "Released into the stars. What is meant for you will find you.",
-  "The mist holds your wish gently. Watch for signs today.",
-  "Your intention glows within the crystal. So mote it be."
-];
+// Every sentence the game writes by itself. The Romanian page (ro/wish/) also loads wish.ro.js,
+// which holds the same sentences in Romanian.
+const words = {
+  blessings: [
+    "The globe has heard you. Let your wish swirl in the mist.",
+    "Your wish is woven into the smoke. Now let it go and trust.",
+    "Released into the stars. What is meant for you will find you.",
+    "The mist holds your wish gently. Watch for signs today.",
+    "Your intention glows within the crystal. So mote it be."
+  ],
+  countNone: "The globe is waiting for today's first wish",
+  countOne: "1 wish is glowing in the globe today",
+  countMany: (count) => `${count} wishes are glowing in the globe today`,
+  dateLocale: undefined // the visitor's own language
+};
+
+const text = document.documentElement.lang === "ro" && window.wishRo ? window.wishRo : words;
+const blessings = text.blessings;
 
 const wishForm = document.getElementById("wishForm");
 const wishInput = document.getElementById("wishInput");
@@ -49,11 +60,11 @@ function updateTicket() {
 
 function updateCount() {
   if (wishesToday === 0) {
-    wishCount.textContent = "The globe is waiting for today's first wish";
+    wishCount.textContent = text.countNone;
   } else if (wishesToday === 1) {
-    wishCount.textContent = "1 wish is glowing in the globe today";
+    wishCount.textContent = text.countOne;
   } else {
-    wishCount.textContent = `${wishesToday} wishes are glowing in the globe today`;
+    wishCount.textContent = text.countMany(wishesToday);
   }
 }
 
@@ -209,7 +220,7 @@ ticketPile.addEventListener("animationend", function(event) {
   if (event.target === ticketPile) ticketPile.classList.remove("is-shaking");
 });
 
-ticketDate.textContent = new Date().toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" });
+ticketDate.textContent = new Date().toLocaleDateString(text.dateLocale, { weekday: "long", day: "numeric", month: "long" });
 
 for (let i = 0; i < Math.min(wishesToday, 40); i++) {
   addOrb();

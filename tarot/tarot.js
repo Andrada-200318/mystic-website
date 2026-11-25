@@ -112,7 +112,7 @@ const romanian = document.documentElement.lang === "ro" && window.tarotRo;
 const text = romanian ? window.tarotRo : words;
 const positions = text.positions;
 
-// The English name stays the card's id (it picks the suit and the picture), so only what is shown is translated
+// The English name stays the card's id (it picks the suit), so only what is shown is translated
 function cardName(card) {
   return romanian ? text.cards[card.name][0] : card.name;
 }
@@ -120,9 +120,6 @@ function cardName(card) {
 function cardMeaning(card) {
   return romanian ? text.cards[card.name][1] : card.meaning;
 }
-
-// The card pictures sit next to this script, so the Romanian page finds them too
-const scriptUrl = document.currentScript.src;
 
 const romanNumerals = [
   "0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
@@ -159,12 +156,6 @@ function getSuit(card) {
   return match ? match[1] : "major";
 }
 
-// Card images live in "Deck of cards", named like "Eight_of_Swords_(Rider-Waite_Smith_tarot_deck).png"
-function getImagePath(card) {
-  const file = "Deck of cards/" + card.name.replace(/ /g, "_") + "_(Rider-Waite_Smith_tarot_deck).png";
-  return new URL(encodeURI(file), scriptUrl).href;
-}
-
 function cardBackHTML() {
   return `
     <svg viewBox="0 0 70 120" aria-hidden="true">
@@ -198,7 +189,6 @@ function createCardElement(card) {
     <div class="card-inner">
       <div class="card-face card-back">${cardBackHTML()}</div>
       <div class="card-face card-front">
-        <img alt="${cardName(card)}">
         <div class="card-fallback">
           <span class="card-fallback-numeral">${numeral}</span>
           <span class="card-fallback-symbol">${suits[suit].symbol}</span>
@@ -206,12 +196,6 @@ function createCardElement(card) {
         </div>
       </div>
     </div>`;
-
-  const image = element.querySelector("img");
-  image.addEventListener("error", function() {
-    image.parentElement.classList.add("no-image");
-  });
-  image.src = getImagePath(card);
 
   return element;
 }
